@@ -21,11 +21,11 @@
   </div>
   <div class="field">
     <%= f.label :sender_id %><br />
-    <%= f.number_field :sender_id %>
+    <%= f.collection_select :sender_id, User.order(:name),:id,:name%>
   </div>
   <div class="field">
     <%= f.label :receiver_id %><br />
-    <%= f.number_field :receiver_id %>
+    <%= f.collection_select :receiver_id, User.order(:name),:id,:name%>
   </div>
   <div class="actions">
     <%= f.submit %>
