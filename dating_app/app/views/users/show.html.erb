@@ -60,6 +60,13 @@
   <%= @user.about_me %>
 </p>
 
+<% @messages.each do |message| %>
+  <tr>
+    <td><%= message.title %></td>
+    <td><%= message.content %></td>
+    <td><%= message.sender.name %></td>
+    <td><%= message.receiver.name %></td>
+<%end%>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
