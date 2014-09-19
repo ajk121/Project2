@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  devise :database_authenticatable, :registerable,
+  :recoverable, :rememberable, :trackable, :validatable, :omniauthable,omniauth_providers: [:facebook]
+
   attr_accessible :about_me, :age, :city, :email, :eyes_color, :favourite_language, :gender, :hair_color, :height, :name, :sex_preference, :smoker
 
 has_many :views_as_viewer, class_name:'Game', foreign_key: 'viewer_id'
