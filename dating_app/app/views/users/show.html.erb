@@ -41,12 +41,12 @@
 </p>
 
 <p>
-  <b>Hair color:</b>
+  <b>Hair:</b>
   <%= @user.hair_color %>
 </p>
 
 <p>
-  <b>Eyes color:</b>
+  <b>Eyes:</b>
   <%= @user.eyes_color %>
 </p>
 
@@ -75,20 +75,10 @@
 </p>
 
 <p>
-  <%= link_to 'People i like', edit_user_path(@user) %>
+  <%= link_to 'People that i like', edit_user_path(@user) %>
 </p>
 
 <p>
   <%= link_to 'People that likes me', edit_user_path(@user) %>
 </p>
 
-<% @messages.each do |message| %>
-  <tr>
-    <td><%= message.title %></td>
-    <td><%= message.content %></td>
-    <td><%= message.sender.name %></td>
-    <td><%= message.receiver.name %></td>
-<%end%>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
