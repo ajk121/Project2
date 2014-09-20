@@ -1,3 +1,18 @@
+<%= search_form_for @search, url: advanced_search_path do |f| %>
+<%= f.condition_fields do |c|%>
+<div class="field">
+  <%= c.attribute_fields do |a| %>
+  <%= a.attribute_select associations: :user%>              
+  <% end %>
+  <%= c.predicate_select %>
+  <%= c.value_fields do |v| %>
+  <%= v.text_field :value %>
+  <% end %>
+</div>
+<% end %>
+<%= f.submit %>
+<% end %>
+
 <p><%= link_to 'Advanced Seach', advanced_search_path%></p>
 
 <table>
