@@ -21,6 +21,16 @@ class ViewsController < ApplicationController
     end
   end
 
+  def user_visited
+    @user = current_user
+    @views = @user.views_as_viewer
+  end
+
+  def user_visiting
+    @user = current_user
+    @views = @user.views_as_viewed
+  end
+
   # GET /views/new
   # GET /views/new.json
   def new

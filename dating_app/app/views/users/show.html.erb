@@ -75,20 +75,13 @@
 </p>
 
 <p>
-  <%= link_to 'People i like', edit_user_path(@user) %>
+  <%= link_to 'People i like', user_visited_path %>
 </p>
 
 <p>
-  <%= link_to 'People that likes me', edit_user_path(@user) %>
+  <%= link_to 'People that likes me', user_visiting_path %>
 </p>
 
-<% @messages.each do |message| %>
-  <tr>
-    <td><%= message.title %></td>
-    <td><%= message.content %></td>
-    <td><%= message.sender.name %></td>
-    <td><%= message.receiver.name %></td>
-<%end%>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

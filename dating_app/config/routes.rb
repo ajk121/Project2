@@ -9,8 +9,10 @@ DatingApp::Application.routes.draw do
 
 
   get 'advanced_search', to: 'users#advanced_search'
-  get 'people_visited', to: 'users#advanced_search'
-  get 'people_visiting', to: 'users#advanced_search'
+  
+  get 'user_visited', to: 'views#user_visited'
+  
+  get 'user_visiting', to: 'views#user_visiting'
 
   root to: 'home#index'
   
