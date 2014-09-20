@@ -15,8 +15,8 @@ gem 'binding_of_caller'
 gem 'better_errors'
 gem 'meta_request'
 gem 'devise' 
+gem 'ransack'
 gem 'omniauth-github'
-gem "omniauth-twitter"
 gem "omniauth-facebook"
 gem "omniauth-google-oauth2"
 end
