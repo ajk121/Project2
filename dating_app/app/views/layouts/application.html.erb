@@ -7,9 +7,39 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= yield %>
+  <div id='wrapper'>
 
-</body>
-</html>
+    <nav>
+      <ul>
+        <li class="title">Dating App</li>
+        <% if current_user %>
+        <li class="login_message">Current User: <%= current_user.email %></li>
+        <%end%>
+      </nav>
+
+      <div id="main">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
+        <%= yield %>
+      </div>
+
+      <footer>
+        <ul>
+          <%unless current_user %>
+          <li><%= link_to 'Register', new_user__registration_path %></li>
+          <li><%= link_to 'Login', new_user_session_path%></li>
+          <%else%>
+          <li><%= link_to 'Home', root_path%></li>
+          <li><%= link_to 'My Profile', user_path(current_user)%></li>
+          <li><%= link_to 'Search', users_path %></li>
+          <li><%= link_to 'Logout', destroy_user_session_path %></li>
+          <li><%= link_to 'Edit Profile', edit_user_path(current_user)%></li>
+          <% end %>
+        </ul>
+      </footer>
+
+    </div>
+    
+  </body>
+  </html>

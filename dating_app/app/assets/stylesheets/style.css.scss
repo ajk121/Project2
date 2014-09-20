@@ -1,0 +1,46 @@
+html{
+  box-sizing:border-box;
+  height:100%;
+}
+
+body {
+  height:100%;
+  width:100%;
+}
+
+div#wrapper {
+  min-width: 1000px;
+  margin: 0 auto;
+  position:relative;
+}
+
+div#main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+nav {
+  min-width: 10000px;
+  border-bottom: 3px solid black;
+  position: fixed;
+  background: orange;
+}
+
+nav ul li {
+  display: inline;
+}
+
+footer {
+  min-width: 1000px;
+  border-top: 3px solid black ;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: orange;
+}
+
+footer li {
+  display:inline;
+  padding :25px;
+}
