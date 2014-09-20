@@ -70,6 +70,18 @@
   <%= @user.about_me %>
 </p>
 
+<p>
+  <%= link_to 'My Messages', messages_path%>
+</p>
+
+<p>
+  <%= link_to 'People i like', edit_user_path(@user) %>
+</p>
+
+<p>
+  <%= link_to 'People that likes me', edit_user_path(@user) %>
+</p>
+
 <% @messages.each do |message| %>
   <tr>
     <td><%= message.title %></td>

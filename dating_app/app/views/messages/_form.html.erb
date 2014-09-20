@@ -17,17 +17,17 @@
   </div>
   <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_field :content %>
+    <%= f.text_area :content %>
   </div>
   <div class="field">
     <%= f.label :sender_id %><br />
     <%= f.collection_select :sender_id, User.order(:name),:id,:name%>
   </div>
   <div class="field">
-    <%= f.label :receiver_id %><br />
+    <%= f.label :message_to %><br />
     <%= f.collection_select :receiver_id, User.order(:name),:id,:name%>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Send'%>
   </div>
 <% end %>
