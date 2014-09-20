@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140919172943) do
+ActiveRecord::Schema.define(:version => 20140920081536) do
 
   create_table "messages", :force => true do |t|
     t.string   "title"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(:version => 20140919172943) do
     t.integer  "age"
     t.string   "gender"
     t.string   "city"
-    t.string   "email"
     t.string   "sex_preference"
     t.string   "hair_color"
     t.string   "eyes_color"
