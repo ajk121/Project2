@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140920144448) do
+ActiveRecord::Schema.define(:version => 20140920152053) do
 
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20140920144448) do
     t.text     "referrer"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.boolean  "counter_cache"
   end
 
   add_index "impressions", ["controller_name", "action_name", "ip_address"], :name => "controlleraction_ip_index"
@@ -75,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20140920144448) do
     t.string   "last_sign_in_ip"
     t.string   "image"
     t.string   "username"
+    t.integer  "impressions_count"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
