@@ -13,17 +13,23 @@ class UsersController < ApplicationController
     end
   end
 
-def advanced_search
-  @search = User.search(params[:q])
-  @users = @search.result
-  @search.build_condition
-end
+  def advanced_search
+    @search = User.search(params[:q])
+    @users = @search.result
+    @search.build_condition
+  end
+
+  def people_visited
+  end
+
+  def people_visiting
+  end
 
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = current_user
-    @messages = @user.messages_as_receiver + @user.messages_as_sender
+    @user = User.find(params[:id])
+    
     @views = @user.views_as_viewed + @user.views_as_viewer
 
     respond_to do |format|

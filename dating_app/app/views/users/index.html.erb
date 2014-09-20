@@ -2,7 +2,8 @@
 <%= f.condition_fields do |c|%>
 <div class="field">
   <%= c.attribute_fields do |a| %>
-  <%= a.attribute_select associations: :user%>              
+  <%= a.attribute_select associations: :user%>        
+
   <% end %>
   <%= c.predicate_select %>
   <%= c.value_fields do |v| %>
