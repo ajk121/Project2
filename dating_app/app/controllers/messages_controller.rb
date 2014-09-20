@@ -2,7 +2,9 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    @user = current_user
+    @messages = @user.messages_as_receiver + @user.messages_as_sender
+    @views = @user.views_as_viewed + @user.views_as_viewer
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,6 +43,7 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(params[:message])
+    @message.sender = User.find(current_user.id)
 
     respond_to do |format|
       if @message.save

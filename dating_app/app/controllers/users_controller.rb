@@ -22,7 +22,7 @@ end
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
+    @user = current_user
     @messages = @user.messages_as_receiver + @user.messages_as_sender
     @views = @user.views_as_viewed + @user.views_as_viewer
 
