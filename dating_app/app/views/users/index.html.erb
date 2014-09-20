@@ -2,6 +2,8 @@
 
 <table>
   <tr>
+    <th>Image</th>
+    <th>Username</th>
     <th>Name</th>
     <th>Age</th>
     <th>Gender</th>
@@ -21,6 +23,8 @@
 
 <% @users.each do |user| %>
   <tr>
+    <td><%= user.image %></td>
+    <td><%= user.username %></td>
     <td><%= user.name %></td>
     <td><%= user.age %></td>
     <td><%= user.gender %></td>
@@ -41,5 +45,3 @@
 </table>
 
 <br />
-
-<%= link_to 'New User', new_user_path %>
