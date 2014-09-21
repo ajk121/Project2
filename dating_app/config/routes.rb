@@ -14,6 +14,8 @@ DatingApp::Application.routes.draw do
   
   get 'user_receives_visit', to: 'views#user_receives_visit'
 
+
+
   root to: 'home#index'
 
 end
