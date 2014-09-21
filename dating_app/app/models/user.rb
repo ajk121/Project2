@@ -14,5 +14,7 @@ class User < ActiveRecord::Base
 
   has_many :messages_as_sender, class_name:'Message', foreign_key: :sender_id, dependent: :destroy
   has_many :messages_as_receiver, class_name:'Message', foreign_key: :receiver_id,dependent: :destroy
+
+  has_many :roles
   
 end
