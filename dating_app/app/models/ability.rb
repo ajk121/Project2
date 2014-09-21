@@ -13,7 +13,6 @@ class Ability
     else
      can :read, View
      can :create, User
-     cannot [:read, :create], Message
      can [:read, :update], User, id: user.id
      can :read, :home
     end
