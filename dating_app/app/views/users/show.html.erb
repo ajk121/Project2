@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= "#{@user.impressionist_count} views" %>
+
 <p>
   <b>Image:</b>
   <%= @user.image %>
@@ -36,17 +38,21 @@
 </p>
 
 <p>
+<<<<<<< HEAD
   <b>Interested in:</b>
+=======
+  <b>Looking for:</b>
+>>>>>>> views
   <%= @user.sex_preference %>
 </p>
 
 <p>
-  <b>Hair color:</b>
+  <b>Hair:</b>
   <%= @user.hair_color %>
 </p>
 
 <p>
-  <b>Eyes color:</b>
+  <b>Eyes:</b>
   <%= @user.eyes_color %>
 </p>
 
@@ -75,13 +81,20 @@
 </p>
 
 <p>
+<<<<<<< HEAD
   <%= link_to 'People i like', user_visited_path %>
+=======
+  <%= link_to 'People that i like', edit_user_path(@user) %>
+>>>>>>> views
 </p>
 
 <p>
   <%= link_to 'People that likes me', user_visiting_path %>
 </p>
 
+<<<<<<< HEAD
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+=======
+>>>>>>> views
