@@ -14,6 +14,7 @@
         <li class="title">Dating App</li>
         <% if current_user %>
         <li class="login_message">Current User: <%= current_user.email %></li>
+        <%=current_user.role%> account
         <%end%>
       </nav>
 

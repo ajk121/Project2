@@ -15,8 +15,11 @@ class RolesController < ApplicationController
   # POST /roles.json
   def create
     @user = current_user
-    @user.role = 'premium'
-
+    if @user.role == 'basic'
+      @user.role = 'premium'
+    else
+      @user.role = 'basic'
+    end
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'You have successfully upgraded to premium. You will be now able to send and receive messages' }
@@ -27,22 +30,5 @@ class RolesController < ApplicationController
       end
     end
   end
-
-  # PUT /roles/1
-  # PUT /roles/1.json
-  def basic
-    @user = current_user
-    @user.role = 'basic'
-
-    respond_to do |format|
-      if @user.save
-       format.html { redirect_to @user, notice: 'Your premium account is now over. You will not be able to send and receive messages until you upgrade again' }
-       format.json { render json: @user, status: :created, location: @user }
-     else
-      format.html { render action: "new" }
-      format.json { render json: @role.errors, status: :unprocessable_entity }
-    end
-  end
-end
 
 end
