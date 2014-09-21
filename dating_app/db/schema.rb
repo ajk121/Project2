@@ -11,7 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
 ActiveRecord::Schema.define(:version => 20140921135605) do
 
   create_table "impressions", :force => true do |t|
@@ -84,10 +83,7 @@ ActiveRecord::Schema.define(:version => 20140921135605) do
     t.string   "image"
     t.string   "username"
     t.integer  "impressions_count"
-<<<<<<< HEAD
     t.string   "role"
-=======
->>>>>>> views
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
