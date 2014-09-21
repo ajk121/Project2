@@ -1,5 +1,5 @@
 class RolesController < ApplicationController
-
+  load_and_authorize_resource
   # GET /roles/new
   # GET /roles/new.json
   def new
