@@ -35,6 +35,7 @@
           <li><%= link_to 'Search', users_path %></li>
           <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
           <li><%= link_to 'Edit Profile', edit_user_path(current_user)%></li>
+          <li><%= link_to 'Upgrade to Premium', edit_user_path(current_user)%></li>
           <% end %>
         </ul>
       </footer>
