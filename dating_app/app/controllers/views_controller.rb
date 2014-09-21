@@ -13,7 +13,9 @@ class ViewsController < ApplicationController
   # GET /views/1
   # GET /views/1.json
   def show
-    @view = View.find(params[:id])
+   @user = current_user
+   @views_viewed = @user.views_as_viewed
+   @views_viewer = @user.views_as_viewer
 
     respond_to do |format|
       format.html # show.html.erb
