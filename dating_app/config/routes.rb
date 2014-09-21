@@ -8,7 +8,6 @@ DatingApp::Application.routes.draw do
   resources :views
   resources :roles
 
-
   get 'advanced_search', to: 'users#advanced_search'
   
   get 'user_visited', to: 'views#user_visited'
@@ -16,8 +15,5 @@ DatingApp::Application.routes.draw do
   get 'user_visiting', to: 'views#user_visiting'
 
   root to: 'home#index'
-
-  get '', to: 'users#advanced_search'
-  
 
 end
