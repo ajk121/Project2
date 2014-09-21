@@ -10,7 +10,7 @@
 
 <% @views.each do |view| %>
   <tr>
-    <td><%= view.viewed_id %></td>
+    <td><%= view.viewed.name %></td>
     <td><%= link_to 'Show', view %></td>
     <td><%= link_to 'Destroy', view, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
