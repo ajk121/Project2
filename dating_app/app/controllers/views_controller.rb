@@ -14,8 +14,6 @@ class ViewsController < ApplicationController
   # GET /views/1.json
   def show
    @user = current_user
-   @views_viewed = @user.views_as_viewed
-   @views_viewer = @user.views_as_viewer
 
     respond_to do |format|
       format.html # show.html.erb
@@ -23,12 +21,12 @@ class ViewsController < ApplicationController
     end
   end
 
-  def user_visited
+  def user_makes_visit
     @user = current_user
     @views = @user.views_as_viewer
   end
 
-  def user_visiting
+  def user_receives_visit
     @user = current_user
     @views = @user.views_as_viewed
   end

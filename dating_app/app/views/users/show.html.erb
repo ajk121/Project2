@@ -78,9 +78,9 @@
 
 <p>
 
-  <%= link_to "#{@user.impressionist_count(start_date:Time.now-(24*60*60),end_date: Time.now)} visits to my profile in the past 3 days", user_visiting_path %>
+  <%= link_to "#{@user.impressionist_count(start_date:Time.now-(24*60*60),end_date: Time.now)} visits to my profile in the past 3 days", user_receives_visit_path %>
 </p>
 
 <p>
-  <%= link_to 'Profiles i have visited', user_visited_path %>
+  <%= link_to 'Profiles i visited', user_makes_visit_path %>
 </p>
