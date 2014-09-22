@@ -1,8 +1,5 @@
 DatingApp::Application.routes.draw do
-  
-
-  devise_for :users, :controllers => { :registrations => 'registrations' } 
-
+  root to: 'home#index'
   resources :messages
   resources :users
   resources :views
@@ -14,8 +11,7 @@ DatingApp::Application.routes.draw do
   
   get 'user_receives_visit', to: 'views#user_receives_visit'
 
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
-
-  root to: 'home#index'
 
 end
