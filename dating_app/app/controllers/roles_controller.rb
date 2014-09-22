@@ -29,12 +29,12 @@ class RolesController < ApplicationController
       end
     end
 
-    def deactivate
-    @user = current_user
-    @user.role = 'inactive'
-    @user.save
-    redirect_to destroy_user_session
-    end
+    # def deactivate
+    # @user = current_user
+    # @user.role = 'inactive'
+    # @user.save
+    # redirect_to destroy_user_session
+    # end
 
   end
 

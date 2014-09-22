@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
-  
+
   impressionist actions: [:show], unique:[:session_hash]
 
+  def soft_delete
+      update_attribute(:deleted_at, Time.current)
+    end
+  end
   # GET /users
   # GET /users.json
   def index
@@ -29,8 +33,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @view = View.new viewed_id:@user.id, viewer_id:current_user.id
     if @view.viewer_id.to_i != @view.viewed_id.to_i
-    @view.save
-  end
+      @view.save
+    end
   end
 
   # GET /users/new
