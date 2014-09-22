@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource except:[:destroy, :show]
 
 
   # GET /messages
@@ -19,7 +19,6 @@ class MessagesController < ApplicationController
   # GET /messages/1.json
   def show
     @message = Message.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @message }
