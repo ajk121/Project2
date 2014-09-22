@@ -6,6 +6,7 @@
   <%= image_tag @user.image.url %>
 </p>
 
+
 <p>
   <b>Name:</b>
   <%= @user.name %>
@@ -42,15 +43,15 @@
   <%= @user.sex_preference %>
 </p>
 
-<p>
+<!-- <p>
   <b>Hair:</b>
   <%= @user.hair_color %>
-</p>
+</p> -->
 
-<p>
+<!-- <p>
   <b>Eyes:</b>
   <%= @user.eyes_color %>
-</p>
+</p> -->
 
 <p>
   <b>Height:</b>
@@ -61,15 +62,28 @@
   <b>Smoker:</b>
   <%= @user.smoker %>
 </p>
-
+<p>
+  <b>GitHub ID:</b>
+  <%= @user.github_id %>
+</p>
 <p>
   <b>Favourite language:</b>
   <%= @user.favourite_language %>
 </p>
 
 <p>
+  <b>Stack Overflow Score:</b>
+  <%= @user.stackoverflow_score %>
+</p>
+
+<p>
   <b>Meet Ups:</b>
   <%= @user.meet_ups %>
+</p>
+
+<p>
+  <b>Do you Prefer Frontend Or Backend?</b>
+  <%= @user.front_backend  %>
 </p>
 
 <p>
