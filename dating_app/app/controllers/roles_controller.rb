@@ -28,14 +28,6 @@ class RolesController < ApplicationController
         format.json { render json: @role.errors, status: :unprocessable_entity }
       end
     end
-
-    # def deactivate
-    # @user = current_user
-    # @user.role = 'inactive'
-    # @user.save
-    # redirect_to destroy_user_session
-    # end
-
   end
 
 end

@@ -2,10 +2,6 @@ class UsersController < ApplicationController
 
   impressionist actions: [:show], unique:[:session_hash]
 
-  def soft_delete
-      update_attribute(:deleted_at, Time.current)
-    end
-  end
   # GET /users
   # GET /users.json
   def index
@@ -57,7 +53,6 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    @user.role = 'basic'
 
     respond_to do |format|
       if @user.save

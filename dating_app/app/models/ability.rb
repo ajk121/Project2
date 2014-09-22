@@ -15,8 +15,6 @@ class Ability
      can :create, User
      can [:read, :update], User, id: user.id
      can :read, :home
-   elsif user.role == 'inactive'
-   
    else
      can :create, User
      can :read, :home

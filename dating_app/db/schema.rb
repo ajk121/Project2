@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140922134729) do
+ActiveRecord::Schema.define(:version => 20140922144552) do
 
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(:version => 20140922134729) do
     t.string   "username"
     t.integer  "impressions_count"
     t.string   "role"
-    t.datetime "deleted_at"
+    t.string   "status"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
