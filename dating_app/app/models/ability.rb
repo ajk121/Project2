@@ -18,7 +18,6 @@ class Ability
    else
        can :create, User
        can :read, :home
-
    end
 end
 end
