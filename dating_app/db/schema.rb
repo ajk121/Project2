@@ -68,8 +68,6 @@ ActiveRecord::Schema.define(:version => 20140921135605) do
     t.string   "about_me"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "provider"
-    t.string   "uid"
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
