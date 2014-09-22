@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20140922152407) do
-=======
-ActiveRecord::Schema.define(:version => 20140922144552) do
->>>>>>> 3e725cf5173d5b52ba2433c624175ef701f40a2d
+ActiveRecord::Schema.define(:version => 20140922165117) do
 
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
@@ -88,8 +84,9 @@ ActiveRecord::Schema.define(:version => 20140922144552) do
     t.string   "username"
     t.integer  "impressions_count"
     t.string   "role"
-    t.string   "meet_ups"
     t.string   "status"
+    t.string   "meet_ups"
+    t.string   "front_backend"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
