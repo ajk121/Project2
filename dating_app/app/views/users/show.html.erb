@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <b>Image:</b>
   <%= image_tag @user.user_image.url %>
@@ -41,17 +42,18 @@
 </p>
 
 <p>
+
   <b>Interested in:</b>
   <%= @user.sex_preference %>
 </p>
 
 <p>
-  <b>Hair color:</b>
+  <b>Hair:</b>
   <%= @user.hair_color %>
 </p>
 
 <p>
-  <b>Eyes color:</b>
+  <b>Eyes:</b>
   <%= @user.eyes_color %>
 </p>
 
@@ -80,13 +82,10 @@
 </p>
 
 <p>
-  <%= link_to 'People i like', user_visited_path %>
+
+  <%= link_to "#{@user.impressionist_count(start_date:Time.now-(24*60*60),end_date: Time.now)} visits to my profile in the past 3 days", user_receives_visit_path %>
 </p>
 
 <p>
-  <%= link_to 'People that likes me', user_visiting_path %>
+  <%= link_to 'Profiles i visited', user_makes_visit_path %>
 </p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

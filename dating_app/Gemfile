@@ -21,7 +21,9 @@ gem "omniauth-facebook"
 gem "omniauth-google-oauth2"
 gem 'carrierwave', '0.9.0'
 gem 'rmagick'
+gem 'impressionist'
 end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
