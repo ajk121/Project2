@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   mount_uploader :image, UserImageUploader
 
-  attr_accessible :about_me, :age, :city, :eyes_color, :favourite_language, :gender, :hair_color, :height, :name, :sex_preference, :smoker, :image, :username, :impressions_count, :status,:meet_ups,:front_backend, :stackoverflow_score
+  attr_accessible :about_me, :age, :city, :eyes_color, :favourite_language, :gender, :hair_color, :height, :name, :sex_preference, :smoker, :image, :username, :impressions_count, :status,:meet_ups,:front_backend, :stackoverflow_score, :github_id
 
   has_many :views_as_viewer, class_name:'View', foreign_key: :viewer_id, dependent: :destroy
   has_many :views_as_viewed, class_name:'View', foreign_key: :viewed_id, dependent: :destroy
