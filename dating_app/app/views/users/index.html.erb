@@ -18,9 +18,9 @@
 <p><%= link_to 'Advanced Seach', advanced_search_path%></p>
 
 <% @users.each do |user| %>
-<div class ='search_image'>
-<%= link_to image_tag(user.image), user_path(user) %><br>
-<%€= user.name %>
+<div class="search_image" id ='user_<%=user.id%>' data-user-id="<%=user.id%>">
+<%= link_to image_tag(user.image), user_path(user) %>
+<div id="image_name_<%=user.id%>" class="hidden"><%= user.name %></div>
 </div>
 
 <% end %>
