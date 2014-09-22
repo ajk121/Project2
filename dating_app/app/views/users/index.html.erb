@@ -15,6 +15,10 @@
 <%= f.submit %>
 <% end %>
 
+<button><%= sort_link @search, :age %></button>
+<button><%= sort_link @search, :city %></button>
+<br>
+
 <p><%= link_to 'Advanced Seach', advanced_search_path%></p>
 
 <% @users.each do |user| %>
