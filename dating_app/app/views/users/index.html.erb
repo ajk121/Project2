@@ -19,7 +19,7 @@
 
 <% @users.each do |user| %>
 <div class ='search_image'>
-<%= image_tag(user.image) %><br>
+<%= link_to image_tag(user.image), user_path(user) %><br>
 <%€= user.name %>
 </div>
 
