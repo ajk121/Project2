@@ -3,13 +3,8 @@
 
 <p>
   <b>Image:</b>
-  <%= image_tag @user.user_image.url %>
+  <%= image_tag @user.image.url %>
 </p>
-
-<!-- <p>
-  <b>Image:</b>
-  <%= @user.image %>
-</p> -->
 
 <p>
   <b>Name:</b>
@@ -70,6 +65,11 @@
 <p>
   <b>Favourite language:</b>
   <%= @user.favourite_language %>
+</p>
+
+<p>
+  <b>Meet Ups:</b>
+  <%= @user.meet_ups %>
 </p>
 
 <p>

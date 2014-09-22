@@ -8,11 +8,11 @@ class User < ActiveRecord::Base
   :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :user_image
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :image
 
-  mount_uploader :user_image, UserImageUploader
+  mount_uploader :image, UserImageUploader
 
-  attr_accessible :about_me, :age, :city, :eyes_color, :favourite_language, :gender, :hair_color, :height, :name, :sex_preference, :smoker, :image, :username, :impressions_count
+  attr_accessible :about_me, :age, :city, :eyes_color, :favourite_language, :gender, :hair_color, :height, :name, :sex_preference, :smoker, :image, :username, :impressions_count, :meet_ups
 
   has_many :views_as_viewer, class_name:'View', foreign_key: :viewer_id, dependent: :destroy
   has_many :views_as_viewed, class_name:'View', foreign_key: :viewed_id, dependent: :destroy
