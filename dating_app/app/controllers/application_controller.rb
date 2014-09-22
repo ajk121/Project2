@@ -5,8 +5,12 @@ class ApplicationController < ActionController::Base
     flash[:error] = "Sorry, you cannot acces this page!"
     redirect_to root_url
   end
-  helper_method :current_user
 
 
+
+  protected
+  def after_sign_in_path_for(resource)
+    users_path
+  end
 
 end
