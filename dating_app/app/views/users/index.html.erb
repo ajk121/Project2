@@ -21,15 +21,12 @@
   <tr>
     <th>Image</th>
     <th>Name</th>
-    <th>Age</th>
-    <th></th>
 
 </tr>
 
 <% @users.each do |user| %>
 <tr>
     <td><%= user.image %></td>
-    <td><%= user.age %></td>
     <td><%= user.name %></td>
 
     <td><%= link_to 'Show', user %></td>

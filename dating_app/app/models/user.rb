@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
-  
+
   is_impressionable :counter_cache => true
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
 
@@ -12,7 +13,7 @@ class User < ActiveRecord::Base
 
   mount_uploader :image, UserImageUploader
 
-  attr_accessible :about_me, :age, :city, :eyes_color, :favourite_language, :gender, :hair_color, :height, :name, :sex_preference, :smoker, :image, :username, :impressions_count, :meet_ups
+  attr_accessible :about_me, :age, :city, :eyes_color, :favourite_language, :gender, :hair_color, :height, :name, :sex_preference, :smoker, :image, :username, :impressions_count, :status,:meet_ups
 
   has_many :views_as_viewer, class_name:'View', foreign_key: :viewer_id, dependent: :destroy
   has_many :views_as_viewed, class_name:'View', foreign_key: :viewed_id, dependent: :destroy
@@ -22,4 +23,14 @@ class User < ActiveRecord::Base
 
   has_many :roles
   
+  before_create :set_role, :set_status
+
+  def set_role
+    self.role = 'basic'
+  end
+
+  def set_status
+    self.status = 'active'
+  end
+
 end

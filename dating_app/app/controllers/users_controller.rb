@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
   impressionist actions: [:show], unique:[:session_hash]
 
   # GET /users
@@ -29,8 +29,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @view = View.new viewed_id:@user.id, viewer_id:current_user.id
     if @view.viewer_id.to_i != @view.viewed_id.to_i
-    @view.save
-  end
+      @view.save
+    end
   end
 
   # GET /users/new

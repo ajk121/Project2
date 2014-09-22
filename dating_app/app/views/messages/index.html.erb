@@ -1,9 +1,9 @@
 <table>
   <tr>
-    <th>Title</th>
-    <th>Content</th>
+    
     <th>From</th>
     <th>To</th>
+    <th>Title</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,10 +11,10 @@
 
 <% @messages.each do |message| %>
   <tr>
-    <td><%= message.title %></td>
-    <td><%= message.content %></td>
+    
     <td><%= message.sender.name %></td>
     <td><%= message.receiver.name %></td>
+    <td><%= message.title %></td>
     <td><%= link_to 'Show', message %></td>
     <td><%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
