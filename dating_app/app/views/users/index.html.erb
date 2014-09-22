@@ -17,22 +17,10 @@
 
 <p><%= link_to 'Advanced Seach', advanced_search_path%></p>
 
-<table>
-  <tr>
-    <th>Image</th>
-    <th>Name</th>
-
-</tr>
-
 <% @users.each do |user| %>
-<tr>
-    <td><%= user.image %></td>
-    <td><%= user.name %></td>
+<div class ='search_image'>
+<%= image_tag(user.image) %><br>
+<%€= user.name %>
+</div>
 
-    <td><%= link_to 'Show', user %></td>
-
-</tr>
 <% end %>
-</table>
-
-<br />
