@@ -53,6 +53,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
+    @user.role = 'basic'
 
     respond_to do |format|
       if @user.save
