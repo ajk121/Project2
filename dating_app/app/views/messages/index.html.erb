@@ -20,10 +20,11 @@
     <td><%= message.status %></td>
     <td><%= message.sender.name %></td>
     <td><%= message.receiver.name %></td>
-    <td><%= message.title %></td>
-    <td><%= link_to 'reply', message %></td>
-    <td><%= link_to 'Show', message %></td>
-    <td><%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
+    <br><td><%= link_to 'Show', message %></td>
+    <td><%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %>&nbsp;&nbsp;&nbsp;<%= time_ago_in_words(message.created_at) %>&nbsp;ago</td>
+
   </tr>
 <% end %>
 </table>
@@ -31,3 +32,6 @@
 <br />
 
 <%= link_to 'New Message', new_message_path %>
+
+  <%= paginate @messages %>
+
