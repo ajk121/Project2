@@ -9,6 +9,7 @@ html{
   height:100%;
 }
 
+
 body {
   height:100%;
   width:100%;
@@ -24,6 +25,10 @@ div#main {
   width: 960px;
   margin: 0 auto;
   padding: 100px 0;
+}
+
+.login_message{
+  margin-left: 900px
 }
 
 nav {
@@ -118,14 +123,77 @@ Profile Page
   height:350px
 }
 
-.profile_right_menu ul li{
+.profile_right_menu {
+padding-top:0.01px;
+  ul li{
   list-style-type: none;
   a{
     text-decoration: none;
   }
 }
+}
 
 .profile_button_messages {
 padding: 10px;
 border-radius: 5px
+}
+
+.about_me {
+  border: 1px solid black;
+  border-radius:10px; 
+  width:400px;
+  height:200px;
+  float:left;
+  padding-top:8px;
+}
+
+
+/*
+========================================
+Edit Page
+========================================
+*/
+
+textarea#user_about_me {
+  border: 1px solid black;
+  border-radius:10px; 
+  width:400px;
+  height:200px;
+  float:left;
+  padding-top:8px;
+}
+
+
+input {
+    display:block;
+    border: 1px solid black;
+    border-radius:20px;
+    text-decoration: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left:5px;
+    margin-top:10px
+}
+
+.edit_left_list {
+  display: inline-block;
+  
+  ul li{ display:block;
+   border: 1px solid black;
+   border-radius:20px; 
+   padding-top: 5px;
+   padding-bottom: 5px;
+   padding-left:5px;
+   padding-right:120px;
+   margin-top:10px
+ }
+}
+
+.edit_right_list {
+  display: inline-block;
+}
+
+.edit_top_wrapper {
+  clear:both;
+  height:350px
 }
