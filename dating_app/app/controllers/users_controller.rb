@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @cities = User.select(:city).group(:city).pluck(:city)
     @genders = User.select(:gender).group(:gender).pluck(:gender)
     @smokers = User.select(:smoker).group(:smoker).pluck(:smoker)
+    @frontback = User.select(:front_backend).group(:front_backend).pluck(:front_backend)
     @favourite_languages = User.select(:favourite_language).group(:favourite_language).pluck(:favourite_language)
 
     
