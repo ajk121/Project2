@@ -22,9 +22,9 @@ class MessagesController < ApplicationController
     
     if @message.receiver == current_user
 
-      @message.status = "read"
-      @message.save
-    
+        @message.status = "read"
+        @message.save
+      
     end 
     respond_to do |format|
       format.html # show.html.erb
