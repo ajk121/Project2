@@ -15,6 +15,18 @@ class MessagesController < ApplicationController
     end
   end
 
+  # GET /messages/1/reply
+  # GET /messages/1/reply.json
+  def reply
+    @original = Message.find(params[:id])
+    @message = Message.new
+
+    respond_to do |format|
+      format.html # reply.html.erb
+      format.json { render json: @message }
+    end
+  end
+
   # GET /messages/1
   # GET /messages/1.json
   def show
@@ -40,6 +52,7 @@ class MessagesController < ApplicationController
       format.json { render json: @message }
     end
   end
+
 
   # GET /messages/1/edit
   def edit
