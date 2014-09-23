@@ -67,7 +67,10 @@
     <li><%= f.text_field :favourite_language %></li>
     <li><%= f.text_field :stackoverflow_score %></li>
     <li><%= f.text_field :meet_ups %></li>
-    <li><%= f.text_field :front_backend %></li>
+    <li><select name="user[front_backend]">
+  <option value="true">Front-End</option>
+  <option value="false">Back-End</option>
+</select></li>
   </ul>
 </div>
 
