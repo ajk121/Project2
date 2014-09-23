@@ -5,13 +5,15 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+ <link href='http://fonts.googleapis.com/css?family=Monofett' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div id='wrapper'>
 
     <nav>
       <ul>
-        <li class="title">Dating App</li>
+        <li class="title"><img class="logo" src='http://wallalay.com/wp-content/uploads/2014/08/Heart-Images-80.jpg'/></li>
+        <li class="title">Bit</li>
         <% if current_user %>
         
         <li class="dropdown">
@@ -27,7 +29,7 @@
            <% if current_user.role =='premium'%>
         <li><%= link_to 'Downgrade To Basic', new_role_path%></li>
         <%else%>
-        <li><%= link_to 'Upgrade to Premium', new_role_path%></li>
+        <li><%= link_to 'Upgrade To Premium', new_role_path%></li>
         <%end%>
          </ul>
        <li class="login_message">Current User: <%= current_user.email %></li>
