@@ -11,12 +11,18 @@
 </div>
 <% end %>
 
+<select name="user[smoker]">
+  <option value="true">Yes</option>
+  <option value="true">Yes</option>
+</select>
 
 <div class ='edit_top_wrapper'>
 
-  <div class='profile_image'>  
+  <div class='edit_image'>  
     <%= image_tag @user.image.url %>
-    <h3><%= @user.role.upcase%> USER</h3>
+    <%unless @user.role=""%>
+    <h3><%= @user.role%> USER</h3>
+  <%end%>
   </div>
 
   <div class='edit_right_menu'>
@@ -45,13 +51,18 @@
 
 <div class ='edit_right_list'>
   <ul>
-    <li><%= f.text_field :age %></li>
+    <li><%= f.number_field :age %></li>
     <li><%= f.text_field :gender %></li>
     <li><%= f.text_field :city %></li>
     <li><%= f.text_field :email %></li>
     <li><%= f.text_field :sex_preference %></li>
     <li><%= f.text_field :height %></li>
-    <li><%= f.text_field :smoker %></li>
+    <li>
+<select name="user[smoker]">
+  <option value="true">Yes</option>
+  <option value="false">No</option>
+</select>
+</li>
     <li><%= f.text_field :github_id %></li>
     <li><%= f.text_field :favourite_language %></li>
     <li><%= f.text_field :stackoverflow_score %></li>

@@ -32,15 +32,86 @@ div#main {
 }
 
 nav {
+  background-color:orange;
+  padding:10px 0;
   min-width: 10000px;
   border-bottom: 3px solid black;
   position: fixed;
-  background: orange;
+}
+nav ul {
+  list-style-type:none;
+  margin:0;
+}
+nav ul li {
+  display:inline-block;
+  position:relative;
 }
 
-nav ul li {
-  display: inline;
+nav li ul {    
+  background-color:orange;
+  position:absolute;
+  left:0;
+  top:40px;
+  width:200px;
 }
+nav li li {
+  position:relative;
+  margin:0;
+  display:block;
+}
+nav li li ul {
+  position:absolute;
+  top:0;
+  left:200px;
+  margin:0;
+}
+
+nav a {
+  line-height:40px;
+  padding:0 12px;
+  margin:0 12px;
+  color:#fff;
+  text-decoration:none;
+  display:inline;
+}
+nav a:hover,
+nav a:focus,
+nav a:active {
+  color:rgb(50,50,50);
+}
+
+nav li li a {
+  border-bottom:solid 1px white;
+  margin:0 10px;
+  padding:0;
+}
+nav li li:last-child a {
+  border-bottom:none;
+}
+
+nav li.dropdown > a {
+    // background-position:right 20px;
+    background-repeat:no-repeat;
+  }
+
+  nav li li.dropdown > a {
+    background-position:right 16px;
+    background-repeat:no-repeat;
+  }
+
+  ul.sub-menu {
+    display:none;
+  }
+// nav {
+//   min-width: 10000px;
+//   border-bottom: 3px solid black;
+//   position: fixed;
+//   background: orange;
+// }
+
+// nav ul li {
+//   display: inline;
+// }
 
 footer {
   min-width: 1000px;
@@ -124,18 +195,18 @@ Profile Page
 }
 
 .profile_right_menu {
-padding-top:0.01px;
+  padding-top:0.01px;
   ul li{
-  list-style-type: none;
-  a{
-    text-decoration: none;
+    list-style-type: none;
+    a{
+      text-decoration: none;
+    }
   }
-}
 }
 
 .profile_button_messages {
-padding: 10px;
-border-radius: 5px
+  padding: 10px;
+  border-radius: 5px
 }
 
 .about_me {
@@ -165,14 +236,14 @@ textarea#user_about_me {
 
 
 input {
-    display:block;
-    border: 1px solid black;
-    border-radius:20px;
-    text-decoration: none;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left:5px;
-    margin-top:10px
+  display:block;
+  border: 1px solid black;
+  border-radius:20px;
+  text-decoration: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left:5px;
+  margin-top:10px
 }
 
 .edit_left_list {
@@ -191,9 +262,20 @@ input {
 
 .edit_right_list {
   display: inline-block;
+  ul {
+    margin-top: 0;
+    list-style-type: none;
+    input {
+      width: 100%;
+    }
+  }
 }
 
 .edit_top_wrapper {
   clear:both;
   height:350px
+}
+
+.edit_image {
+  float:left
 }

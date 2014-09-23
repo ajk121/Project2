@@ -14,12 +14,6 @@
     </div>
 
   </div>
-  <!-- <li><%#= link_to 'Profiles i visited', user_makes_visit_path %> -->
-  <!-- </li> -->
-  <!-- <li><%#= link_to 'My Messages', messages_path%></li> -->
-
-
-
 
   <div class ='profile_left_list'>
     <ul>
@@ -54,9 +48,7 @@
 
     </ul>
   </div>
-
-
-
+<br>
 
   <%= link_to "#{@user.impressionist_count(start_date:Time.now-(24*60*60),end_date: Time.now)} visits to my profile in the past 3 days", user_receives_visit_path %>
 
