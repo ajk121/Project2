@@ -24,16 +24,16 @@ class User < ActiveRecord::Base
 
   has_many :roles
   
-  before_create :set_role, :set_status
+  # before_create :set_role, :set_status
 
 
-  def set_role
-    self.role = 'basic'
-  end
+  # def set_role
+  #   self.role = 'basic'
+  # end
 
-  def set_status
-    self.status = 'active'
-  end
+  # def set_status
+  #   self.status = 'active'
+  # end
 
   def self.from_omniauth(auth)
     if user = User.find_by_email(auth.info.email)

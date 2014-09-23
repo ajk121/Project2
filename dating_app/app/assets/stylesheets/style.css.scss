@@ -1,3 +1,9 @@
+/*
+========================================
+Main Page
+========================================
+*/
+
 html{
   box-sizing:border-box;
   height:100%;
@@ -67,10 +73,14 @@ img {
 }
 
 
+/*
+========================================
+Profile Page
+========================================
+*/
 
 .profile_right_list {
   display: inline-block;
-
 
   ul li{
     display:block;
@@ -83,7 +93,6 @@ img {
     padding-right:120px;
     margin-top:10px
   }
-
 }
 
 .profile_left_list {
@@ -100,4 +109,23 @@ img {
  }
 }
 
+.profile_image {
+  float:left
+}
 
+.profile_top_wrapper {
+  clear:both;
+  height:350px
+}
+
+.profile_right_menu ul li{
+  list-style-type: none;
+  a{
+    text-decoration: none;
+  }
+}
+
+.profile_button_messages {
+padding: 10px;
+border-radius: 5px
+}
