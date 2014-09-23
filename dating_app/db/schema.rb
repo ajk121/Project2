@@ -11,27 +11,8 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140923124515) do
 
-  create_table "authentication_providers", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "authentication_providers", ["name"], :name => "index_name_on_authentication_providers"
-
-  create_table "headshot_photos", :force => true do |t|
-    t.string   "description"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.integer  "capturable_id"
-    t.string   "capturable_type"
-    t.datetime "image_updated_at"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-  end
+ActiveRecord::Schema.define(:version => 20140923104518) do
 
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
@@ -66,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20140923124515) do
     t.integer  "receiver_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "status"
   end
 
   create_table "roles", :force => true do |t|
