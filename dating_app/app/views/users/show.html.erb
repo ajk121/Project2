@@ -2,10 +2,10 @@
 
 
 
-  <div class='profile_top_left_menu'>
+  <div class='profile_left_menu'>
     <ul>
       <li><%= @user.name %></li>
-      <li>A.K.A. <%= @user.username %></li>
+      
       <li><%@user.role%></li>
       <li><%= link_to 'Profiles i visited', user_makes_visit_path %>
       </li>
@@ -24,93 +24,45 @@
     </div>
   </div>
 
-
-  <div class='profile_left_menu'
-  
-  <table>
-    <tr>
-      <td>Age</td>
-      <td><%= @user.age %></td>
-    </tr>
-
-
-    <tr>
-      <td>Gender</td>
-      <td><%= @user.gender %></td>
-    </tr>
-    
-    
-    <tr>
-      <td>City</td>
-      <td><%= @user.city %></td>
-    </tr>
-    
-    
-    <tr>
-      <td>Email</td>
-      <td><%= @user.email %></td>
-    </tr>
-
-    <tr>
-      <td>Interested in</td>
-      <%= @user.sex_preference %>
-      <td></td>
-    </tr>
-
-    <tr>
-      <td>Height in cm</td>
-      <td><%= @user.height %></td>
-    </tr>
-
-    <tr>
-      <td>Smoker?</td>
-      <td><%= @user.smoker %></td>
-    </tr>
-
-    <tr>
-      <td>GitHub ID</td>
-      <td><%= @user.github_id %></td>
-    </tr>
-
-    <tr>
-      <td>Favourite language</td>
-      <td><%= @user.favourite_language %></td>
-    </tr>
-
-    <tr>
-      <td>Stack Overflow Score</td>
-      <td><%= @user.stackoverflow_score %></td>
-    </tr>
-
-    <tr>
-      <td>Meet Ups</td>
-      <td><%= @user.meet_ups %></td>
-    </tr>    
-
-    <tr>
-      <td>Front-end Or Back-end?</td>
-      <td><%= @user.meet_ups %></td>
-    </tr>    
-
-
-    <tr>
-      <td>Meet Ups</td>
-      <td><%= @user.front_backend  %></td>
-    </tr>  
-
-    <tr>
-      <td>About me</td>
-      <td><%= @user.about_me %></td>
-    </tr>    
-    
-    
-
-    
-    
+  <div class ='profile_left_list'>
+    <ul>
+      <li>Age</li>
+      <li>Gender</li>
+      <li>City</li>
+      <li>Email</li>
+      <li>Interested in</li>
+      <li>Height in cm</li>
+      <li>Smoker</li>
+      <li>GitHub ID</li>
+      <li>Favourite code language</li>
+      <li>Stack Overflow Score</li>
+      <li>Meet Ups</li>
+      <li>Front-end Or Back-end</li>
+      <li>About me</li>
+    </ul>
+  </div>
+  <div class ='profile_right_list'>
+    <ul>
+      <li><%= @user.age %></li>
+      <li><%= @user.gender %></li>
+      <li><%= @user.city %></li>
+      <li><%= @user.email %></li>
+      <li><%= @user.sex_preference %></li>
+      <li><%= @user.height %></li>
+      <li><%= @user.smoker %></li>
+      <li><%= @user.github_id %></li>
+      <li><%= @user.favourite_language %></li>
+      <li><%= @user.stackoverflow_score %></li>
+      <li><%= @user.meet_ups %></li>
+      <li> <%= @user.front_backend  %></li>
+      <li><%= @user.about_me %></li>
+    </ul>
+  </div>
 
 
 
-    <%= link_to "#{@user.impressionist_count(start_date:Time.now-(24*60*60),end_date: Time.now)} visits to my profile in the past 3 days", user_receives_visit_path %>
+
+  <%= link_to "#{@user.impressionist_count(start_date:Time.now-(24*60*60),end_date: Time.now)} visits to my profile in the past 3 days", user_receives_visit_path %>
 
 
 

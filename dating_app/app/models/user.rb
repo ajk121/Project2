@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  
+
 
   is_impressionable :counter_cache => true
   
@@ -26,7 +26,6 @@ class User < ActiveRecord::Base
   
   before_create :set_role, :set_status
 
- # validate :genders, :unique
 
   def set_role
     self.role = 'basic'

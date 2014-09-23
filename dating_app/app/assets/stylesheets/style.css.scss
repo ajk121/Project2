@@ -66,3 +66,38 @@ img {
   display:none
 }
 
+
+
+.profile_right_list {
+  display: inline-block;
+
+
+  ul li{
+    display:block;
+    border: 1px solid black;
+    border-radius:20px;
+    text-decoration: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left:5px;
+    padding-right:120px;
+    margin-top:10px
+  }
+
+}
+
+.profile_left_list {
+  display: inline-block;
+  
+  ul li{ display:block;
+   border: 1px solid black;
+   border-radius:20px; 
+   padding-top: 5px;
+   padding-bottom: 5px;
+   padding-left:5px;
+   padding-right:120px;
+   margin-top:10px
+ }
+}
+
+
