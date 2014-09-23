@@ -1,41 +1,59 @@
 
-<%= search_form_for @search, url: advanced_search_path do |f| %>
-<%= f.condition_fields do |c|%>
+
+
+<%= search_form_for @search do |f| %>
+
 <div class="field">
-  <%= c.attribute_fields do |a| %>
-  <%= a.attribute_select associations: :user%>        
+  <%= f.label :age_gteq, "Age between" %>
+  <%= f.text_field :age_gteq %>
+  <%= f.label :age_lteq, "and" %>
+  <%= f.text_field :age_lteq %>    
+</div><br>
 
-  <% end %>
-  <%= c.predicate_select %>
-  <%= c.value_fields do |v| %>
-  <%= v.text_field :value %>
-  <% end %>
-</div>
+<div class="field">
+  <%= f.label "City" %>
+  <%= f.select :city_eq, options_for_select(@cities, @search.city_eq), include_blank: true %>
+</div><br>
+
+<div class="field">
+  <%= f.label "Gender" %>
+  <%= f.select :gender_eq, options_for_select(@genders, @search.gender_eq), include_blank: true %>
+</div><br>
+
+<div class="field">
+  <%#= f.label "Smoker" %>
+  <%#= f.select :smoker_eq, options_for_select(@smoker, @search.smoker_eq), include_blank: true %>
+</div><br>
+
+<div class="field">
+  <%#= f.label "Front-end/Back-end" %>
+  <%#= f.select :front_backend_eq, options_for_select(@frontback, @search.front_backend_eq), include_blank: true %>
+</div><br>
+
+<div class="field">
+  <%= f.label "Favourite code language" %>
+  <%= f.select :favourite_language_eq, options_for_select(@favourite_languages, @search.favourite_language_eq), include_blank: true %>
+</div><br>
+
+<div class="field">
+  <%= f.label :stackoverflow_score_gteq, "Stackoverflow score between" %>
+  <%= f.text_field :stackoverflow_score_gteq %>
+  <%= f.label :stackoverflow_score_lteq, "and" %>
+  <%= f.text_field :stackoverflow_score_lteq %>    
+</div><br>
+
+
+
+<p>
+  <%= f.submit %>
+</p>
 <% end %>
-<%= f.submit %>
-<% end %>
 
-<p><%= link_to 'Advanced Seach', advanced_search_path%></p>
-
-<table>
-  <tr>
-    <th>Image</th>
-    <th>Name</th>
-    <th>Age</th>
-    <th></th>
-
-</tr>
 
 <% @users.each do |user| %>
-<tr>
-    <td><%= user.image %></td>
-    <td><%= user.age %></td>
-    <td><%= user.name %></td>
+<div class="search_image" id ='user_<%=user.id%>' data-user-id="<%=user.id%>">
+  <%= link_to image_tag(user.image), user_path(user) %>
+  <div id="image_name_<%=user.id%>" class="hidden"><%= user.name %></div>
+</div>
 
-    <td><%= link_to 'Show', user %></td>
-
-</tr>
 <% end %>
-</table>
-
-<br />

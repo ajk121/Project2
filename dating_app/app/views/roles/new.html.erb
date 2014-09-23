@@ -1,5 +1,12 @@
 <%= form_for(@role) do |f| %>
 
+  <!-- RADIO BUTTONS -->
+  <!-- Upgrade if current_user.role = "basic"-->
+  <!-- Downgrade if premium -->
+  <!-- Deactivate if active-->
+  <!-- Activate if deactive-->
+
+  <!-- Submit pass params into role create -->
 
 <%if current_user.role !='premium'%>
 <h3>By upgrading your profile to Premium you will be able to send and receive messages bla bla </h3>
@@ -10,10 +17,10 @@
 
 
 <%elsif%>
-<h3>By terminating your premium account you will not be able to send or receive messages bla bla </h3>
+<h3>By downgrading to basic account you will not be able to send or receive messages bla bla </h3>
 
 <div class="actions">
-  <%= f.submit 'Terminate Premium'%>
+  <%= f.submit 'Downgrade to Basic'%>
 </div>
 
 <%else%>

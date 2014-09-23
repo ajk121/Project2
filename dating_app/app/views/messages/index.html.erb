@@ -1,20 +1,27 @@
+<h1>Inbox</h1>
+
+<%#= link_to "#{@user.impressionist_count(start_date:Time.now-(24*60*60),end_date: Time.now)} visits to my profile in the past 3 days", user_receives_visit_path %>
+
 <table>
   <tr>
-    <th>Title</th>
-    <th>Content</th>
+    
+    <th>status</th>
     <th>From</th>
     <th>To</th>
+    <th>Title</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
+
 <% @messages.each do |message| %>
   <tr>
-    <td><%= message.title %></td>
-    <td><%= message.content %></td>
+    <td><%= message.status %></td>
     <td><%= message.sender.name %></td>
     <td><%= message.receiver.name %></td>
+    <td><%= message.title %></td>
+    <td><%= link_to 'reply', message %></td>
     <td><%= link_to 'Show', message %></td>
     <td><%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

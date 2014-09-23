@@ -2,7 +2,8 @@
 <%= f.condition_fields do |c|%>
 <div class="field">
   <%= c.attribute_fields do |a| %>
-  <%= a.attribute_select associations: :user%>              
+  <%= a.attribute_select associations: :user%>        
+
   <% end %>
   <%= c.predicate_select %>
   <%= c.value_fields do |v| %>
@@ -12,28 +13,17 @@
 <% end %>
 <%= f.submit %>
 <% end %>
-<button><%= sort_link @search, :name %></button>
+
 <button><%= sort_link @search, :age %></button>
+<button><%= sort_link @search, :city %></button>
+<br>
 
-<table>
-  <tr>
-    <th>Image</th>
-    <th>Name</th>
-    <th>Age</th>
-    <th></th>
 
-</tr>
 
 <% @users.each do |user| %>
-<tr>
-    <td><%= user.image %></td>
-    <td><%= user.age %></td>
-    <td><%= user.name %></td>
+<div class="search_image" id ='user_<%=user.id%>' data-user-id="<%=user.id%>">
+<%= link_to image_tag(user.image), user_path(user) %>
+<div id="image_name_<%=user.id%>" class="hidden"><%= user.name %></div>
+</div>
 
-    <td><%= link_to 'Show', user %></td>
-
-</tr>
 <% end %>
-</table>
-
-<br />
