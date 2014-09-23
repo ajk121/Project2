@@ -1,19 +1,20 @@
 
-<%= search_form_for @search, url: advanced_search_path do |f| %>
-<%= f.condition_fields do |c|%>
-<div class="field">
-  <%= c.attribute_fields do |a| %>
-  <%= a.attribute_select associations: :user%>        
 
-  <% end %>
-  <%= c.predicate_select %>
-  <%= c.value_fields do |v| %>
-  <%= v.text_field :value %>
-  <% end %>
-</div>
+
+<%= search_form_for @search do |f| %>
+
+  <div class="field">
+      <%= f.label :age_gteq, "Age between" %>
+      <%= f.text_field :age_gteq %>
+      <%= f.label :age_lteq, "and" %>
+      <%= f.text_field :age_lteq %>    
+    </div>
+  <p>
+    <%= f.submit %>
+  </p>
 <% end %>
-<%= f.submit %>
-<% end %>
+
+
 
 <button><%= sort_link @search, :age %></button>
 <button><%= sort_link @search, :city %></button>
