@@ -1,105 +1,117 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %>
 
 
-<p>
-  <b></b>
-  <%= image_tag @user.image.url %>
-</p>
+
+  <div class='profile_top_left_menu'>
+    <ul>
+      <li><%= @user.name %></li>
+      <li>A.K.A. <%= @user.username %></li>
+      <li><%@user.role%></li>
+      <li><%= link_to 'Profiles i visited', user_makes_visit_path %>
+      </li>
+      <li><%= link_to 'My Messages', messages_path%></li>
+    </ul>
+  </div>
+
+  <div class='profile_image'>  
+    <%= image_tag @user.image.url %>
+
+    <div class="field">
+      <%= form_for(@user) do |f| %>
+      <%= f.label :image %><br />
+      <%= f.file_field :image %>
+      <%end%>
+    </div>
+  </div>
 
 
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
+  <div class='profile_left_menu'
+  
+  <table>
+    <tr>
+      <td>Age</td>
+      <td><%= @user.age %></td>
+    </tr>
 
-<p>
-  <b>Nickname:</b>
-  <%= @user.username %>
-</p>
 
-<p>
-  <b>Age:</b>
-  <%= @user.age %>
-</p>
+    <tr>
+      <td>Gender</td>
+      <td><%= @user.gender %></td>
+    </tr>
+    
+    
+    <tr>
+      <td>City</td>
+      <td><%= @user.city %></td>
+    </tr>
+    
+    
+    <tr>
+      <td>Email</td>
+      <td><%= @user.email %></td>
+    </tr>
 
-<p>
-  <b>Gender:</b>
-  <%= @user.gender %>
-</p>
+    <tr>
+      <td>Interested in</td>
+      <%= @user.sex_preference %>
+      <td></td>
+    </tr>
 
-<p>
-  <b>City:</b>
-  <%= @user.city %>
-</p>
+    <tr>
+      <td>Height in cm</td>
+      <td><%= @user.height %></td>
+    </tr>
 
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
+    <tr>
+      <td>Smoker?</td>
+      <td><%= @user.smoker %></td>
+    </tr>
 
-<p>
+    <tr>
+      <td>GitHub ID</td>
+      <td><%= @user.github_id %></td>
+    </tr>
 
-  <b>Interested in:</b>
-  <%= @user.sex_preference %>
-</p>
+    <tr>
+      <td>Favourite language</td>
+      <td><%= @user.favourite_language %></td>
+    </tr>
 
-<!-- <p>
-  <b>Hair:</b>
-  <%= @user.hair_color %>
-</p> -->
+    <tr>
+      <td>Stack Overflow Score</td>
+      <td><%= @user.stackoverflow_score %></td>
+    </tr>
 
-<!-- <p>
-  <b>Eyes:</b>
-  <%= @user.eyes_color %>
-</p> -->
+    <tr>
+      <td>Meet Ups</td>
+      <td><%= @user.meet_ups %></td>
+    </tr>    
 
-<p>
-  <b>Height in cm:</b>
-  <%= @user.height %>
-</p>
+    <tr>
+      <td>Front-end Or Back-end?</td>
+      <td><%= @user.meet_ups %></td>
+    </tr>    
 
-<p>
-  <b>Smoker:</b>
-  <%= @user.smoker %>
-</p>
-<p>
-  <b>GitHub ID:</b>
-  <%= @user.github_id %>
-</p>
-<p>
-  <b>Favourite language:</b>
-  <%= @user.favourite_language %>
-</p>
 
-<p>
-  <b>Stack Overflow Score:</b>
-  <%= @user.stackoverflow_score %>
-</p>
+    <tr>
+      <td>Meet Ups</td>
+      <td><%= @user.front_backend  %></td>
+    </tr>  
 
-<p>
-  <b>Meet Ups:</b>
-  <%= @user.meet_ups %>
-</p>
+    <tr>
+      <td>About me</td>
+      <td><%= @user.about_me %></td>
+    </tr>    
+    
+    
 
-<p>
-  <b>Do you Prefer Frontend Or Backend?</b>
-  <%= @user.front_backend  %>
-</p>
+    
+    
 
-<p>
-  <b>About me:</b>
-  <%= @user.about_me %>
-</p>
 
-<p>
-  <%= link_to 'My Messages', messages_path%>
-</p>
 
-<p>
+    <%= link_to "#{@user.impressionist_count(start_date:Time.now-(24*60*60),end_date: Time.now)} visits to my profile in the past 3 days", user_receives_visit_path %>
 
-  <%= link_to "#{@user.impressionist_count(start_date:Time.now-(24*60*60),end_date: Time.now)} visits to my profile in the past 3 days", user_receives_visit_path %>
-</p>
 
-<p>
-  <%= link_to 'Profiles i visited', user_makes_visit_path %>
-</p>
+
+
