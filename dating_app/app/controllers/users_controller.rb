@@ -7,8 +7,12 @@ class UsersController < ApplicationController
   def index
     # @users = User.all
     @search = User.search(params[:q])
-    @users = @search.result
-    # @search.build_condition
+    @users = @search.result(distinct: true)
+    @cities = User.select(:city).group(:city).pluck(:city)
+    @genders = User.select(:gender).group(:gender).pluck(:gender)
+    @smokers = User.select(:smoker).group(:smoker).pluck(:smoker)
+    @favourite_languages = User.select(:favourite_language).group(:favourite_language).pluck(:favourite_language)
+
     
     respond_to do |format|
       format.html # index.html.erb
@@ -18,7 +22,7 @@ class UsersController < ApplicationController
 
   def advanced_search
     @search = User.search(params[:q])
-    @users = @search.result
+    @users = @search.result(distinct: true)
     # @search.build_condition
   end
 

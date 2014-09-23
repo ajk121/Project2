@@ -23,7 +23,6 @@
 
   User.create(email: "donny@gmail.com", password: "password", password_confirmation: "password", name: "Donny Brasco", age: "43", gender: "Male", city: "London", sex_preference: "Female", meet_ups: "LRUG, MRUG, forgayze.js, Tech Arts", front_backend:"Front & Backend",favourite_language: "Rails, Javascript, PHP,  ",stackoverflow_score: "390", height: "187", github_id: "forgayze.tech", about_me: "I turn code into £££, all things lavish" )
 
-
   User.create(email: "bobby@gmail.com", password: "password", password_confirmation: "password", name: "Bobby Va Va Voom", age: "39", gender: "Male", city: "Paris", sex_preference: "Female", meet_ups: "LRUG, MRUG, Voom Tech, Start_ups.Paree Tech Arts", front_backend:"Front & Backend",favourite_language: "Rails, Javascript, PHP, ",stackoverflow_score: "390", height: "175", github_id: "vavavoom", about_me: "Hey bobby whats french for has_many :money" )
 
   User.create(email: "jackie@gmail.com", password: "password", password_confirmation: "password", name: "Jackie Chan", age: "33", gender: "Male", city: "New York", sex_preference: "Female", meet_ups: "NY Tech, Start_ups.Paree, Tech Arts", front_backend:"Front & Backend",favourite_language: "Rails, Javascript, PHP, ",stackoverflow_score: "550", height: "180", github_id: "onemorething", about_me: "function(){?} " )
