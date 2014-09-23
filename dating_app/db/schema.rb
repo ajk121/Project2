@@ -68,6 +68,8 @@ ActiveRecord::Schema.define(:version => 20140922175640) do
     t.string   "about_me"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "provider"
+    t.string   "uid"
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
@@ -82,8 +84,8 @@ ActiveRecord::Schema.define(:version => 20140922175640) do
     t.string   "username"
     t.integer  "impressions_count"
     t.string   "role"
-    t.string   "meet_ups"
     t.string   "status"
+    t.string   "meet_ups"
     t.string   "front_backend"
     t.integer  "stackoverflow_score"
     t.string   "github_id"
