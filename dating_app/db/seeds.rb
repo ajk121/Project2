@@ -19,11 +19,10 @@
 
   User.create(email: "peter@gmail.com", password: "password", password_confirmation: "password", name: "Peter Renold", age: "49", gender: "Male", city: "Global - Jet Setter", sex_preference: "Female", meet_ups: "My Place", front_backend:"Everything",favourite_language: "All",stackoverflow_score: "4552", height: "183", github_id: "p.renold.digital", about_me: "Sleep, eat, drink & work tech" )
 
-<<<<<<< HEAD
   User.create(email: "donny@gmail.com", password: "password", password_confirmation: "password", name: "Donny Brasco", age: "43", gender: "Male", city: "NY & London", sex_preference: "Female", meet_ups: "LRUG, MRUG, fugazi.js, Tech Arts", front_backend:"Front & Backend",favourite_language: "Rails, Javascript, PHP,  ",stackoverflow_score: "390", height: "187", github_id: "fugazi.tech", about_me: "I turn code into £££, all things lavish" )
-=======
+
   User.create(email: "donny@gmail.com", password: "password", password_confirmation: "password", name: "Donny Brasco", age: "43", gender: "Male", city: "London", sex_preference: "Female", meet_ups: "LRUG, MRUG, forgayze.js, Tech Arts", front_backend:"Front & Backend",favourite_language: "Rails, Javascript, PHP,  ",stackoverflow_score: "390", height: "187", github_id: "forgayze.tech", about_me: "I turn code into £££, all things lavish" )
->>>>>>> seeds
+
 
   User.create(email: "bobby@gmail.com", password: "password", password_confirmation: "password", name: "Bobby Va Va Voom", age: "39", gender: "Male", city: "Paris", sex_preference: "Female", meet_ups: "LRUG, MRUG, Voom Tech, Start_ups.Paree Tech Arts", front_backend:"Front & Backend",favourite_language: "Rails, Javascript, PHP, ",stackoverflow_score: "390", height: "175", github_id: "vavavoom", about_me: "Hey bobby whats french for has_many :money" )
 

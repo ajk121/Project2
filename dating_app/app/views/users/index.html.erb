@@ -3,29 +3,38 @@
 
 <%= search_form_for @search do |f| %>
 
-  <div class="field">
-      <%= f.label :age_gteq, "Age between" %>
-      <%= f.text_field :age_gteq %>
-      <%= f.label :age_lteq, "and" %>
-      <%= f.text_field :age_lteq %>    
-    </div>
-  <p>
-    <%= f.submit %>
-  </p>
+<div class="field">
+  <%= f.label :age_gteq, "Age between" %>
+  <%= f.text_field :age_gteq %>
+  <%= f.label :age_lteq, "and" %>
+  <%= f.text_field :age_lteq %>    
+</div><br>
+
+<div class="field">
+  <%= f.label "City" %>
+  <%= f.select :city_eq, options_from_collection_for_select(User.all, "id", "city", @search.city_eq), include_blank: true %>
+</div><br>
+
+<div class="field">
+  <%= f.label "Gender" %>
+  <%= f.select :gender_eq, options_from_collection_for_select(User.all, "id", "gender", @search.city_eq), include_blank: true %>
+</div><br>
+
+<div class="field">
+  <%= f.label "Smoker" %>
+  <%= f.select :smoker_eq, options_from_collection_for_select(User.all, "id", "smoker", @search.city_eq), include_blank: true %>
+</div><br>
+
+<p>
+  <%= f.submit %>
+</p>
 <% end %>
 
 
-
-<button><%= sort_link @search, :age %></button>
-<button><%= sort_link @search, :city %></button>
-<br>
-
-<p><%= link_to 'Advanced Seach', advanced_search_path%></p>
-
 <% @users.each do |user| %>
 <div class="search_image" id ='user_<%=user.id%>' data-user-id="<%=user.id%>">
-<%= link_to image_tag(user.image), user_path(user) %>
-<div id="image_name_<%=user.id%>" class="hidden"><%= user.name %></div>
+  <%= link_to image_tag(user.image), user_path(user) %>
+  <div id="image_name_<%=user.id%>" class="hidden"><%= user.name %></div>
 </div>
 
 <% end %>
