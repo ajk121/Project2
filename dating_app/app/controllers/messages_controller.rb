@@ -19,6 +19,13 @@ class MessagesController < ApplicationController
   # GET /messages/1.json
   def show
     @message = Message.find(params[:id])
+    
+    if @message.receiver == current_user
+
+      @message.status = "read"
+      @message.save
+    
+    end 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @message }

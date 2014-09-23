@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140922175640) do
+ActiveRecord::Schema.define(:version => 20140923104518) do
 
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20140922175640) do
     t.integer  "receiver_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "status"
   end
 
   create_table "roles", :force => true do |t|
