@@ -166,7 +166,7 @@ img {
 }
 
 .hidden {
-  display:none
+  display:none;
 }
 
 
@@ -176,6 +176,7 @@ img {
 
 .inbox, table {
   width: 100%;
+}
 
 /*
 ========================================
@@ -189,22 +190,21 @@ Profile Page
   border-radius:5px;
   width:662px;
   margin-left:10px;
-  background-color: #BDDEFF
-
+  background-color: #BDDEFF;
 }
 
 .profile_image {
-  float:left
+  float:left;
 }
 
 .profile_role {
   text-align:right;
-  margin-right:32px
+  margin-right:32px;
 }
 
 .profile_name {
   padding-top: 1px;
-  margin-right:32px
+  margin-right:32px;
 }
 .profile_top_wrapper {
   clear:both;
@@ -224,7 +224,7 @@ Profile Page
 
 .profile_button_messages {
   padding: 10px;
-  border-radius: 5px
+  border-radius: 5px;
 }
 
 .about_me {
@@ -276,7 +276,7 @@ textarea#user_about_me {
 }
 
 .edit_right_menu  h2 input {
-border:3px solid #BDDEFF 
+border:3px solid #BDDEFF; 
 }
 
 input {
@@ -288,7 +288,7 @@ input {
   padding-bottom: 5px;
   padding-left:5px;
   margin-top:10px;
-  background:white
+  background:white;
 }
 
 .edit_left_list {
@@ -302,7 +302,7 @@ input {
    padding-bottom: 5px;
    padding-left:5px;
    padding-right:120px;
-   margin-top:10px
+   margin-top:10px;
  }
 }
 
@@ -325,11 +325,11 @@ input {
 
 .edit_image {
   float:left;
-  margin-left: 18px
+  margin-left: 18px;
 }
 
 .select option{
-  height:50px
+  height:50px;
 }
 
 /*
@@ -339,19 +339,14 @@ Search Page
 */
 
 #open_search_button {
-  margin-left: 700px
+  margin-left: 700px;
 }
 
 #close_search_button {
-  margin-left: 700px
+  margin-left: 700px;
 }
 
 
 .pagination {
   color: black;
-  // background-color: white;
 }
-
-
-
-

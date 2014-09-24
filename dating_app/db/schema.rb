@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140924083354) do
+ActiveRecord::Schema.define(:version => 20140923124515) do
 
   create_table "authentication_providers", :force => true do |t|
     t.string   "name"
@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(:version => 20140924083354) do
     t.integer  "stackoverflow_score"
     t.string   "github_id"
     t.boolean  "front_backend"
-    t.string   "smoker"
+    t.boolean  "smoker"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
