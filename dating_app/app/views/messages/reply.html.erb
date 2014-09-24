@@ -1,5 +1,21 @@
 <h1>Reply message</h1>
 
+
+<p>
+  <b>Subject</br>
+  <%= @original.title %>
+</p>
+
+<p>
+  <b>Original Message</b>
+  <%= @original.content %>
+</p>
+
+<p>
+  <b>Sender</b>
+  <%= @original.sender.name %>
+</p>
+
 <%= render 'form' %><br>
 
 <%= link_to 'Back', messages_path %>
