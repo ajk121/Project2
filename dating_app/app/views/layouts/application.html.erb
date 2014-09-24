@@ -31,33 +31,35 @@
         <%else%>
         <li><%= link_to 'Upgrade To Premium', new_role_path%></li>
         <%end%>
-         </ul>
-       <li class="login_message">Current User: <%= current_user.email %></li>
-       </ul>
 
-       <%end%>
-     </nav>
+      </ul> 
+    </nav>
 
-     <div id="main">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <div id="main">
+       <!--  <p class="notice"><%= notice %></p> -->
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </div>
 
-      <%= yield %>
-    </div>
-
-    <footer>
-      <ul>
-        <%unless current_user %>
-        <li><%= link_to 'Register', new_user_registration_path %></li>
-        <li><%= link_to 'Login', new_user_session_path%></li>
-        <%else%>
-        <li><%= link_to 'Home', root_path%></li>
-        <li><%= link_to 'Search', users_path %></li>
-        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-        
-        <% end %>
-      </ul>
-    </footer>
+      <footer>
+        <ul>
+          <%unless current_user %>
+          <li><%= link_to 'Register', new_user_registration_path %></li>
+          <li><%= link_to 'Login', new_user_session_path%></li>
+          <%else%>
+          <li><%= link_to 'Home', root_path%></li>
+          <li><%= link_to 'My Profile', user_path(current_user)%></li>
+          <li><%= link_to 'Search', users_path %></li>
+          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to 'Edit Profile', edit_user_path(current_user)%></li>
+          <% if current_user.role =='premium'%>
+          <li><%= link_to 'Downgrade to basic account', new_role_path%></li>
+          <%else%>
+          <li><%= link_to 'Upgrade to Premium', new_role_path%></li>
+          <%end%>
+          <% end %>
+        </ul>
+      </footer>
 
   </div>
 

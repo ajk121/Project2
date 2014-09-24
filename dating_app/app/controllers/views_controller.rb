@@ -2,12 +2,13 @@ class ViewsController < ApplicationController
   
   def user_makes_visit
     @user = current_user
-    @views = @user.views_as_viewer
+    @views = @user.views_as_viewer.page(params[:page])
+
   end
 
   def user_receives_visit
     @user = current_user
-    @views = @user.views_as_viewed
+    @views = @user.views_as_viewed.page(params[:page])
   end
 
 
