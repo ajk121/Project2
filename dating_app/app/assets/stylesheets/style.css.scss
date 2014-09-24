@@ -22,7 +22,8 @@ body {
 .logo {
   width:50px;
   height: 50px;
-  border-color: #0099CC
+  border-color: #0099CC;
+  background-color:#0099CC
 }
 
 .title {
@@ -153,7 +154,9 @@ img {
   height: 250px;
   border: 1px solid #6B1229;
   margin:10px;
-  border-radius: 5px
+  border-radius: 5px;
+  background-color: white;
+  border: 3px solid #BDDEFF;
 
 }
 
@@ -171,7 +174,7 @@ img {
 
 
 .inbox, th, td, tr {
-   border: 1px solid black;
+   border: 1px solid white;
 }
 
 .inbox, table {
@@ -266,7 +269,7 @@ textarea#user_about_me {
   border: 3px solid #BDDEFF;
   border-radius:5px; 
   background-color: white;
-  width:400px;
+  width:353px;
   height:120px;
   float:left;
   padding-top:8px;
@@ -274,6 +277,11 @@ textarea#user_about_me {
     padding-left: 5px;
   }
 }
+
+.edit_right_menu {
+  padding-top:15px
+}
+
 
 .edit_right_menu  h2 input {
 border:3px solid #BDDEFF; 
@@ -320,7 +328,7 @@ input {
 .edit_top_wrapper {
   clear:both;
   height:280px;
-  width:700px;
+  width:710px;
 }
 
 .edit_image {
@@ -328,8 +336,26 @@ input {
   margin-left: 18px;
 }
 
-.select option{
-  height:50px;
+input#username {
+margin-top:10px
+}
+
+select {
+  background:transparent;
+  border:none
+}
+
+.selector {
+  display:block;
+  border: 3px solid #BDDEFF;
+  border-radius:10px;
+  text-decoration: none;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left:3px;
+  margin-top:10px;
+  background:white;
+  width:250px
 }
 
 /*
