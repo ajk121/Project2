@@ -1,24 +1,49 @@
 
-<h1>New message</h1>
-
-<h1>Reply message</h1>
 
 
-<p>
-  <b>Subject</br>
-  <%= @original.title %>
-</p>
+<p>From: 
+  <%= @original.sender.name %></p>
 
-<p>
-  <b>Original Message</b>
-  <%= @original.content %>
-</p>
+  <div class ='original_content'>
+    <p><%= @original.content %></p>
+  </div>
 
-<p>
-  <b>Sender</b>
-  <%= @original.sender.name %>
-</p>
+  <%= form_for(@message) do |f| %>
+  <% if @message.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
 
-<%= render 'form' %><br>
+    <ul>
+      <% @message.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
 
-<%= link_to 'Back', messages_path %>
+  <div id='message_form_main'>
+    <%= form_for(@message) do |f| %>
+
+    <div class="field">
+      <%= f.text_field :title, placeholder: "#{@original.title}" %>
+          </div><br>
+      <div class="field">
+        <%= f.text_area :content, placeholder: "Content" %>
+      </div>
+
+      <div class="message_receiver">
+       <% if @original %>
+       <%= f.label 'To:' %> 
+       <%= @original.sender.name %> 
+       <%= f.hidden_field :receiver_id, :value => @original.sender_id %>
+       <% else %>
+       <%= f.collection_select :receiver_id, User.order(:name),:id,:name %> 
+       <%end%> 
+     </div>
+     <div class="message_action">
+      <%= f.submit 'Send'%>
+    </div>
+    <% end %>
+  </div>
+  <% end %>
+

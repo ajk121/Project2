@@ -4,6 +4,9 @@ Main Page
 ========================================
 */
 
+
+
+
 html{
   box-sizing:border-box;
   height:100%;
@@ -482,5 +485,17 @@ select#message_receiver_id {
 
 input#message_title {
   width:292px
+}
+
+.original_content {
+  background-color: white;
+  border: 3px solid #BDDEFF;
+  border-radius:10px;
+  height: 200px;
+  width: 306px;
+p{
+  word-wrap:break-word;
+  padding: 5px
+}
 }
 
