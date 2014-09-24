@@ -256,32 +256,41 @@ Edit Page
 */
 
 textarea#user_about_me {
-  border: 1px solid black;
-  border-radius:10px; 
+  border: 3px solid #BDDEFF;
+  border-radius:5px; 
+  background-color: white;
   width:400px;
-  height:200px;
+  height:120px;
   float:left;
   padding-top:8px;
+  p{
+    padding-left: 5px;
+  }
 }
 
+.edit_right_menu  h2 input {
+border:3px solid #BDDEFF 
+}
 
 input {
   display:block;
-  border: 1px solid black;
-  border-radius:20px;
+  border: 3px solid #BDDEFF;
+  border-radius:10px;
   text-decoration: none;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left:5px;
-  margin-top:10px
+  margin-top:10px;
+  background:white
 }
 
 .edit_left_list {
   display: inline-block;
   
   ul li{ display:block;
-   border: 1px solid black;
-   border-radius:20px; 
+   border: 3px solid #BDDEFF;
+   border-radius:10px;
+   background: white; 
    padding-top: 5px;
    padding-bottom: 5px;
    padding-left:5px;
