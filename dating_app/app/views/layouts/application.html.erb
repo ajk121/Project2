@@ -6,6 +6,7 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Monofett' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div id='wrapper'>
@@ -22,7 +23,6 @@
           <%= link_to 'My Profile', user_path(current_user)%></a>
           <ul class="sub-menu">
            <li><%= link_to 'Profiles I Visited', user_makes_visit_path %></li>
-
            <li><%= link_to "Visits To My Profile", user_receives_visit_path %></li>
            <li><%= link_to 'My Messages', messages_path%></li>
            <li><%= link_to 'Edit Profile', edit_user_path(current_user)%></li>
@@ -31,6 +31,7 @@
            <%else%>
            <li><%= link_to 'Upgrade To Premium', new_role_path%></li>
            <%end%>
+           <% end %>
 
          </ul> 
        </nav>
@@ -52,9 +53,6 @@
           <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
           <% end %>
         </ul>
-
-        <% end %>
-        <%end%>
       </footer>
     </div>
 
