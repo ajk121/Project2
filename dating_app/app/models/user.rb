@@ -50,4 +50,7 @@ class User < ActiveRecord::Base
     end
   end
 
+  def get_all_user_except_current_user(user_id)
+    User.find(:all, :conditions => ["id != ?", user_id])
+  end 
 end

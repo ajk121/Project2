@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
   # GET /messages/1/reply
   # GET /messages/1/reply.json
   def reply
-    puts "-------"
+    
     @original = Message.find(params[:message_id])
     @message = Message.new
 
