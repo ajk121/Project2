@@ -54,7 +54,6 @@ class MessagesController < ApplicationController
     end
   end
 
-
   # GET /messages/1/edit
   def edit
     @message = Message.find(params[:id])

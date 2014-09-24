@@ -21,8 +21,16 @@
   </div><br>
 
   <div class="field">
-    <%= f.label :To %><br><br>
-    <%= f.collection_select :receiver_id, User.order(:name),:id,:name%>
+   <% if @original %>
+     <%= f.label 'To:' %> 
+     <%= @original.sender.name %> 
+     <%= f.hidden_field :receiver_id, :value => @original.sender_id %>
+   <% else %>
+     <%= f.label :To %><br><br>
+     <%= f.collection_select :receiver_id, User.order(:name),:id,:name %> 
+  <%end%> 
+
+
   </div>
   <div class="actions"><br>
     <%= f.submit 'Send'%>
