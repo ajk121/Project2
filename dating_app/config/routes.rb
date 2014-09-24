@@ -1,10 +1,8 @@
 DatingApp::Application.routes.draw do
-<<<<<<< HEAD
  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   root to: 'home#index'
   resources :messages
-=======
   
   root to: 'home#index'
 
@@ -16,7 +14,6 @@ DatingApp::Application.routes.draw do
   
   # <%= link_to "Reply", reply_to_path(@message) %>
 
->>>>>>> messages
   resources :users
   resources :views
   resources :roles
@@ -30,10 +27,4 @@ DatingApp::Application.routes.draw do
   get 'user_makes_visit', to: 'views#user_makes_visit'
   get 'user_receives_visit', to: 'views#user_receives_visit'
 
-<<<<<<< HEAD
-
- 
- 
-=======
->>>>>>> messages
 end
