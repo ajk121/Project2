@@ -39,13 +39,14 @@ $('#new_message').on('click', function(e){
   console.log('#new_message');
   $('#message_form').fadeIn(500);
   $('#new_message').addClass('hidden');
+  $('#close_message').removeClass('hidden');
 });
 
-$('#close_search_button').on('click', function(e){
+$('#close_message').on('click', function(e){
   e.preventDefault;
-  $('#search').slideUp(300);
-  $('#close_search_button').addClass('hidden');
-  $('#open_search_button').removeClass('hidden');
+  $('#message_form').fadeOut(300);
+  $('#close_message').addClass('hidden');
+  $('#new_message').removeClass('hidden');
 });
 
 
