@@ -20,6 +20,9 @@ DatingApp::Application.routes.draw do
   resources :users
   resources :views
   resources :roles
+  resources :posts do
+    get 'page/:page', action: :index, on: :collection
+  end
 
   # httpverb 'url', to: 'controllername#methodname', as: :helpername
 

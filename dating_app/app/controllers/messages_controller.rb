@@ -6,8 +6,9 @@ class MessagesController < ApplicationController
   # GET /messages.json
   def index
     @user = current_user
-    @messages = @user.messages_as_receiver + @user.messages_as_sender
+    messages = (@user.messages_as_receiver + @user.messages_as_sender)
     @views = @user.views_as_viewed + @user.views_as_viewer
+    @messages = Kaminari.paginate_array(messages).page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

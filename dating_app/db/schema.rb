@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140923104518) do
+ActiveRecord::Schema.define(:version => 20140924083354) do
 
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
@@ -64,13 +64,10 @@ ActiveRecord::Schema.define(:version => 20140923104518) do
     t.string   "hair_color"
     t.string   "eyes_color"
     t.float    "height"
-    t.boolean  "smoker"
     t.string   "favourite_language"
     t.string   "about_me"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "provider"
-    t.string   "uid"
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
@@ -87,9 +84,10 @@ ActiveRecord::Schema.define(:version => 20140923104518) do
     t.string   "role"
     t.string   "status"
     t.string   "meet_ups"
-    t.string   "front_backend"
     t.integer  "stackoverflow_score"
     t.string   "github_id"
+    t.boolean  "front_backend"
+    t.string   "smoker"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

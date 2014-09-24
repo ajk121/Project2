@@ -1,3 +1,9 @@
+/*
+========================================
+Main Page
+========================================
+*/
+
 html{
   box-sizing:border-box;
   height:100%;
@@ -6,6 +12,17 @@ html{
 body {
   height:100%;
   width:100%;
+}
+
+.logo {
+  width:50px;
+  height: 50px;
+  border-color: orange
+}
+
+.title {
+  font-family:"Monofett";
+  font-size:60px
 }
 
 div#wrapper {
@@ -20,17 +37,97 @@ div#main {
   padding: 100px 0;
 }
 
-nav {
+.login_message{
+  margin-left: 700px
+}
+
+/*
+========================================
+Nav
+========================================
+*/
+.top-nav {
+  background-color:orange;
+  padding:10px 0;
   min-width: 10000px;
   border-bottom: 3px solid black;
   position: fixed;
-  background: orange;
+}
+.top-nav ul {
+  list-style-type:none;
+  margin:0;
+}
+.top-nav ul li {
+  display:inline-block;
+  position:relative;
 }
 
-nav ul li {
-  display: inline;
+.top-nav li ul {    
+  background-color:orange;
+  position:absolute;
+  left:0;
+  top:40px;
+  width:200px;
+  border-radius:10px
+}
+.top-nav li li {
+  position:relative;
+  margin:0;
+  display:block;
+}
+.top-nav li li ul {
+  position:absolute;
+  top:0;
+  left:200px;
+  margin:0;
+
 }
 
+.top-nav a {
+  line-height:40px;
+  padding:0 12px;
+  margin:0 12px;
+  color:#fff;
+  text-decoration:none;
+  display:inline;
+
+}
+
+.top-nav a:hover,
+.top-nav a:focus,
+.top-nav a:active {
+  color:rgb(50,50,50);
+}
+
+.top-nav li li a {
+  border-bottom:solid 1px white;
+  margin:0 10px;
+  padding:0;
+
+}
+.top-nav li li:last-child a {
+  border-bottom:none;
+}
+
+
+.top-nav li.dropdown > a {
+    background-repeat:no-repeat;
+  }
+
+  .top-nav li li.dropdown > a {
+    background-position:right 16px;
+    background-repeat:no-repeat;
+  }
+
+ul.sub-menu {
+  display:none;
+}
+
+/*
+========================================
+Footer
+========================================
+*/
 footer {
   min-width: 1000px;
   border-top: 3px solid black ;
@@ -44,6 +141,7 @@ footer li {
   display:inline;
   padding :25px;
 }
+
 
 img {
   width: 250px;
@@ -66,10 +164,154 @@ img {
   display:none
 }
 
+
 .inbox, th, td, tr {
    border: 1px solid black;
 }
 
 .inbox, table {
   width: 100%;
+
+/*
+========================================
+Profile Page
+========================================
+*/
+
+.profile_list {
+
+  display:block;
+  border: 1px solid black;
+  border-radius:5px;
+  width:650px;
+  margin-left:10px
 }
+
+.profile_image {
+  float:left
+}
+
+.profile_role {
+  text-align:right;
+  margin-right:32px
+}
+
+.profile_name {
+  padding-top: 1px;
+  margin-right:32px
+}
+.profile_top_wrapper {
+  clear:both;
+  height:350px;
+  width:700px
+}
+
+.profile_right_menu {
+  padding-top:0.01px;
+  ul li{
+    list-style-type: none;
+    a{
+      text-decoration: none;
+    }
+  }
+}
+
+.profile_button_messages {
+  padding: 10px;
+  border-radius: 5px
+}
+
+.about_me {
+  border: 1px solid black;
+  border-radius:5px; 
+  width:400px;
+  height:120px;
+  float:left;
+  padding-top:8px;
+}
+
+
+
+/*
+========================================
+Edit Page
+========================================
+*/
+
+textarea#user_about_me {
+  border: 1px solid black;
+  border-radius:10px; 
+  width:400px;
+  height:200px;
+  float:left;
+  padding-top:8px;
+
+
+input {
+  display:block;
+  border: 1px solid black;
+  border-radius:20px;
+  text-decoration: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left:5px;
+  margin-top:10px
+}
+
+.edit_left_list {
+  display: inline-block;
+  
+  ul li{ display:block;
+   border: 1px solid black;
+   border-radius:20px; 
+   padding-top: 5px;
+   padding-bottom: 5px;
+   padding-left:5px;
+   padding-right:120px;
+   margin-top:10px
+ }
+}
+
+.edit_right_list {
+  display: inline-block;
+  ul {
+    margin-top: 0;
+    list-style-type: none;
+    input {
+      width: 100%;
+    }
+  }
+}
+
+.edit_top_wrapper {
+  clear:both;
+  height:350px
+}
+
+.edit_image {
+  float:left
+}
+
+/*
+========================================
+Search Page
+========================================
+*/
+
+#open_search_button {
+  margin-left: 700px
+}
+
+#close_search_button {
+  margin-left: 700px
+}
+
+
+.pagination {
+  color: black;
+  // background-color: white;
+}
+
+
+
+
