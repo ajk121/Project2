@@ -176,7 +176,7 @@ img {
 
 
 .inbox, th, td, tr {
-   border: 1px solid white;
+ border: 1px solid white;
 }
 
 .inbox, table {
@@ -265,6 +265,20 @@ Profile Page
   display:inline;
 }
 
+.visits a{
+  text-decoration: none;
+  border: 3px solid #BDDEFF;
+  border-radius:10px; 
+  background-color: white;
+  width:400px;
+  height:120px;
+  padding: 5px;
+  padding-right:345px;
+  margin-left:7px;
+  font-weight:bold;
+  color:black;
+}
+
 
 /*
 ========================================
@@ -291,7 +305,7 @@ textarea#user_about_me {
 
 
 .edit_right_menu  h2 input {
-border:3px solid #BDDEFF; 
+  border:3px solid #BDDEFF; 
 }
 
 input {
@@ -344,7 +358,7 @@ input {
 }
 
 input#username {
-margin-top:10px
+  margin-top:10px
 }
 
 select {
@@ -380,9 +394,9 @@ Search Page
 }
 
 #q_age_gteq, #q_stackoverflow_score_gteq, #q_stackoverflow_score_lteq, #q_age_lteq {
-width:89px;
-display:inline-block;
-border-radius:5px
+  width:89px;
+  display:inline-block;
+  border-radius:5px
 }
 
 #q_stackoverflow_score_gteq{
@@ -395,25 +409,25 @@ border-radius:5px
 
 
 #q_city_eq, #q_gender_eq, #q_smoker_eq, #q_front_backend_eq, #q_favourite_language_eq{
-width:100px;
-display:inline;
-background: white;
-border: 3px solid #BDDEFF; 
-height: 35px;
-margin-left:277px
+  width:100px;
+  display:inline;
+  background: white;
+  border: 3px solid #BDDEFF; 
+  height: 35px;
+  margin-left:277px
 }
 
 #q_gender_eq {
-margin-left: 250px
+  margin-left: 250px
 }
 
 #q_smoker_eq{
-margin-left: 248px
+  margin-left: 248px
 
 }
 
 #q_front_backend_eq{
-margin-left:151px
+  margin-left:151px
 }
 
 #q_favourite_language_eq{
@@ -493,9 +507,9 @@ input#message_title {
   border-radius:10px;
   height: 200px;
   width: 306px;
-p{
-  word-wrap:break-word;
-  padding: 5px
-}
+  p{
+    word-wrap:break-word;
+    padding: 5px
+  }
 }
 
