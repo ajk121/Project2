@@ -49,10 +49,5 @@
 <div id ='open_search_button'><button>Open Search</button></div>
 <div id ='close_search_button' class='hidden'><button>Close Search</button></div>
 
-<% @users.each do |user| %>
-<div class="search_image" id ='user_<%=user.id%>' data-user-id="<%=user.id%>">
-  <%= link_to image_tag(user.image), user_path(user) %>
-  <div id="image_name_<%=user.id%>" class="hidden"><%= user.name %></div>
-</div>
-<% end %>
+<%= render @users %>
 <%= paginate @users %>

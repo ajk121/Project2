@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  load_and_authorize_resource except:[:destroy, :show]
+  load_and_authorize_resource
 
 
   # GET /messages
@@ -19,11 +19,12 @@ class MessagesController < ApplicationController
   # GET /messages/1/reply
   # GET /messages/1/reply.json
   def reply
-    @original = Message.find(params[:id])
+    puts "-------"
+    @original = Message.find(params[:message_id])
     @message = Message.new
 
     respond_to do |format|
-     format.html {render :new} # new.html.erb
+     format.html {render :reply} # new.html.erb
      format.json { render json: @message }
     end
   end
@@ -54,7 +55,6 @@ class MessagesController < ApplicationController
     end
   end
 
-
   # GET /messages/1/edit
   def edit
     @message = Message.find(params[:id])
@@ -64,7 +64,7 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(params[:message])
-    @message.sender = User.find(current_user.id)
+    @message.sender = current_user
 
     respond_to do |format|
       if @message.save
