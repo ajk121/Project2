@@ -7,7 +7,7 @@
     </div>
     
     <div class='profile_right_menu'>
-      
+
       <div class='profile_name'><h1><%= @user.name %></h1></div>
       <div class= 'new_message'><%= link_to 'SEND MESSAGE', new_message_path %></div>
       <div class='profile_role'><h3><%= @user.role%> USER</h3></div>
@@ -72,9 +72,11 @@
     </table>
   </div>
   <br>
-
+  
+  <%if @user == current_user  %>
   <%= link_to "#{@user.impressionist_count(start_date:Time.now-(24*60*60),end_date: Time.now)} visits to my profile in the past 3 days", user_receives_visit_path %>
-
+  <%else%>
+  <%end%>
 
 
 
