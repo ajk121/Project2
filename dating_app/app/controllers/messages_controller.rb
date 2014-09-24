@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  load_and_authorize_resource except:[:destroy, :show]
+  load_and_authorize_resource
 
 
   # GET /messages
@@ -64,7 +64,7 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(params[:message])
-    @message.sender = User.find(current_user.id)
+    @message.sender = current_user
 
     respond_to do |format|
       if @message.save
