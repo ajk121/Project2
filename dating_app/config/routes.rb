@@ -1,8 +1,5 @@
 DatingApp::Application.routes.draw do
-<<<<<<< HEAD
 
-=======
->>>>>>> 071533d9e10d356c72ab57ec519da5ef99d0c411
  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   root to: 'home#index'
