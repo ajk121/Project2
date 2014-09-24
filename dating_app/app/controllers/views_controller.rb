@@ -2,15 +2,14 @@ class ViewsController < ApplicationController
   
   def user_makes_visit
     @user = current_user
-    @views = @user.views_as_viewer.page(params[:page])
+    @users = Kaminari.paginate_array(@user.views_as_viewer.map(&:viewer)).page(params[:page])
 
   end
 
   def user_receives_visit
     @user = current_user
-    @views = @user.views_as_viewed.page(params[:page])
+    @users = Kaminari.paginate_array(@user.views_as_viewed.map(&:viewed)).page(params[:page])
   end
-
 
   def destroy
     @view = View.find(params[:id])
