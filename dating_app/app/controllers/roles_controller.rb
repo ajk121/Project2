@@ -16,18 +16,12 @@ class RolesController < ApplicationController
     @user = current_user
     if @user.role == 'basic'
       @user.role = 'premium'
+      @user.save
+      redirect_to @user, notice: 'You have successfully upgraded to premium. You will be now able read, send and receive messages'
     else
       @user.role = 'basic'
+      redirect_to @user, notice: 'You have successfully downgraded your account to basic. You will not be able to read, send or receive messages anymore'
     end
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'You have successfully upgraded to premium. You will be now able to send and receive messages' }
-        format.json { render json: @user, status: :created, location: @user }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @role.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+end
 
 end

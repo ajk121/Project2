@@ -148,6 +148,9 @@ footer {
 footer li {
   display:inline;
   padding :25px;
+  a{
+    text-decoration: none
+  }
 }
 
 
@@ -269,7 +272,7 @@ Profile Page
   border-left: 1px solid white;
 }
 
-.new_message{
+.new_message_button_profile{
   display:inline-block;
   text-decoration: none;
   border: 3px solid #BDDEFF;
