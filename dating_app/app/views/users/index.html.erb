@@ -54,5 +54,5 @@
   <%= link_to image_tag(user.image), user_path(user) %>
   <div id="image_name_<%=user.id%>" class="hidden"><%= user.name %></div>
 </div>
-
 <% end %>
+<%= paginate @users %>
