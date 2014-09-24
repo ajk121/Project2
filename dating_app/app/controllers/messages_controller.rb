@@ -18,11 +18,12 @@ class MessagesController < ApplicationController
   # GET /messages/1/reply
   # GET /messages/1/reply.json
   def reply
-    @original = Message.find(params[:id])
+    puts "-------"
+    @original = Message.find(params[:message_id])
     @message = Message.new
 
     respond_to do |format|
-     format.html {render :new} # new.html.erb
+     format.html {render :reply} # new.html.erb
      format.json { render json: @message }
     end
   end

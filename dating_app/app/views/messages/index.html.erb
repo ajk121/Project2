@@ -21,7 +21,7 @@
     <td><%= message.sender.name %></td>
     <td><%= message.receiver.name %></td>
     <td><%= message.title %></td>
-    <td><%= link_to 'reply', reply_message_path(message) %></td>
+    <td><%= link_to 'reply', message_reply_message_path(message) %></td>
     <td><%= link_to 'Show', message %></td>
     <td><%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

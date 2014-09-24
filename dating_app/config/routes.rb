@@ -5,7 +5,7 @@ DatingApp::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => 'registrations' } 
 
   resources :messages do
-    get '/:id/reply', to: 'messages#reply' # , as: :reply_to
+    get '/reply', to: 'messages#reply', as: :reply_message
   end
   
   # <%= link_to "Reply", reply_to_path(@message) %>
