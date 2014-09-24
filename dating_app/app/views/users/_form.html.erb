@@ -12,14 +12,12 @@
 <% end %>
 
 <div class ='edit_top_wrapper'>
-
   <div class='edit_image'>  
     <%= image_tag @user.image.url %>
     <%unless @user.role=""%>
     <h3><%= @user.role%> USER</h3>
   <%end%>
   </div>
-
   <div class='edit_right_menu'>
     <h2><%= f.text_field :name %></h2>
     <div><%= f.text_area :about_me %>

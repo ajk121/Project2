@@ -16,16 +16,26 @@ class MessagesController < ApplicationController
     end
   end
 
+  # GET /messages/1/reply
+  # GET /messages/1/reply.json
+  def reply
+    @original = Message.find(params[:id])
+    @message = Message.new
+
+    respond_to do |format|
+     format.html {render :new} # new.html.erb
+     format.json { render json: @message }
+    end
+  end
+
   # GET /messages/1
   # GET /messages/1.json
   def show
     @message = Message.find(params[:id])
     
     if @message.receiver == current_user
-
-      @message.status = "read"
-      @message.save
-    
+        @message.status = "read"
+        @message.save
     end 
     respond_to do |format|
       format.html # show.html.erb
@@ -43,6 +53,7 @@ class MessagesController < ApplicationController
       format.json { render json: @message }
     end
   end
+
 
   # GET /messages/1/edit
   def edit
