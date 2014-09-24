@@ -1,17 +1,13 @@
-<h1>Inbox</h1>
+<h1>My Messages</h1>
 
 <%#= link_to "#{@user.impressionist_count(start_date:Time.now-(24*60*60),end_date: Time.now)} visits to my profile in the past 3 days", user_receives_visit_path %>
 <div class="message_table">
 <table>
   <tr>
-    
-    <th>status</th>
+    <th>Status</th>
     <th>From</th>
     <th>To</th>
     <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
   
@@ -28,6 +24,31 @@
 <% end %>
 </table>
 
+<div id='new_message'><button>New Message</button></div>
+<div id='message_form' class='hidden' >
+  <%= form_for(@message) do |f| %>
+
+    <div class="field">
+      <%= f.text_field :title, placeholder: "Title" %>
+    </div><br>
+    <div class="field">
+      <%= f.text_area :content, placeholder: "Content" %>
+    </div>
+
+    <div class="message_receiver">
+     <% if @original %>
+       <%= f.label 'To:' %> 
+       <%= @original.sender.name %> 
+       <%= f.hidden_field :receiver_id, :value => @original.sender_id %>
+     <% else %>
+       <%= f.collection_select :receiver_id, User.order(:name),:id,:name %> 
+    <%end%> 
+    </div>
+    <div class="message_action">
+      <%= f.submit 'Send'%>
+    </div>
+  <% end %>
+</div>
 
 
   <%= paginate @messages %>

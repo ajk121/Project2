@@ -10,6 +10,8 @@ class MessagesController < ApplicationController
     @views = @user.views_as_viewed + @user.views_as_viewer
     @messages = Kaminari.paginate_array(messages).page(params[:page])
 
+    @message = Message.new
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @messages }
