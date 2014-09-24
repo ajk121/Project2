@@ -14,7 +14,7 @@ body {
   height:100%;
   width:100%;
   background-image: url('');
-  background-color:grey;
+  background-color:#CFCFCF;
   background-size: cover;
   width:100%;
 }
@@ -191,7 +191,7 @@ Profile Page
   display:block;
   border: 3px solid white;
   border-radius:5px;
-  width:662px;
+  width:665px;
   margin-left:10px;
   background-color: #BDDEFF;
 }
@@ -372,6 +372,19 @@ Search Page
   margin-left: 700px;
 }
 
+#q_age_gteq, #q_stackoverflow_score_gteq, #q_stackoverflow_score_lteq, #q_age_lteq {
+width:100px;
+display:inline;
+border-radius:5px
+}
+
+#q_city_eq, #q_gender_eq, #q_smoker_eq, #q_front_backend_eq, #q_favourite_language_eq{
+width:100px;
+display:inline;
+background: white;
+border: 3px solid #BDDEFF; 
+height: 35px;
+}
 
 .pagination {
   color: black;
