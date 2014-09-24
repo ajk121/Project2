@@ -13,6 +13,26 @@
 
 ActiveRecord::Schema.define(:version => 20140924083354) do
 
+  create_table "authentication_providers", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "authentication_providers", ["name"], :name => "index_name_on_authentication_providers"
+
+  create_table "headshot_photos", :force => true do |t|
+    t.string   "description"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.integer  "capturable_id"
+    t.string   "capturable_type"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
     t.integer  "impressionable_id"
@@ -55,6 +75,20 @@ ActiveRecord::Schema.define(:version => 20140924083354) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "user_authentications", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "authentication_provider_id"
+    t.string   "uid"
+    t.string   "token"
+    t.datetime "token_expires_at"
+    t.text     "params"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "user_authentications", ["authentication_provider_id"], :name => "index_user_authentications_on_authentication_provider_id"
+  add_index "user_authentications", ["user_id"], :name => "index_user_authentications_on_user_id"
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.integer  "age"
@@ -68,6 +102,8 @@ ActiveRecord::Schema.define(:version => 20140924083354) do
     t.string   "about_me"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "provider"
+    t.string   "uid"
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
