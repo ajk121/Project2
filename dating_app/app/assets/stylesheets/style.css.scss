@@ -19,6 +19,7 @@ body {
   background-color:#CFCFCF;
   background-size: cover;
   width:100%;
+  background-image: url('http://healthnutsmedia.com/wp-content/uploads/2013/08/Engage-background-white-HNM-blue-gradient-blue-gears.png');
 }
 
 .logo {
@@ -35,13 +36,13 @@ body {
 
 div#wrapper {
   min-width: 1000px;
-  margin: 0 auto;
   position:relative;
+  margin: 0 auto
 }
 
 div#main {
   width: 960px;
-  margin: 0 auto;
+  margin-left: 250px;
   padding: 100px 0;
 }
 
