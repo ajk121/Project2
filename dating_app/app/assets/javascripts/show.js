@@ -19,17 +19,17 @@ $(document).ready(function(){
     }
     );
 
-  // $('#open_search_button').on('click', function(e){
-  //   e.preventDefault;
-  //   $('#search').slideDown(300);
-  //   $('#open_search_button').addClass('hidden');
-  //   $('#close_search_button').removeClass('hidden');
-  // });
+  $('#open_search_button').on('click', function(e){
+    e.preventDefault;
+    $('#search').slideDown(300);
+    $('#open_search_button').addClass('hidden');
+    $('#close_search_button').removeClass('hidden');
+  });
 
-  // $('#close_search_button').on('click', function(e){
-  //   e.preventDefault;
-  //   $('#search').slideUp(300);
-  //   $('#close_search_button').addClass('hidden');
-  //   $('#open_search_button').removeClass('hidden');
-  // });
+  $('#close_search_button').on('click', function(e){
+    e.preventDefault;
+    $('#search').slideUp(300);
+    $('#close_search_button').addClass('hidden');
+    $('#open_search_button').removeClass('hidden');
+  });
 });
