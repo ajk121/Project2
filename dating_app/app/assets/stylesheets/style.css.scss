@@ -110,17 +110,17 @@ nav li li:last-child a {
 }
 
 nav li.dropdown > a {
-    background-repeat:no-repeat;
-  }
+  background-repeat:no-repeat;
+}
 
-  nav li li.dropdown > a {
-    background-position:right 16px;
-    background-repeat:no-repeat;
-  }
+nav li li.dropdown > a {
+  background-position:right 16px;
+  background-repeat:no-repeat;
+}
 
-  ul.sub-menu {
-    display:none;
-  }
+ul.sub-menu {
+  display:none;
+}
 
 /*
 ========================================
@@ -170,43 +170,32 @@ Profile Page
 ========================================
 */
 
-.profile_right_list {
-  display: inline-block;
+.profile_list {
 
-  ul li{
-    display:block;
-    border: 1px solid black;
-    border-radius:20px;
-    text-decoration: none;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left:5px;
-    padding-right:120px;
-    margin-top:10px
-  }
-}
-
-.profile_left_list {
-  display: inline-block;
-  
-  ul li{ display:block;
-   border: 1px solid black;
-   border-radius:20px; 
-   padding-top: 5px;
-   padding-bottom: 5px;
-   padding-left:5px;
-   padding-right:120px;
-   margin-top:10px
- }
+  display:block;
+  border: 1px solid black;
+  border-radius:5px;
+  width:650px;
+  margin-left:10px
 }
 
 .profile_image {
   float:left
 }
 
+.profile_role {
+  text-align:right;
+  margin-right:32px
+}
+
+.profile_name {
+  padding-top: 1px;
+  margin-right:32px
+}
 .profile_top_wrapper {
   clear:both;
-  height:350px
+  height:350px;
+  width:700px
 }
 
 .profile_right_menu {
@@ -226,12 +215,13 @@ Profile Page
 
 .about_me {
   border: 1px solid black;
-  border-radius:10px; 
+  border-radius:5px; 
   width:400px;
-  height:200px;
+  height:120px;
   float:left;
   padding-top:8px;
 }
+
 
 
 /*

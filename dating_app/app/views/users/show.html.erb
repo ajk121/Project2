@@ -4,63 +4,73 @@
 
     <div class='profile_image'>  
       <%= image_tag @user.image.url %>
-      <h3><%= @user.role.upcase%> USER</h3>
     </div>
     
     <div class='profile_right_menu'>
-      <h2><%= @user.name %></h2>
+      
+      <div class='profile_name'><h1><%= @user.name %></h1></div>
+      
+      <div class='profile_role'><h3><%= @user.role.upcase%> USER</h3></div>
+
       <div class='about_me'><%= @user.about_me%>
       </div>
+
     </div>
-
   </div>
 
-  <div class ='profile_left_list'>
-    <ul>
+  <div class ='profile_list'>
+    <table class='profile_table'>
       <tr>
-      <td>Age</td>
-      <td><%= @user.age %></td>
+        <td>Age</td>
+        <td><%= @user.age %></td>
+      </tr>
       <tr>
-      <td>Gender</td>
-      <td><%= @user.gender %></td>
+        <td>Gender</td>
+        <td><%= @user.gender %></td>
+      </tr>
       <tr>
-      <td>City</td>
-      <td><%= @user.city %></td>
+        <td>City</td>
+        <td><%= @user.city %></td>
+      </tr>
       <tr>
-      <td>Email</td>
-      <td><%= @user.email %></td>
+        <td>Email</td>
+        <td><%= @user.email %></td>
+      </tr>
       <tr>
-      <td>Interested in</td>
-      <td><%= @user.sex_preference %></td>
+        <td>Interested in</td>
+        <td><%= @user.sex_preference %></td>
+      </tr>
       <tr>
-      <td>Height in cm</td>
-      <td><%= @user.height %></td>
+        <td>Height in cm</td>
+        <td><%= @user.height %></td>
+      </tr>
       <tr>
-      <td>Smoker</td>
-      <td><%= @user.smoker %></td>
+        <td>Smoker</td>
+        <td><%= @user.smoker %></td>
+      </tr>
       <tr>
-      <td>GitHub ID</td>
-      <td><%= @user.github_id %></td>
+        <td>GitHub ID</td>
+        <td><%= @user.github_id %></td>
+      </tr>
       <tr>
-      <td>Favourite code language</td>
-      <td><%= @user.favourite_language %></td>
+        <td>Favourite code language</td>
+        <td><%= @user.favourite_language %></td>
+      </tr>
       <tr>
-      <td>Stack Overflow Score</td>
-      <td><%= @user.stackoverflow_score %></td>
+        <td>Stack Overflow Score</td>
+        <td><%= @user.stackoverflow_score %></td>
+      </tr>
       <tr>
-      <td>Meet Ups</td>
-      <td><%= @user.meet_ups %></td>
+        <td>Meet Ups</td>
+        <td><%= @user.meet_ups %></td>
+      </tr>
       <tr>
-      <td>Front-end Or Back-end</td>
-      <td><%= @user.front_backend  %></td>
-    </ul>
+        <td>Front-end Or Back-end</td>
+        <td><%= @user.front_backend  %></td>
+      </tr>
+    </table>
   </div>
-  <div class ='profile_right_list'>
-    <ul>
-
-    </ul>
-  </div>
-<br>
+  <br>
 
   <%= link_to "#{@user.impressionist_count(start_date:Time.now-(24*60*60),end_date: Time.now)} visits to my profile in the past 3 days", user_receives_visit_path %>
 
