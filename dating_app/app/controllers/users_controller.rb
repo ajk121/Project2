@@ -19,12 +19,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def advanced_search
-    @search = User.search(params[:q])
-    @users = @search.result(distinct: true)
-    # @search.build_condition
-  end
-
 
   # GET /users/1
   # GET /users/1.json
