@@ -312,11 +312,17 @@ input {
 
 .edit_top_wrapper {
   clear:both;
-  height:350px
+  height:280px;
+  width:700px;
 }
 
 .edit_image {
-  float:left
+  float:left;
+  margin-left: 18px
+}
+
+.select option{
+  height:50px
 }
 
 /*
