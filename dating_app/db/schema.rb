@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140923124515) do
+ActiveRecord::Schema.define(:version => 20140924083354) do
 
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(:version => 20140923124515) do
     t.string   "hair_color"
     t.string   "eyes_color"
     t.float    "height"
-    t.boolean  "smoker"
     t.string   "favourite_language"
     t.string   "about_me"
     t.datetime "created_at",                             :null => false
@@ -88,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20140923124515) do
     t.integer  "stackoverflow_score"
     t.string   "github_id"
     t.boolean  "front_backend"
+    t.string   "smoker"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

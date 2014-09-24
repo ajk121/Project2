@@ -5,17 +5,33 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+ <link href='http://fonts.googleapis.com/css?family=Monofett' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div id='wrapper'>
 
     <nav>
       <ul>
-        <li class="title">Dating App</li>
+        <li class="title"><img class="logo" src='http://wallalay.com/wp-content/uploads/2014/08/Heart-Images-80.jpg'/></li>
+        <li class="title">Bit</li>
         <% if current_user %>
-        <li class="login_message">Current User: <%= current_user.email %></li>
-        <%=current_user.role%> account
+        
+        <li class="dropdown">
+          <ul class="sub-menu">
+         </ul>
+         <%= link_to 'My Profile', user_path(current_user)%></a>
+         <ul class="sub-menu">
+           <li><%= link_to 'Profiles I Visited', user_makes_visit_path %></li>
+
+           <li><%= link_to "Visits To My Profile", user_receives_visit_path %></li>
+           <li><%= link_to 'My Messages', messages_path%></li>
+           <li><%= link_to 'Edit Profile', edit_user_path(current_user)%></li>
+           <% if current_user.role =='premium'%>
+        <li><%= link_to 'Downgrade To Basic', new_role_path%></li>
+        <%else%>
+        <li><%= link_to 'Upgrade To Premium', new_role_path%></li>
         <%end%>
+
       </ul> 
     </nav>
 
@@ -45,7 +61,7 @@
         </ul>
       </footer>
 
-    </div>
+  </div>
 
-  </body>
-  </html>
+</body>
+</html>
