@@ -50,9 +50,9 @@ $('#close_search_button').on('click', function(e){
 
 $('#message_new').on('click', function(e){
   e.preventDefault;
-  console.log('#new_message');
+  console.log('#message_new');
   $('#message_form').fadeIn(500);
-  $('#new_message').addClass('hidden');
+  $('#message_new').addClass('hidden');
   $('#close_message').removeClass('hidden');
 });
 
@@ -60,7 +60,7 @@ $('#close_message').on('click', function(e){
   e.preventDefault;
   $('#message_form').fadeOut(300);
   $('#close_message').addClass('hidden');
-  $('#new_message').removeClass('hidden');
+  $('#message_new').removeClass('hidden');
 });
 
 
