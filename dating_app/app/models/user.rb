@@ -27,6 +27,10 @@ class User < ActiveRecord::Base
   before_create :set_initial_role
   after_update :set_role
 
+  def self.get_all_user_except(user_id)
+    where("users.id != ?", user_id)
+  end 
+
   def self.from_omniauth(auth)
     if user = User.find_by_email(auth.info.email)
       user.provider = auth.provider
@@ -55,10 +59,4 @@ class User < ActiveRecord::Base
   # def set_status
   #   self.status = 'active'
   # end
-
-
-  def get_all_user_except_current_user(user_id)
-    User.find(:all, :conditions => ["id != ?", user_id])
-  end 
-
 end
