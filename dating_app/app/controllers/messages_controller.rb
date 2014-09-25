@@ -20,8 +20,9 @@ class MessagesController < ApplicationController
   # GET /messages/1/reply
   # GET /messages/1/reply.json
   def reply
-    puts "-------"
+    
     @original = Message.find(params[:message_id])
+    authorize! :reply, @original 
     @message = Message.new
 
     respond_to do |format|

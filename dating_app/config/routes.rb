@@ -1,15 +1,17 @@
 DatingApp::Application.routes.draw do
 
-  post "headshot/capture" => 'headshot#capture', :as => :headshot_capture
-
  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   resources :messages do
     get '/reply', to: 'messages#reply', as: :reply_message
-
   end
+
   root to: 'home#index'
   resources :messages
+
+  delete '/messages/:id', to: 'messages#destroy', as: :delete_message
+  ; 
+
   resources :users
   resources :views
   resources :roles

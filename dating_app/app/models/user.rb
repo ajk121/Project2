@@ -42,6 +42,7 @@ class User < ActiveRecord::Base
     end
   end
 
+
   private
   def set_initial_role
     self.role ||= "incomplete"
@@ -54,5 +55,10 @@ class User < ActiveRecord::Base
   # def set_status
   #   self.status = 'active'
   # end
+
+
+  def get_all_user_except_current_user(user_id)
+    User.find(:all, :conditions => ["id != ?", user_id])
+  end 
 
 end
