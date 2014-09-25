@@ -11,6 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(:version => 20140923124515) do
+=======
 ActiveRecord::Schema.define(:version => 20140925130009) do
 
   create_table "authentication_providers", :force => true do |t|
@@ -32,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20140925130009) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
+>>>>>>> 3f0f9b1636ca973a5066d8266b3fd31c3e906c31
 
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
@@ -75,20 +79,6 @@ ActiveRecord::Schema.define(:version => 20140925130009) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "user_authentications", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "authentication_provider_id"
-    t.string   "uid"
-    t.string   "token"
-    t.datetime "token_expires_at"
-    t.text     "params"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-  end
-
-  add_index "user_authentications", ["authentication_provider_id"], :name => "index_user_authentications_on_authentication_provider_id"
-  add_index "user_authentications", ["user_id"], :name => "index_user_authentications_on_user_id"
-
   create_table "users", :force => true do |t|
     t.string   "name"
     t.integer  "age"
@@ -98,12 +88,11 @@ ActiveRecord::Schema.define(:version => 20140925130009) do
     t.string   "hair_color"
     t.string   "eyes_color"
     t.float    "height"
+    t.boolean  "smoker"
     t.string   "favourite_language"
     t.string   "about_me"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "provider"
-    t.string   "uid"
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
@@ -118,12 +107,16 @@ ActiveRecord::Schema.define(:version => 20140925130009) do
     t.string   "username"
     t.integer  "impressions_count"
     t.string   "role"
-    t.string   "status"
     t.string   "meet_ups"
+    t.string   "status"
     t.integer  "stackoverflow_score"
     t.string   "github_id"
+<<<<<<< HEAD
+    t.boolean  "front_backend"
+=======
     t.string   "front_backend"
     t.string   "smoker"
+>>>>>>> 3f0f9b1636ca973a5066d8266b3fd31c3e906c31
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

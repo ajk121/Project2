@@ -19,7 +19,7 @@
   User.create(email: "chris@gmail.com", password: "password", password_confirmation: "password", name: "Chris Marsh", age: "41", gender: "Male", city: "Manchester", sex_preference: "Female", meet_ups: "MRUG", front_backend:"Backend",favourite_language: "Javascript",stackoverflow_score: "552", height: "173", github_id: "paul.php", about_me: "Drop me a line of code to find out", smoker: "Yes" )
 
 
-  User.create(email: "peter@gmail.com", password: "password", password_confirmation: "password", name: "Peter Renold", age: "49", gender: "Male", city: "Global - Jet Setter", sex_preference: "Female", meet_ups: "My Place", front_backend:"Everything",favourite_language: "All",stackoverflow_score: "4552", height: "183", github_id: "p.renold.digital", about_me: "Sleep, eat, drink & work tech", smoker: "No" )
+  User.create(email: "peter@gmail.com", password: "password", password_confirmation: "password", name: "Peter Renold", age: "49", gender: "Male", city: "London", sex_preference: "Female", meet_ups: "My Place", front_backend:"Everything",favourite_language: "All",stackoverflow_score: "4552", height: "183", github_id: "p.renold.digital", about_me: "Sleep, eat, drink & work tech", smoker: "No" )
 
 
   User.create(email: "donny@gmail.com", password: "password", password_confirmation: "password", name: "Donny Brasco", age: "43", gender: "Male", city: "New York", sex_preference: "Female", meet_ups: "LRUG, MRUG, fugazi.js, Tech Arts", front_backend:"Backend",favourite_language: "Rails",stackoverflow_score: "390", height: "187", github_id: "fugazi.tech", about_me: "I turn code into £££, all things lavish", smoker: "No" )
