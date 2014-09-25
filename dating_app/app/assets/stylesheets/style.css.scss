@@ -178,7 +178,6 @@ img {
   display:none;
 }
 
-
 .inbox, th, td, tr {
  border: 1px solid white;
 }
@@ -325,6 +324,7 @@ textarea#user_about_me {
   }
 }
 
+
 .edit_right_menu {
   padding-top:15px
 }
@@ -346,28 +346,14 @@ input {
   background:white;
 }
 
-.edit_left_list {
-  display: inline-block;
-  
-  ul li{ display:block;
-   border: 3px solid #BDDEFF;
-   border-radius:10px;
-   background: white; 
-   padding-top: 5px;
-   padding-bottom: 5px;
-   padding-left:5px;
-   padding-right:120px;
-   margin-top:10px;
- }
-}
-
-.edit_right_list {
+.edit_list {
   display: inline-block;
   ul {
     margin-top: 0;
     list-style-type: none;
     input {
-      width: 100%;
+      width: 590px;
+      margin-top: 10px
     }
   }
 }
@@ -383,13 +369,20 @@ input {
   margin-left: 18px;
 }
 
-input#username {
-  margin-top:10px
+input#user_name {
+  margin-top:10px;
+  width: 351px
 }
 
 select {
   background:transparent;
-  border:none
+  border:none;
+  width:590px
+}
+
+.update_user_button {
+  margin-left: 300px;
+
 }
 
 .selector {
@@ -402,7 +395,7 @@ select {
   padding-left:3px;
   margin-top:10px;
   background:white;
-  width:250px
+  width:590px
 }
 
 /*
@@ -426,7 +419,7 @@ Search Page
 }
 
 #q_stackoverflow_score_gteq{
-  margin-left:152px;
+  margin-left:160px;
 }
 
 #q_age_gteq{
@@ -453,11 +446,11 @@ Search Page
 }
 
 #q_front_backend_eq{
-  margin-left:151px
+  margin-left:165px
 }
 
 #q_favourite_language_eq{
-  margin-left:121px;
+  margin-left:128px;
 }
 
 

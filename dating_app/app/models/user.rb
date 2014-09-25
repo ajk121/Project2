@@ -29,13 +29,13 @@ class User < ActiveRecord::Base
   validates :name, presence: true, on: :update, length: { minimum: 2 }
   validates :about_me, presence: true, on: :update, length: { minimum: 12 }
   validates :age, presence: true, on: :update, numericality: { only_integer: true }
-  validates :gender, presence: true, on: :update
+  validates :gender, inclusion: ["Male", "Female"], on: :update
   validates :sex_preference, presence: true, on: :update
   validates :city, presence: true, on: :update
   validates :height, presence: true, on: :update, numericality: true
-  validates :smoker, presence: true, on: :update
+  validates :smoker, inclusion: ["Smoker", "Non Smoker"], on: :update
   validates :favourite_language, presence: true, on: :update
-  validates :front_backend, presence: true, on: :update
+  validates :front_backend, inclusion: ["Back-End", "Front-End"], on: :update
   validates :stackoverflow_score, presence: true, on: :update
 
 
@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
 
   
   before_create :set_initial_role
-  after_update :set_role
+  # after_update :set_role
 
 
   def self.get_all_user_except(user_id)

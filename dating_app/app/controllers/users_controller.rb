@@ -51,12 +51,10 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-      if @user.save
+      @user.save
       # if @user.image == 'nil'   
       #  @user.image = "http://brandonmathis.com/projects/fancy-avatars/demo/images/avatar_male_dark_on_clear_200x200.png"
         redirect_to @user
-      end
-    end
   end
 
   # PUT /users/1
@@ -83,6 +81,6 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }
-
   end
+end
 end
