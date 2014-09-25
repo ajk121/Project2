@@ -4,36 +4,26 @@ DatingApp::Application.routes.draw do
 
   resources :messages do
     get '/reply', to: 'messages#reply', as: :reply_message
+    collection do
+      get 'inbox'
+      get 'sent'
+    end
   end
 
   root to: 'home#index'
-  resources :messages
 
-
-  resources :messages do
-    get '/:id/reply', to: 'messages#reply' 
-  end
   
-  
-  delete '/messages/:id', to: 'messages#destroy', as: :delete_message
-  ; 
 
-  resources :users
+  delete '/messages/:id', to: 'messages#destroy', as: :delete_message 
+
+  resources :users 
   resources :views
   resources :roles
   resources :posts do
     get 'page/:page', action: :index, on: :collection
   end
 
-
-
-
-
   get 'user_makes_visit', to: 'views#user_makes_visit'
   get 'user_receives_visit', to: 'views#user_receives_visit'
-
-
-
-
 
 end
