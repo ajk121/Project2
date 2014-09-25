@@ -1,4 +1,7 @@
 <h1>Profiles I visited</h1>
-
+<%if @user.views_as_viewed.count == 0 %>
+<h3> You haven't visited any profile </h3>
+<%else%>
 <%= render @users %>
 <%= paginate @users %>
+<%end%>
