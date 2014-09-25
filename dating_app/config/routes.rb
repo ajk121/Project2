@@ -1,5 +1,7 @@
 DatingApp::Application.routes.draw do
 
+  post "headshot/capture" => 'headshot#capture', :as => :headshot_capture
+
  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   resources :messages do

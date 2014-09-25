@@ -222,7 +222,7 @@ Profile Page
     padding-bottom: 5px;
     margin-bottom: 5px;
 
-}
+  }
 }
 .profile_top_wrapper {
   clear:both;
@@ -288,7 +288,7 @@ Profile Page
     text-decoration: none;
     color:black;
     font-weight: bold
-}
+  }
 }
 
 .visits a{
@@ -539,3 +539,11 @@ input#message_title {
   }
 }
 
+table.message_table {
+  border: 3px solid #BDDEFF;
+  td{
+    background-color: white;
+    border: 3px solid #BDDEFF;
+    padding:10px;
+  }
+}

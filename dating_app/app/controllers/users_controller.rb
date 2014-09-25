@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   impressionist actions: [:show], unique:[:session_hash]
+  helper :headshot
 
   # GET /users
   # GET /users.json
