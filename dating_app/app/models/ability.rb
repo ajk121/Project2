@@ -10,7 +10,6 @@ class Ability
       can :create, Message
       can :reply, Message do |message|
         message.receiver_id == user.id && message.sender_id != user.id
-
       end
       can :read, Message do |message|
         [message.receiver_id, message.sender_id].include? user.id
@@ -18,14 +17,13 @@ class Ability
       can [:destroy], Message, receiver_id: user.id
       can :read, View
       can :read, :home
-
     elsif user.role == 'basic'
       can :read, View
       can :create, User
       can [:read, :update], User, id: user.id
       can :read, :home
     elsif user.role == 'incomplete'
-      can :update, User
+      can :update, User, id: user.id
       can :read, :home
     else
       can :create, User
