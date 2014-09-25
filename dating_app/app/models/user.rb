@@ -27,10 +27,6 @@ class User < ActiveRecord::Base
   before_create :set_initial_role
   after_update :set_role
 
-  # def set_status
-  #   self.status = 'active'
-  # end
-
   def self.from_omniauth(auth)
     if user = User.find_by_email(auth.info.email)
       user.provider = auth.provider
@@ -51,8 +47,12 @@ class User < ActiveRecord::Base
     self.role ||= "incomplete"
   end
 
-  def set_role
-    self.role = "basic"
-  end
+  # def set_role
+  #   self.role = "basic"
+  # end
+
+  # def set_status
+  #   self.status = 'active'
+  # end
 
 end
