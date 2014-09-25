@@ -11,10 +11,8 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
+
 ActiveRecord::Schema.define(:version => 20140923124515) do
-=======
-ActiveRecord::Schema.define(:version => 20140925130009) do
 
   create_table "authentication_providers", :force => true do |t|
     t.string   "name"
@@ -35,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20140925130009) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
->>>>>>> 3f0f9b1636ca973a5066d8266b3fd31c3e906c31
 
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
@@ -111,12 +108,9 @@ ActiveRecord::Schema.define(:version => 20140925130009) do
     t.string   "status"
     t.integer  "stackoverflow_score"
     t.string   "github_id"
-<<<<<<< HEAD
-    t.boolean  "front_backend"
-=======
     t.string   "front_backend"
     t.string   "smoker"
->>>>>>> 3f0f9b1636ca973a5066d8266b3fd31c3e906c31
+
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
