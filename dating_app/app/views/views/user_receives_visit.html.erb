@@ -1,4 +1,7 @@
 <h1>Visits To My Profile </h1>
-
+<%if @user.views_as_viewed.count == 0 %>
+<h3> You haven't received any visit in the past 3 days </h3>
+<%else%>
 <%= render @users %>
 <%= paginate @users %>
+<%end%>

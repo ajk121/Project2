@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   protected
   def after_sign_in_path_for(resource)
     if resource.sign_in_count == 1
-      new_user_path
+      edit_user_path(resource)
     else
       users_path
     end
