@@ -3,12 +3,15 @@ DatingApp::Application.routes.draw do
  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   root to: 'home#index'
-  resources :messages
 
   resources :messages do
     get '/reply', to: 'messages#reply', as: :reply_message
-
   end
+
+  delete '/messages/:id', to: 'messages#destroy', as: :delete_message
+  ; 
+
+
 
   resources :users
   resources :views

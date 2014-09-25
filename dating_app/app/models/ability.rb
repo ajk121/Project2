@@ -11,8 +11,9 @@ class Ability
      can :create, Message
      can :reply, Message do |message|
       message.receiver_id == user.id && message.sender_id != user.id
+    
     end
-     can :read, Message do |message|
+    can :read, Message do |message|
       [message.receiver_id, message.sender_id].include? user.id
     end
     can [:destroy], Message, receiver_id: user.id
