@@ -11,8 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20140925130009) do
 
+=======
+
+ActiveRecord::Schema.define(:version => 20140923124515) do
+
+  create_table "authentication_providers", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "authentication_providers", ["name"], :name => "index_name_on_authentication_providers"
+
+  create_table "headshot_photos", :force => true do |t|
+    t.string   "description"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.integer  "capturable_id"
+    t.string   "capturable_type"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+>>>>>>> de5099887527bb2496f9d784a9baad92e39f0760
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
     t.integer  "impressionable_id"
@@ -88,6 +114,10 @@ ActiveRecord::Schema.define(:version => 20140925130009) do
     t.string   "github_id"
     t.string   "front_backend"
     t.string   "smoker"
+<<<<<<< HEAD
+=======
+
+>>>>>>> de5099887527bb2496f9d784a9baad92e39f0760
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
