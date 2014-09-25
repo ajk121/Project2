@@ -1,0 +1,5 @@
+<div class="search_image" id ='user_<%= view.id%>' data-user-id="<%=view.id%>">
+  <%= link_to image_tag(view.image), user_path(view) %>
+  <div id="image_name_<%=view.id%>" class="hidden"><%= view.name %>
+  </div>
+</div>

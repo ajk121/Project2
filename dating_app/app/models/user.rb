@@ -23,9 +23,30 @@ class User < ActiveRecord::Base
   has_many :messages_as_receiver, class_name:'Message', foreign_key: :receiver_id,dependent: :destroy
 
   has_many :roles
+
+  validates :name, presence: true, on: :update, length: { minimum: 2 }
+  validates :about_me, presence: true, on: :update, length: { minimum: 12 }
+  validates :age, presence: true, on: :update, numericality: { only_integer: true }
+  validates :gender, presence: true, on: :update
+  validates :sex_preference, presence: true, on: :update
+  validates :city, presence: true, on: :update
+  validates :height, presence: true, on: :update, numericality: true
+  validates :smoker, presence: true, on: :update
+  validates :favourite_language, presence: true, on: :update
+  validates :front_backend, presence: true, on: :update
+  validates :stackoverflow_score, presence: true, on: :update
+
+
+  # before_create :set_role, :set_status
+
   
   before_create :set_initial_role
   # after_update :set_role
+
+
+  def self.get_all_user_except(user_id)
+    where("users.id != ?", user_id)
+  end 
 
   def self.from_omniauth(auth)
     if user = User.find_by_email(auth.info.email)
@@ -55,10 +76,4 @@ class User < ActiveRecord::Base
   # def set_status
   #   self.status = 'active'
   # end
-
-
-  def get_all_user_except_current_user(user_id)
-    User.find(:all, :conditions => ["id != ?", user_id])
-  end 
-
 end
