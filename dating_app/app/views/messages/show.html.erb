@@ -19,9 +19,11 @@
 <div class='message_field'>
   <%= @message.receiver.name %>
 </div>
+<br>
 
-
-
+<div class="message_show_button">
 <%= link_to 'Back to my messages', messages_path %>
-
+</div>
+<div class="message_show_button">
 <%= link_to 'Reply', message_reply_message_path(@message) %>
+</div>
