@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
 
-
   is_impressionable :counter_cache => true
   
   # Include default devise modules. Others available are:

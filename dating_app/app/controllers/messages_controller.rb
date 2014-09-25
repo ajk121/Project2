@@ -1,13 +1,11 @@
 class MessagesController < ApplicationController
   load_and_authorize_resource
 
-
   # GET /messages
   # GET /messages.json
   def index
-    @user = current_user
-    messages = (@user.messages_as_receiver + @user.messages_as_sender)
-    @views = @user.views_as_viewed + @user.views_as_viewer
+    messages = (current_user.messages_as_receiver + current_user.messages_as_sender)
+    @views = current_user.views_as_viewed + current_user.views_as_viewer
     @messages = Kaminari.paginate_array(messages).page(params[:page])
     @message = Message.new
     
@@ -15,6 +13,24 @@ class MessagesController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @messages }
     end
+  end
+
+  # GET /messages/inbox
+  def inbox
+    @views = current_user.views_as_viewed + current_user.views_as_viewer
+    @messages = Kaminari.paginate_array(current_user.messages_as_receiver).page(params[:page])
+    @message = Message.new
+
+    render :index
+  end
+
+  # GET /messages/sent
+  def sent
+    @views = current_user.views_as_viewed + current_user.views_as_viewer
+    @messages = Kaminari.paginate_array(current_user.messages_as_sender).page(params[:page])
+    @message = Message.new
+    
+    render :index
   end
 
   # GET /messages/1/reply
