@@ -1,9 +1,6 @@
 class User < ActiveRecord::Base
 
   is_impressionable :counter_cache => true
-  
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
 
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
@@ -54,7 +51,6 @@ class User < ActiveRecord::Base
       end
     end
   end
-
 
   private
   def set_initial_role
