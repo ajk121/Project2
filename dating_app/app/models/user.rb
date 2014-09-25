@@ -9,12 +9,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :image
-
   mount_uploader :image, UserImageUploader
 
-  attr_accessible :about_me, :age, :city, :eyes_color, :favourite_language, :gender, :hair_color, :height, :name, :sex_preference, :smoker, :image, :username, :impressions_count, :status,:meet_ups,:front_backend, :stackoverflow_score, :github_id
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :image, :role, :about_me, :age, :city, :eyes_color, :favourite_language, :gender, :hair_color, :height, :name, :sex_preference, :smoker, :image, :username, :impressions_count, :status,:meet_ups,:front_backend, :stackoverflow_score, :github_id
 
   has_many :views_as_viewer, class_name:'View', foreign_key: :viewer_id, dependent: :destroy
   has_many :views_as_viewed, class_name:'View', foreign_key: :viewed_id, dependent: :destroy
@@ -38,17 +35,10 @@ class User < ActiveRecord::Base
   validates :front_backend, inclusion: ["Back-End", "Front-End"], on: :update
   validates :stackoverflow_score, presence: true, on: :update
 
-
-  # before_create :set_role, :set_status
-
-  
   before_create :set_initial_role
-  # after_update :set_role
-
 
   def self.get_all_user_except(user_id)
     where("users.id != ?", user_id) 
-    # && when user
   end 
 
   def self.from_omniauth(auth)
@@ -72,11 +62,4 @@ class User < ActiveRecord::Base
     self.role ||= "incomplete"
   end
 
-  # def set_role
-  #   self.role = "basic"
-  # end
-
-  # def set_status
-  #   self.status = 'active'
-  # end
 end

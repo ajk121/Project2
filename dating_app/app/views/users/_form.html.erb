@@ -28,6 +28,11 @@
 <div class ='edit_list'>
   <ul>
     <li><%= f.file_field :user_image %></li>
+        <li><div class ='selector'>
+          <select name="user[role]">
+      <option value="Basic">Basic Account</option>
+      <option value="Premium">Premium Account</option>
+    </div></select>
     <li><%= f.number_field :age, placeholder: 'Age' %></li>
         <li><div class ='selector'>
           <select name="user[gender]">
