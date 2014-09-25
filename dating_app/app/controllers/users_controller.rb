@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  load_and_authorize_resource
+  # load_and_authorize_resource
   impressionist actions: [:show], unique:[:session_hash]
   helper :headshot
 

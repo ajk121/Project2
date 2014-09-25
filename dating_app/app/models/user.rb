@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   validates :smoker, inclusion: ["Smoker", "Non Smoker"], on: :update
   validates :favourite_language, presence: true, on: :update
   validates :front_backend, inclusion: ["Back-End", "Front-End"], on: :update
-  validates :stackoverflow_score, presence: true, on: :update
+  validates :stackoverflow_score, presence: true, on: :update, :numericality => { :greater_than_or_equal_to => 0 }
 
   before_create :set_initial_role
 
