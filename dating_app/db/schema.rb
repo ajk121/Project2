@@ -11,10 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20140925130009) do
-
-=======
 
 ActiveRecord::Schema.define(:version => 20140923124515) do
 
@@ -38,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20140923124515) do
     t.datetime "updated_at",         :null => false
   end
 
->>>>>>> de5099887527bb2496f9d784a9baad92e39f0760
+
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
     t.integer  "impressionable_id"
@@ -114,10 +110,7 @@ ActiveRecord::Schema.define(:version => 20140923124515) do
     t.string   "github_id"
     t.string   "front_backend"
     t.string   "smoker"
-<<<<<<< HEAD
-=======
 
->>>>>>> de5099887527bb2496f9d784a9baad92e39f0760
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
