@@ -29,16 +29,19 @@
   <ul>
     <li><%= f.file_field :user_image %></li>
     <li><%= f.number_field :age, placeholder: 'Age' %></li>
-    <li><%= f.text_field :gender,
-     placeholder: 'Gender' %></li>
+        <li><div class ='selector'>
+          <select name="user[gender]">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </div></select>
     <li><%= f.text_field :city, placeholder: 'City' %></li>
     <li><%= f.text_field :email, placeholder: 'Email' %></li>
     <li><%= f.text_field :sex_preference, placeholder: 'Interested In' %></li>
     <li><%= f.text_field :height, placeholder: 'Height' %></li>
     <li><div class ='selector'>
 <select name="user[smoker]">
-  <option value="true">Smoker</option>
-  <option value="false">Non Smoker</option>
+  <option value="Smoker">Smoker</option>
+  <option value="Non Smoker">Non Smoker</option>
 </select>
 </div>
 </li>
@@ -48,8 +51,8 @@
     <li><%= f.text_field :meet_ups, placeholder: 'Meetups' %></li>
     <div class ='selector'>
     <li><select name="user[front_backend]">
-  <option value="true">Front-End</option>
-  <option value="false">Back-End</option>
+  <option value="Front-End">I'm more of a Front-End person</option>
+  <option value="Back-End">I'm more of a Back-End person</option>
 </select>
 </div></li>
   </ul>

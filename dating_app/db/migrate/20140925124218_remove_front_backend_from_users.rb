@@ -4,6 +4,6 @@ class RemoveFrontBackendFromUsers < ActiveRecord::Migration
   end
 
   def down
-    add_column :users, :front_backend, :string
+    add_column :users, :front_backend, :boolean
   end
 end
