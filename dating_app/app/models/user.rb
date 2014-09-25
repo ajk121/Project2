@@ -24,15 +24,15 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true, on: :update, length: { minimum: 2 }
   validates :about_me, presence: true, on: :update, length: { minimum: 12 }
-  validates :age, presence: true, on: :update, numericality: { only_integer: true }
+  validates :age, presence: true, on: :update, numericality: { only_integer: true }, inclusion: {in: 18..100}
   validates :gender, inclusion: ["Male", "Female"], on: :update
   validates :sex_preference, presence: true, on: :update
   validates :city, presence: true, on: :update
-  validates :height, presence: true, on: :update, numericality: true
+  validates :height, presence: true, on: :update, numericality: true, inclusion: {in: 0..300}
   validates :smoker, inclusion: ["Smoker", "Non Smoker"], on: :update
   validates :favourite_language, presence: true, on: :update
   validates :front_backend, inclusion: ["Back-End", "Front-End"], on: :update
-  validates :stackoverflow_score, presence: true, on: :update
+  validates :stackoverflow_score, presence: true, on: :update, :numericality => { :greater_than_or_equal_to => 0 }
 
   before_create :set_initial_role
 
