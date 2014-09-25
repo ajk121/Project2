@@ -10,19 +10,19 @@ $(document).ready(function(){
   //   $("#image_name_"+userid).slideUp();
   // });
 
-// $('.message_table').on('click', 'a', function(e){
-//   e.preventDefault();
-//   href = $(this).attr('href');
-//   toggleMessage(href);
-// });
+$('.message_table').on('click', 'a', function(e){
+  e.preventDefault();
+  href = $(this).attr('href');
+  toggleMessage(href);
+});
 
-// function toggleMessage(href) {
-//   $('#message_form').fadeIn(500);
-//   $('#new_message').addClass('hidden');
-//   $('#close_message').removeClass('hidden');
-//   formAction = $('form#new_message').attr('action');
-//   $('form#new_message').attr('action', href);
-// }
+function toggleMessage(href) {
+  $('#message_form').fadeIn(500);
+  $('#message_new').addClass('hidden');
+  $('#close_message').removeClass('hidden');
+  formAction = $('form#_message_new').attr('action');
+  $('form#message_new').attr('action', href);
+}
 
 $( '.dropdown' ).hover(
   function(){

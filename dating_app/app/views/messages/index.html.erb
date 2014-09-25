@@ -2,23 +2,28 @@
 
 <table class='message_table'>
   <tr>
-    <th>Status</th>
-    <th>From</th>
-    <th>To</th>
-    <th>Title</th>
+
+    <td>Status</td>
+    <td colspan ="2">From</td>
+    <td colspan ="2">To</td>
+    <td>Title</td>
   </tr>
 
   <% @messages.each do |message| %>
   <tr>
+    
+    <%if message.status=='unread'%>
     <td><%= message.status %></td>
+    <td><%= message.sender.image%></td>
     <td><%= message.sender.name %></td>
+    <td><%= message.receiver.image%></td>
     <td><%= message.receiver.name %></td>
     <td><%= message.title %></td>
 
     <td><%= link_to 'reply', message_reply_message_path(message) if can? :reply, message %></td> 
 
     <td><%= link_to 'Show', message %></td>
-    <td><%= link_to( 'Delete', delete_message_path(message), method: :delete, data: { confirm: 'Are you sure?' }) if can? :destroy, message %></td>  
+    <td><%= link_to( 'Delete', delete_message_path(message), metdod: :delete, data: { confirm: 'Are you sure?' }) if can? :destroy, message %></td>  
   </tr>
 
   <% end %>
