@@ -27,6 +27,7 @@
 
 <div class ='edit_list'>
   <ul>
+    <li><%= f.file_field :user_image %></li>
     <li><%= f.number_field :age, placeholder: 'Age' %></li>
     <li><%= f.text_field :gender,
      placeholder: 'Gender' %></li>
@@ -36,8 +37,8 @@
     <li><%= f.text_field :height, placeholder: 'Height' %></li>
     <li><div class ='selector'>
 <select name="user[smoker]">
-  <option value="true">Yes</option>
-  <option value="false">No</option>
+  <option value="true">Smoker</option>
+  <option value="false">Non Smoker</option>
 </select>
 </div>
 </li>
