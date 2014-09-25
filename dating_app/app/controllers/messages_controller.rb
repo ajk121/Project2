@@ -21,6 +21,7 @@ class MessagesController < ApplicationController
   def reply
     
     @original = Message.find(params[:message_id])
+    authorize! :reply, @original 
     @message = Message.new
 
     respond_to do |format|
