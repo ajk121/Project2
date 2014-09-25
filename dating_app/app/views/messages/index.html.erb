@@ -2,7 +2,6 @@
 
 <table class='message_table'>
   <tr>
-    
     <td>Status</td>
     <td>Date&Time</td>
     <td colspan ="2">From</td>
@@ -16,20 +15,17 @@
     <td class ='table_date'><strong><%= message.status %></strong></td>
     <%else%>
     <td><%= message.status %></td>
-      <%end%>
+    <%end%>
     <td><%= message.created_at.time.strftime("%b %-d %Y @ %H:%M") %></td>
     <td><%= message.sender.image%></td>
     <td><%= message.sender.name %></td>
     <td><%= message.receiver.image%></td>
     <td><%= message.receiver.name %></td>
     <td><%= message.title %></td>
-
     <td><%= link_to 'reply', message_reply_message_path(message) if can? :reply, message %></td> 
-
     <td><%= link_to 'Show', message %></td>
     <td><%= link_to( 'Delete', delete_message_path(message), metdod: :delete, data: { confirm: 'Are you sure?' }) if can? :destroy, message %></td>  
   </tr>
-
   <% end %>
 </table>
 
@@ -57,7 +53,6 @@
  <div class="message_action">
   <%= f.submit 'Send'%>
 </div>
-
 <% end %>
 </div>
 

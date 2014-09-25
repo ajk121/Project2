@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  is_impressionable :counter_cache => true
+  is_impressionable counter_cache: true
 
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]

@@ -1,48 +1,48 @@
 
 <div id ='search' class='hidden'>
-<%= search_form_for @search do |f| %>
+  <%= search_form_for @search do |f| %>
 
-<div class="field">
-  <%= f.label :age_gteq, "Age" %>
-  <%= f.text_field :age_gteq %>
-  <%= f.label :age_lteq, "between" %>
-  <%= f.text_field :age_lteq %>    
-</div><br>
+  <div class="field">
+    <%= f.label :age_gteq, "Age" %>
+    <%= f.text_field :age_gteq %>
+    <%= f.label :age_lteq, "between" %>
+    <%= f.text_field :age_lteq %>    
+  </div><br>
 
-<div class="field">
-  <%= f.label "City" %>
-  <%= f.select :city_eq, options_for_select(@cities, @search.city_eq), include_blank: true %>
-</div><br>
+  <div class="field">
+    <%= f.label "City" %>
+    <%= f.select :city_eq, options_for_select(@cities, @search.city_eq), include_blank: true %>
+  </div><br>
 
-<div class="field">
-  <%= f.label "Gender" %>
-  <%= f.select :gender_eq, options_for_select(@genders, @search.gender_eq), include_blank: true %>
-</div><br>
+  <div class="field">
+    <%= f.label "Gender" %>
+    <%= f.select :gender_eq, options_for_select(@genders, @search.gender_eq), include_blank: true %>
+  </div><br>
 
-<div class="field">
-  <%= f.label "Smoker" %>
-  <%= f.select :smoker_eq, options_for_select(@smokers, @search.smoker_eq), include_blank: true %>
-</div><br>
+  <div class="field">
+    <%= f.label "Smoker" %>
+    <%= f.select :smoker_eq, options_for_select(@smokers, @search.smoker_eq), include_blank: true %>
+  </div><br>
 
-<div class="field">
-  <%= f.label "Front-end/Back-end" %>
-  <%= f.select :front_backend_eq, options_for_select(@frontback, @search.front_backend_eq), include_blank: true %>
-</div><br>
+  <div class="field">
+    <%= f.label "Front-end/Back-end" %>
+    <%= f.select :front_backend_eq, options_for_select(@frontback, @search.front_backend_eq), include_blank: true %>
+  </div><br>
 
-<div class="field">
-  <%= f.label "Favourite code language" %>
-  <%= f.select :favourite_language_eq, options_for_select(@favourite_languages, @search.favourite_language_eq), include_blank: true %>
-</div><br>
+  <div class="field">
+    <%= f.label "Favourite code language" %>
+    <%= f.select :favourite_language_eq, options_for_select(@favourite_languages, @search.favourite_language_eq), include_blank: true %>
+  </div><br>
 
-<div class="field">
-  <%= f.label :stackoverflow_score_gteq, "Stackoverflow score" %>
-  <%= f.text_field :stackoverflow_score_gteq %>
-  <%= f.label :stackoverflow_score_lteq, "between" %>
-  <%= f.text_field :stackoverflow_score_lteq %>    
-</div><br>
+  <div class="field">
+    <%= f.label :stackoverflow_score_gteq, "Stackoverflow score" %>
+    <%= f.text_field :stackoverflow_score_gteq %>
+    <%= f.label :stackoverflow_score_lteq, "between" %>
+    <%= f.text_field :stackoverflow_score_lteq %>    
+  </div><br>
 
- <%= f.submit %>
-<% end %>
+  <%= f.submit %>
+  <% end %>
 </div>
 
 <div id ='open_search_button'><button>Open Search</button></div>

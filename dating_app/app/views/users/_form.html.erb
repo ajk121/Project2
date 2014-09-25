@@ -1,7 +1,6 @@
 <%= form_for(@user) do |f| %>
 <% if @user.errors.any? %>
 <div id="error_explanation">
-  <!-- <h2><%#= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2> -->
 
   <ul style="list-style: none;">
     <% @user.errors.full_messages.each do |msg| %>
@@ -16,8 +15,9 @@
     <%= image_tag @user.image.url %>
     <%unless @user.role=""%>
     <h3><%= @user.role%> USER</h3>
-  <%end%>
+    <%end%>
   </div>
+
   <div class='edit_right_menu'>
     <h2><%= f.text_field :name, placeholder: "Name*"%></h2>
     <div><%= f.text_area :about_me, placeholder: 'About Me*' %>
@@ -28,41 +28,42 @@
 <div class ='edit_list'>
   <ul>
     <li><%= f.file_field :image %></li>
-        <li><div class ='selector'>
-          <select name="user[role]">
-      <option value="Basic">Basic Account</option>
-      <option value="Premium">Premium Account</option>
-    </div></select>
-    <li><%= f.number_field :age, placeholder: 'Age*' %></li>
-        <li><div class ='selector'>
-          <select name="user[gender]">
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-    </div></select></li>
-    <li><%= f.text_field :city, placeholder: 'City*' %></li>
-    <li><%= f.text_field :email, placeholder: 'Email*' %></li>
-    <li><%= f.text_field :sex_preference, placeholder: 'Interested In*' %></li>
-    <li><%= f.text_field :height, placeholder: 'Height in CM*' %></li>
     <li><div class ='selector'>
-<select name="user[smoker]">
-  <option value="Smoker">Smoker</option>
-  <option value="Non Smoker">Non Smoker</option>
-</select>
-</div>
-</li>
-    <li><%= f.text_field :github_id, placeholder: 'GitHub Id' %></li>
-    <li><%= f.text_field :favourite_language, placeholder: 'Favourite Code Language*' %></li>
-    <li><%= f.text_field :stackoverflow_score, placeholder: 'Stackoverflow Score*' %></li>
-    <li><%= f.text_field :meet_ups, placeholder: 'Meetups' %></li>
-    <div class ='selector'>
-    <li><select name="user[front_backend]">
-  <option value="Front-End">I'm more of a Front-End person</option>
-  <option value="Back-End">I'm more of a Back-End person</option>
-</select>
-</div></li>
-  </ul>
-</div>
-<div class='update_user_button'>
-<%= f.submit %>
+      <select name="user[role]">
+        <option value="Basic">Basic Account</option>
+        <option value="Premium">Premium Account</option>
+      </div></select>
+      <li><%= f.number_field :age, placeholder: 'Age*' %></li>
+      <li><div class ='selector'>
+        <select name="user[gender]">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </div></select></li>
+        <li><%= f.text_field :city, placeholder: 'City*' %></li>
+        <li><%= f.text_field :email, placeholder: 'Email*' %></li>
+        <li><%= f.text_field :sex_preference, placeholder: 'Interested In*' %></li>
+        <li><%= f.text_field :height, placeholder: 'Height in CM*' %></li>
+        <li><div class ='selector'>
+          <select name="user[smoker]">
+            <option value="Smoker">Smoker</option>
+            <option value="Non Smoker">Non Smoker</option>
+          </select>
+        </div>
+      </li>
+      <li><%= f.text_field :github_id, placeholder: 'GitHub Id' %></li>
+      <li><%= f.text_field :favourite_language, placeholder: 'Favourite Code Language*' %></li>
+      <li><%= f.text_field :stackoverflow_score, placeholder: 'Stackoverflow Score*' %></li>
+      <li><%= f.text_field :meet_ups, placeholder: 'Meetups' %></li>
+      <div class ='selector'>
+        <li><select name="user[front_backend]">
+          <option value="Front-End">I'm more of a Front-End person</option>
+          <option value="Back-End">I'm more of a Back-End person</option>
+        </select>
+      </div></li>
+    </ul>
+  </div>
+  <div class='update_user_button'>
+    <%= f.submit %>
+  </div>
 </div>
 <% end %>
