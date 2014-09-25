@@ -24,12 +24,8 @@ class User < ActiveRecord::Base
 
   has_many :roles
   
-  # before_create :set_role, :set_status
-
-
-  # def set_role
-  #   self.role = 'basic'
-  # end
+  before_create :set_initial_role
+  after_update :set_role
 
   # def set_status
   #   self.status = 'active'
@@ -48,6 +44,15 @@ class User < ActiveRecord::Base
         user.password = Devise.friendly_token[0,20]
       end
     end
+  end
+
+  private
+  def set_initial_role
+    self.role ||= "incomplete"
+  end
+
+  def set_role
+    self.role = "basic"
   end
 
 end

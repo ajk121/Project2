@@ -1,6 +1,5 @@
 <h1>My Messages</h1>
 
-<div class="message_table">
 <table class='message_table'>
   <tr>
     <th>Status</th>
@@ -9,19 +8,19 @@
     <th>Title</th>
   </tr>
 
-  
 <% @messages.each do |message| %>
   <tr>
     <td><%= message.status %></td>
     <td><%= message.sender.name %></td>
     <td><%= message.receiver.name %></td>
     <td><%= message.title %></td>
-    <td><%= link_to 'reply', message_reply_message_path(message) %></td>
+    <td><%= link_to 'Reply', message_reply_message_path(message) %></td>
     <td><%= link_to 'Show', message %></td>
     <td><%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
+
 
 <div id='new_message'><button>New Message</button></div>
 <div id='close_message' class='hidden'><button>Close Message</button></div>

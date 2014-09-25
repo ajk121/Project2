@@ -22,6 +22,6 @@ class RolesController < ApplicationController
       @user.role = 'basic'
       redirect_to @user, notice: 'You have successfully downgraded your account to basic. You will not be able to read, send or receive messages anymore'
     end
-end
+  end
 
 end

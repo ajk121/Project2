@@ -5,15 +5,7 @@
     <div class='profile_image'>  
       <%= image_tag @user.image.url %>
     </div>
-    <%= headshot_default_config(Rails.application.config.session_options[:key], headshot_capture_path) %>
-
-    <%= headshot_camera %>
-
-    <br/><br/>
-
-    <%= headshot_snap_button('Shoot') %>
-    <div class='profile_right_menu'>
-
+    
       <div class='profile_name'><h1><%= @user.name %></h1></div>
       <div class= 'new_message_button_profile'><%= link_to 'SEND MESSAGE', new_message_path %></div>
       <div class='profile_role'><h3><%= @user.role%> USER</h3></div>

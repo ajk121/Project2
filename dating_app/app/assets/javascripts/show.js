@@ -10,6 +10,20 @@ $(document).ready(function(){
   //   $("#image_name_"+userid).slideUp();
   // });
 
+// $('.message_table').on('click', 'a', function(e){
+//   e.preventDefault();
+//   href = $(this).attr('href');
+//   toggleMessage(href);
+// });
+
+// function toggleMessage(href) {
+//   $('#message_form').fadeIn(500);
+//   $('#new_message').addClass('hidden');
+//   $('#close_message').removeClass('hidden');
+//   formAction = $('form#new_message').attr('action');
+//   $('form#new_message').attr('action', href);
+// }
+
 $( '.dropdown' ).hover(
   function(){
     $(this).children('.sub-menu').slideDown(300);
