@@ -482,7 +482,8 @@ textarea#message_content {
   background-color: white;
   border: 3px solid #BDDEFF;
   border-radius:10px;
-  height: 200px
+  height: 200px;
+  width: 300px
 }
 
 select#message_receiver_id {
@@ -512,7 +513,8 @@ select#message_receiver_id {
 }
 
 input#message_title {
-  width:292px
+  width:300px;
+  margin-top :10px
 }
 
 .original_content {
