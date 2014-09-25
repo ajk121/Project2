@@ -42,7 +42,8 @@
        <%= @original.sender.name %> 
        <%= f.hidden_field :receiver_id, :value => @original.sender_id %>
      <% else %>
-       <%= f.collection_select :receiver_id, User.order(:name),:id,:name %> 
+       <%= f.collection_select :receiver_id, User.find(current_user.id).viewed_users.uniq,:id,:name %> 
+
     <%end%> 
     </div>
     <div class="message_action">
