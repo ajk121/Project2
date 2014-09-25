@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(:version => 20140923124515) do
     t.string   "github_id"
     t.string   "front_backend"
     t.string   "smoker"
+
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
