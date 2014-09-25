@@ -48,7 +48,7 @@ $('#close_search_button').on('click', function(e){
 });
 
 
-$('#new_message').on('click', function(e){
+$('#message_new').on('click', function(e){
   e.preventDefault;
   console.log('#new_message');
   $('#message_form').fadeIn(500);
