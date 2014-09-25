@@ -8,7 +8,7 @@
     <th>Title</th>
   </tr>
 
-<% @messages.each do |message| %>
+  <% @messages.each do |message| %>
   <tr>
     <td><%= message.status %></td>
     <td><%= message.sender.name %></td>
@@ -21,37 +21,37 @@
     <td><%= link_to( 'Delete', delete_message_path(message), method: :delete, data: { confirm: 'Are you sure?' }) if can? :destroy, message %></td>  
   </tr>
 
-<% end %>
+  <% end %>
 </table>
 
-<div id='new_message'><button>New Message</button></div>
+<div id='message_new'><button>New Message</button></div>
 <div id='close_message' class='hidden'><button>Close Message</button></div>
 <div id='message_form' class='hidden' >
   <%= form_for(@message) do |f| %>
 
-    <div class="field">
-      <%= f.text_field :title, placeholder: "Title" %>
-    </div><br>
-    <div class="field">
-      <%= f.text_area :content, placeholder: "Content" %>
-    </div>
+  <div class="field">
+    <%= f.text_field :title, placeholder: "Title" %>
+  </div><br>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Content" %>
+  </div>
 
-    <div class="message_receiver">
-     <% if @original %>
-       <%= f.label 'To:' %> 
-       <%= @original.sender.name %> 
-       <%= f.hidden_field :receiver_id, :value => @original.sender_id %>
-     <% else %>
-       <%= f.collection_select :receiver_id, User.find(current_user.id).viewed_users.uniq,:id,:name %> 
+  <div class="message_receiver">
+   <% if @original %>
+   <%= f.label 'To:' %> 
+   <%= @original.sender.name %> 
+   <%= f.hidden_field :receiver_id, :value => @original.sender_id %>
+   <% else %>
+   <%= f.collection_select :receiver_id, User.find(current_user.id).viewed_users.uniq,:id,:name %> 
 
-    <%end%> 
-    </div>
-    <div class="message_action">
-      <%= f.submit 'Send'%>
-    </div>
-  <% end %>
+   <%end%> 
+ </div>
+ <div class="message_action">
+  <%= f.submit 'Send'%>
+</div>
+<% end %>
 </div>
 
 
-  <%= paginate @messages %>
+<%= paginate @messages %>
 
