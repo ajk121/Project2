@@ -44,7 +44,8 @@ div#main {
 }
 
 .login_message{
-  margin-left: 700px
+  margin-left: 500px;
+  color:white
 }
 
 /*
@@ -52,6 +53,7 @@ div#main {
 Nav
 ========================================
 */
+
 .top-nav {
   background-color:#0099CC;
   padding:10px 0;
@@ -59,13 +61,14 @@ Nav
   border-bottom: 3px solid black;
   position: fixed;
 }
+
 .top-nav ul {
   list-style-type:none;
   margin:0;
-}
-.top-nav ul li {
-  display:inline-block;
-  position:relative;
+  li {
+    display:inline-block;
+    position:relative;
+  }
 }
 
 .top-nav li ul {    
@@ -76,17 +79,17 @@ Nav
   width:200px;
   border-radius:10px
 }
+
 .top-nav li li {
   position:relative;
   margin:0;
   display:block;
-}
-.top-nav li li ul {
-  position:absolute;
-  top:0;
-  left:200px;
-  margin:0;
-
+  ul {
+    position:absolute;
+    top:0;
+    left:200px;
+    margin:0;
+  }
 }
 
 .top-nav a {
@@ -96,7 +99,6 @@ Nav
   color:#fff;
   text-decoration:none;
   display:inline;
-
 }
 
 .top-nav a:hover,
@@ -114,7 +116,6 @@ Nav
 .top-nav li li:last-child a {
   border-bottom:none;
 }
-
 
 .top-nav li.dropdown > a {
   background-repeat:no-repeat;
@@ -134,6 +135,7 @@ ul.sub-menu {
 Footer
 ========================================
 */
+
 footer {
   min-width: 1000px;
   border-top: 3px solid black ;
@@ -141,33 +143,30 @@ footer {
   position: fixed;
   bottom: 0;
   background: #0099CC;
-}
-
-footer li {
-  display:inline;
-  padding :25px;
-  a{
-    text-decoration: none
+  li {
+    display:inline;
+    padding :25px;
+    a{
+      text-decoration: none;
+      color:white
+    }
   }
 }
-
 
 img {
   width: 250px;
   height: 250px;
-  border: 1px solid #6B1229;
   margin:10px;
   border-radius: 5px;
   background-color: white;
   border: 3px solid #BDDEFF;
-
 }
 
-.search_image{
+.search_image {
   display:inline-block;
 }
 
-#image_name div{
+#image_name div { 
   font-size: 30px;
 }
 
@@ -213,13 +212,13 @@ Profile Page
   text-transform:uppercase;
   padding-top: 1px;
   margin-right:32px;
-  h1{
+  h1 {
     margin-top:6px;
     padding-bottom: 5px;
     margin-bottom: 5px;
-
   }
 }
+
 .profile_top_wrapper {
   clear:both;
   height:280px;
@@ -253,6 +252,7 @@ Profile Page
     padding-left: 5px;
   }
 }
+
 .profile_table td:nth-child(1){
   padding-top: 5px;
   padding-left: 5px;
@@ -324,7 +324,6 @@ textarea#user_about_me {
 .edit_right_menu {
   padding-top:15px
 }
-
 
 .edit_right_menu  h2 input {
   border:3px solid #BDDEFF; 
@@ -427,7 +426,6 @@ Search Page
   margin-left:274px
 }
 
-
 #q_city_eq, #q_gender_eq, #q_smoker_eq, #q_front_backend_eq, #q_favourite_language_eq{
   width:100px;
   display:inline;
@@ -454,7 +452,6 @@ Search Page
   margin-left:128px;
 }
 
-
 .pagination {
   color: black;
 }
@@ -472,6 +469,7 @@ Search Page
   height: 35px;
   border-radius: 5px
 }
+
 
 /*
 ========================================
@@ -536,9 +534,9 @@ table.message_table {
     background-color: white;
     border: 3px solid #BDDEFF;
     padding:10px;
-  a{
-    text-decoration: none
-  }
+    a{
+      text-decoration: none
+    }
   }
 }
 
@@ -556,7 +554,6 @@ table.message_table {
   border-radius: 5px
 }
 
-
 .message_field {
   background-color: white;
   border: 3px solid #BDDEFF;
@@ -573,8 +570,8 @@ table.message_table {
   display: inline;
   width: 50px;
   a{
-  text-decoration: none;
-  padding:20px;
-  padding-top:10px
+    text-decoration: none;
+    padding:20px;
+    padding-top:10px
   }
 }
