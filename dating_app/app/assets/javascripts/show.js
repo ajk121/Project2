@@ -26,6 +26,7 @@ function toggleMessage(href) {
 
 $( '.dropdown' ).hover(
   function(){
+    console.log('hover');
     $(this).children('.sub-menu').slideDown(300);
   },
   function(){

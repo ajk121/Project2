@@ -8,7 +8,7 @@ class Ability
     elsif user.role == 'premium'
       can [:read, :update], User, id: user.id
       can :create, Message
-      can :reply, Message do |message|
+      can [:reply, :inbox, :sent], Message do |message|
         message.receiver_id == user.id && message.sender_id != user.id
       end
       can :read, Message do |message|
