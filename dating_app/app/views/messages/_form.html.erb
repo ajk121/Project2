@@ -30,7 +30,7 @@
    <% else %>
 
      <%= f.label :To %><br><br>
-     <%= f.collection_select :receiver_id, User.get_all_user_except(current_user.id),:id,:name %> 
+     <%= f.collection_select :receiver_id, User.find(current_user.id).viewed_users.uniq,:id,:name %> 
   <%end%> 
 
 

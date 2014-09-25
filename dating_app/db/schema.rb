@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20140923124515) do
     t.datetime "updated_at",         :null => false
   end
 
+
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
     t.integer  "impressionable_id"
@@ -85,7 +86,6 @@ ActiveRecord::Schema.define(:version => 20140923124515) do
     t.string   "hair_color"
     t.string   "eyes_color"
     t.float    "height"
-    t.boolean  "smoker"
     t.string   "favourite_language"
     t.string   "about_me"
     t.datetime "created_at",                             :null => false
