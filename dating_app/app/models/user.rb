@@ -39,14 +39,14 @@ class User < ActiveRecord::Base
 
   # before_create :set_role, :set_status
 
+  
+  before_create :set_initial_role
+  after_update :set_role
 
-  # def set_role
-  #   self.role = 'basic'
-  # end
 
-  # def set_status
-  #   self.status = 'active'
-  # end
+  def self.get_all_user_except(user_id)
+    where("users.id != ?", user_id)
+  end 
 
   def self.from_omniauth(auth)
     if user = User.find_by_email(auth.info.email)
@@ -63,4 +63,17 @@ class User < ActiveRecord::Base
     end
   end
 
+
+  private
+  def set_initial_role
+    self.role ||= "incomplete"
+  end
+
+  # def set_role
+  #   self.role = "basic"
+  # end
+
+  # def set_status
+  #   self.status = 'active'
+  # end
 end

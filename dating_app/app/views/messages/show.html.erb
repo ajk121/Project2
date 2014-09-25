@@ -2,7 +2,7 @@
 
 <div class='messages'>
 <p>
-  <b>Title:</b>
+  <b>Subject:</b>
   <%= @message.title %>
 </p>
 
@@ -13,15 +13,16 @@
 
 <p>
   <b>Sender:</b>
-  <%= @message.sender_id %>
+  <%= @message.sender.name %>
 </p>
 
 <p>
   <b>Receiver:</b>
-  <%= @message.receiver_id %>
+  <%= @message.receiver.name %>
 </p>
 </div>
 
 
 
 <%= link_to 'Back to my messages', messages_path %>
+<%#= link_to 'Reply to this message', message_reply_message_path(@message) %>

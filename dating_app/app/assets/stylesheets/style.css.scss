@@ -4,25 +4,29 @@ Main Page
 ========================================
 */
 
+
+
+
 html{
   box-sizing:border-box;
   height:100%;
-  font-family:'Raleway';
+  font-family:"Raleway";
 }
 
 body {
   height:100%;
   width:100%;
-  background-image: url('');
-  background-color:grey;
+  background-color:#CFCFCF;
   background-size: cover;
   width:100%;
+  background-image: url('http://healthnutsmedia.com/wp-content/uploads/2013/08/Engage-background-white-HNM-blue-gradient-blue-gears.png');
 }
 
 .logo {
   width:50px;
   height: 50px;
-  border-color: #0099CC
+  border-color: #0099CC;
+  background-color:#0099CC
 }
 
 .title {
@@ -32,13 +36,13 @@ body {
 
 div#wrapper {
   min-width: 1000px;
-  margin: 0 auto;
   position:relative;
+  margin: 0 auto
 }
 
 div#main {
   width: 960px;
-  margin: 0 auto;
+  margin-left: 250px;
   padding: 100px 0;
 }
 
@@ -145,6 +149,9 @@ footer {
 footer li {
   display:inline;
   padding :25px;
+  a{
+    text-decoration: none
+  }
 }
 
 
@@ -153,7 +160,9 @@ img {
   height: 250px;
   border: 1px solid #6B1229;
   margin:10px;
-  border-radius: 5px
+  border-radius: 5px;
+  background-color: white;
+  border: 3px solid #BDDEFF;
 
 }
 
@@ -166,12 +175,12 @@ img {
 }
 
 .hidden {
-  display:none
+  display:none;
 }
 
 
 .inbox, th, td, tr {
-   border: 1px solid black;
+ border: 1px solid white;
 }
 
 .inbox, table {
@@ -188,24 +197,32 @@ Profile Page
   display:block;
   border: 3px solid white;
   border-radius:5px;
-  width:662px;
+  width:665px;
   margin-left:10px;
-  background-color: #BDDEFF
-
+  background-color: #BDDEFF;
 }
 
 .profile_image {
-  float:left
+  float:left;
 }
 
 .profile_role {
-  text-align:right;
-  margin-right:32px
+  margin-right:32px;
+  text-transform:uppercase;
+  display:inline-block;
+  padding-left: 50px
 }
 
 .profile_name {
+  text-transform:uppercase;
   padding-top: 1px;
-  margin-right:32px
+  margin-right:32px;
+  h1{
+    margin-top:6px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+
+  }
 }
 .profile_top_wrapper {
   clear:both;
@@ -225,13 +242,13 @@ Profile Page
 
 .profile_button_messages {
   padding: 10px;
-  border-radius: 5px
+  border-radius: 5px;
 }
 
 .about_me {
-  border: 3px solid white;
+  border: 3px solid #BDDEFF;
   border-radius:5px; 
-  background-color: #BDDEFF;
+  background-color: white;
   width:400px;
   height:120px;
   float:left;
@@ -256,6 +273,38 @@ Profile Page
   border-left: 1px solid white;
 }
 
+.new_message_button_profile{
+  display:inline-block;
+  text-decoration: none;
+  border: 3px solid #BDDEFF;
+  border-radius:10px; 
+  background-color: white;
+  width:150px;
+  height:40px;
+  padding-top:15px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  a{
+    text-decoration: none;
+    color:black;
+    font-weight: bold
+  }
+}
+
+.visits a{
+  text-decoration: none;
+  border: 3px solid #BDDEFF;
+  border-radius:10px; 
+  background-color: white;
+  width:400px;
+  height:120px;
+  padding: 5px;
+  padding-right:345px;
+  margin-left:7px;
+  font-weight:bold;
+  color:black;
+}
+
 
 /*
 ========================================
@@ -267,7 +316,7 @@ textarea#user_about_me {
   border: 3px solid #BDDEFF;
   border-radius:5px; 
   background-color: white;
-  width:400px;
+  width:353px;
   height:120px;
   float:left;
   padding-top:8px;
@@ -276,8 +325,13 @@ textarea#user_about_me {
   }
 }
 
+.edit_right_menu {
+  padding-top:15px
+}
+
+
 .edit_right_menu  h2 input {
-border:3px solid #BDDEFF 
+  border:3px solid #BDDEFF; 
 }
 
 input {
@@ -289,7 +343,7 @@ input {
   padding-bottom: 5px;
   padding-left:5px;
   margin-top:10px;
-  background:white
+  background:white;
 }
 
 .edit_left_list {
@@ -303,7 +357,7 @@ input {
    padding-bottom: 5px;
    padding-left:5px;
    padding-right:120px;
-   margin-top:10px
+   margin-top:10px;
  }
 }
 
@@ -321,16 +375,34 @@ input {
 .edit_top_wrapper {
   clear:both;
   height:280px;
-  width:700px;
+  width:710px;
 }
 
 .edit_image {
   float:left;
-  margin-left: 18px
+  margin-left: 18px;
 }
 
-.select option{
-  height:50px
+input#username {
+  margin-top:10px
+}
+
+select {
+  background:transparent;
+  border:none
+}
+
+.selector {
+  display:block;
+  border: 3px solid #BDDEFF;
+  border-radius:10px;
+  text-decoration: none;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left:3px;
+  margin-top:10px;
+  background:white;
+  width:250px
 }
 
 /*
@@ -340,19 +412,138 @@ Search Page
 */
 
 #open_search_button {
-  margin-left: 700px
+  margin-left: 700px;
 }
 
 #close_search_button {
-  margin-left: 700px
+  margin-left: 700px;
+}
+
+#q_age_gteq, #q_stackoverflow_score_gteq, #q_stackoverflow_score_lteq, #q_age_lteq {
+  width:89px;
+  display:inline-block;
+  border-radius:5px
+}
+
+#q_stackoverflow_score_gteq{
+  margin-left:152px;
+}
+
+#q_age_gteq{
+  margin-left:274px
+}
+
+
+#q_city_eq, #q_gender_eq, #q_smoker_eq, #q_front_backend_eq, #q_favourite_language_eq{
+  width:100px;
+  display:inline;
+  background: white;
+  border: 3px solid #BDDEFF; 
+  height: 35px;
+  margin-left:277px
+}
+
+#q_gender_eq {
+  margin-left: 250px
+}
+
+#q_smoker_eq{
+  margin-left: 248px
+
+}
+
+#q_front_backend_eq{
+  margin-left:151px
+}
+
+#q_favourite_language_eq{
+  margin-left:121px;
 }
 
 
 .pagination {
   color: black;
-  // background-color: white;
 }
 
+#open_search_button button {
+  background-color: white;
+  border: 3px solid #BDDEFF;
+  height: 35px;
+  border-radius: 5px
+}
 
+#close_search_button button {
+  background-color: white;
+  border: 3px solid #BDDEFF;
+  height: 35px;
+  border-radius: 5px
+}
 
+/*
+========================================
+New Message Dropdown
+========================================
+*/
 
+textarea#message_content {
+  background-color: white;
+  border: 3px solid #BDDEFF;
+  border-radius:10px;
+  height: 200px
+}
+
+select#message_receiver_id {
+  background-color: white;
+  border: 3px solid #BDDEFF;
+  border-radius:10px;
+  height: 35px;
+  width:200px
+}
+
+.message_action {
+  width: 55px;
+  display:inline-block
+}
+
+.message_receiver {
+  width: 200px;
+  display:inline-block;
+  margin-right: 25px;
+  margin-left: 10px
+}
+
+#message_form {
+  width:350px;
+  float:right;
+  margin-top: 20px
+}
+
+#message_form {
+  width:350px;
+  margin-top: 20px
+}
+
+input#message_title {
+  width:292px
+}
+
+.original_content {
+  background-color: white;
+  border: 3px solid #BDDEFF;
+  border-radius:10px;
+  height: 200px;
+  width: 306px;
+  p{
+    word-wrap:break-word;
+    padding: 5px
+  }
+}
+
+table.message_table {
+  border: 3px solid #BDDEFF;
+  td{
+    background-color: white;
+    border: 3px solid #BDDEFF;
+    padding:10px;
+  }
+}

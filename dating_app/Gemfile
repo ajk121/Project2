@@ -12,6 +12,7 @@ gem 'carrierwave', '0.9.0'
 gem 'rmagick'
 gem 'impressionist'
 gem 'sqlite3'
+gem 'headshot'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

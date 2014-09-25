@@ -1,10 +1,12 @@
 class Message < ActiveRecord::Base
+  # validate :get_all_users_except_current_user, on: :create
   attr_accessible :content, :receiver_id, :sender_id, :title
 
   belongs_to :sender, class_name: 'User', foreign_key: 'sender_id'
   belongs_to :receiver, class_name: 'User', foreign_key: 'receiver_id'
 
  before_validation :set_default_status
+
 
  private 
  def set_default_status

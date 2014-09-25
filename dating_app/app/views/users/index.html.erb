@@ -1,12 +1,11 @@
 
-
 <div id ='search' class='hidden'>
 <%= search_form_for @search do |f| %>
 
 <div class="field">
-  <%= f.label :age_gteq, "Age between" %>
+  <%= f.label :age_gteq, "Age" %>
   <%= f.text_field :age_gteq %>
-  <%= f.label :age_lteq, "and" %>
+  <%= f.label :age_lteq, "between" %>
   <%= f.text_field :age_lteq %>    
 </div><br>
 
@@ -21,13 +20,13 @@
 </div><br>
 
 <div class="field">
-  <%#= f.label "Smoker" %>
-  <%#= f.select :smoker_eq, options_for_select(@smoker, @search.smoker_eq), include_blank: true %>
+  <%= f.label "Smoker" %>
+  <%= f.select :smoker_eq, options_for_select(@smokers, @search.smoker_eq), include_blank: true %>
 </div><br>
 
 <div class="field">
-  <%#= f.label "Front-end/Back-end" %>
-  <%#= f.select :front_backend_eq, options_for_select(@frontback, @search.front_backend_eq), include_blank: true %>
+  <%= f.label "Front-end/Back-end" %>
+  <%= f.select :front_backend_eq, options_for_select(@frontback, @search.front_backend_eq), include_blank: true %>
 </div><br>
 
 <div class="field">
@@ -36,9 +35,9 @@
 </div><br>
 
 <div class="field">
-  <%= f.label :stackoverflow_score_gteq, "Stackoverflow score between" %>
+  <%= f.label :stackoverflow_score_gteq, "Stackoverflow score" %>
   <%= f.text_field :stackoverflow_score_gteq %>
-  <%= f.label :stackoverflow_score_lteq, "and" %>
+  <%= f.label :stackoverflow_score_lteq, "between" %>
   <%= f.text_field :stackoverflow_score_lteq %>    
 </div><br>
 

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   impressionist actions: [:show], unique:[:session_hash]
+  helper :headshot
 
   # GET /users
   # GET /users.json
@@ -17,12 +18,6 @@ class UsersController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @users }
     end
-  end
-
-  def advanced_search
-    @search = User.search(params[:q])
-    @users = @search.result(distinct: true)
-    # @search.build_condition
   end
 
 
@@ -56,14 +51,10 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-
-    respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render json: @user, status: :created, location: @user }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+      # if @user.image == 'nil'   
+      #  @user.image = "http://brandonmathis.com/projects/fancy-avatars/demo/images/avatar_male_dark_on_clear_200x200.png"
+        redirect_to @user
       end
     end
   end
@@ -75,7 +66,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: 'You have successfully updated your profile' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -89,10 +80,9 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }
-    end
+
   end
 end

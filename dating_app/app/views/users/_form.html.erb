@@ -19,7 +19,7 @@
   <%end%>
   </div>
   <div class='edit_right_menu'>
-    <h2><%= f.text_field :name %></h2>
+    <h2><%= f.text_field :name, placeholder: "Name"%></h2>
     <div><%= f.text_area :about_me %>
     </div>
   </div>
@@ -38,7 +38,7 @@
     <li><%= f.label :favourite_language %></li>
     <li><%= f.label :stackoverflow_score %></li>
     <li><%= f.label :meet_ups %></li>
-    <li><%= f.label :front_backend %></li>
+    <li><%= f.label :front_end_or_back_end %></li>
   </ul>
 </div>
 
@@ -50,20 +50,23 @@
     <li><%= f.text_field :email %></li>
     <li><%= f.text_field :sex_preference %></li>
     <li><%= f.text_field :height %></li>
-    <li>
+    <li><div class ='selector'>
 <select name="user[smoker]">
   <option value="true">Yes</option>
   <option value="false">No</option>
 </select>
+</div>
 </li>
     <li><%= f.text_field :github_id %></li>
     <li><%= f.text_field :favourite_language %></li>
     <li><%= f.text_field :stackoverflow_score %></li>
     <li><%= f.text_field :meet_ups %></li>
+    <div class ='selector'>
     <li><select name="user[front_backend]">
   <option value="true">Front-End</option>
   <option value="false">Back-End</option>
-</select></li>
+</select>
+</div></li>
   </ul>
 </div>
 

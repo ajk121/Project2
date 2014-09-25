@@ -9,9 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- 
  */
- @import 'normalize.css';
+ 
+ 
  @import 'mixins.css.scss';
- @import 'style.css.scss';
  @import 'variables.css.scss';
+ @import 'style.css.scss';
+ @import 'normalize.css';

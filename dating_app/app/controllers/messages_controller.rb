@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  load_and_authorize_resource except:[:destroy, :show]
+  load_and_authorize_resource
 
 
   # GET /messages
@@ -9,7 +9,8 @@ class MessagesController < ApplicationController
     messages = (@user.messages_as_receiver + @user.messages_as_sender)
     @views = @user.views_as_viewed + @user.views_as_viewer
     @messages = Kaminari.paginate_array(messages).page(params[:page])
-
+    @message = Message.new
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @messages }
@@ -19,14 +20,16 @@ class MessagesController < ApplicationController
   # GET /messages/1/reply
   # GET /messages/1/reply.json
   def reply
-    @original = Message.find(params[:id])
+    
+    @original = Message.find(params[:message_id])
+    authorize! :reply, @original 
     @message = Message.new
 
     respond_to do |format|
-     format.html {render :new} # new.html.erb
+     format.html {render :reply} # new.html.erb
      format.json { render json: @message }
-    end
-  end
+   end
+ end
 
   # GET /messages/1
   # GET /messages/1.json
@@ -34,8 +37,8 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
     
     if @message.receiver == current_user
-        @message.status = "read"
-        @message.save
+      @message.status = "read"
+      @message.save
     end 
     respond_to do |format|
       format.html # show.html.erb
@@ -47,13 +50,11 @@ class MessagesController < ApplicationController
   # GET /messages/new.json
   def new
     @message = Message.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @message }
     end
   end
-
 
   # GET /messages/1/edit
   def edit
@@ -64,17 +65,9 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(params[:message])
-    @message.sender = User.find(current_user.id)
-
-    respond_to do |format|
-      if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render json: @message, status: :created, location: @message }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
-      end
-    end
+    @message.sender = current_user
+    @message.save
+    redirect_to messages_path 
   end
 
   # PUT /messages/1
