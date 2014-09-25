@@ -511,11 +511,6 @@ select#message_receiver_id {
   margin-top: 20px
 }
 
-#message_form {
-  width:350px;
-  margin-top: 20px
-}
-
 input#message_title {
   width:292px
 }
@@ -538,5 +533,60 @@ table.message_table {
     background-color: white;
     border: 3px solid #BDDEFF;
     padding:10px;
+  }
+}
+
+/*
+========================================
+New Message Page
+========================================
+*/
+
+textarea#message_content {
+  background-color: white;
+  border: 3px solid #BDDEFF;
+  border-radius:10px;
+  height: 200px
+}
+
+select#message_receiver_id {
+  background-color: white;
+  border: 3px solid #BDDEFF;
+  border-radius:10px;
+  height: 35px;
+  width:200px
+}
+
+.message_action {
+  width: 55px;
+  display:inline-block
+}
+
+.message_receiver {
+  width: 200px;
+  display:inline-block;
+  margin-right: 25px;
+  margin-left: 10px
+}
+
+#message_form {
+  width:350px;
+  float:right;
+  margin-top: 20px
+}
+
+input#message_title {
+  width:292px
+}
+
+.original_content {
+  background-color: white;
+  border: 3px solid #BDDEFF;
+  border-radius:10px;
+  height: 200px;
+  width: 306px;
+  p{
+    word-wrap:break-word;
+    padding: 5px
   }
 }
