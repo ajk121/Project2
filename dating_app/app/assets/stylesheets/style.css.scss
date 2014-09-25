@@ -324,7 +324,6 @@ textarea#user_about_me {
   }
 }
 
-
 .edit_right_menu {
   padding-top:15px
 }
@@ -535,7 +534,23 @@ table.message_table {
     background-color: white;
     border: 3px solid #BDDEFF;
     padding:10px;
-    
+
   }
+
 }
+
+.message_new_button {
+  background-color: white;
+  border: 3px solid #BDDEFF;
+  height: 35px;
+  border-radius: 5px
+}
+
+.message_new_button_close {
+  background-color: white;
+  border: 3px solid #BDDEFF;
+  height: 35px;
+  border-radius: 5px
+}
+
 

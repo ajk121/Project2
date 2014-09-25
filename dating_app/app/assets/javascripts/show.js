@@ -10,29 +10,15 @@ $(document).ready(function(){
   //   $("#image_name_"+userid).slideUp();
   // });
 
-$('.message_table').on('click', 'a', function(e){
-  e.preventDefault();
-  href = $(this).attr('href');
-  toggleMessage(href);
-});
-
-function toggleMessage(href) {
-  $('#message_form').fadeIn(500);
-  $('#message_new').addClass('hidden');
-  $('#close_message').removeClass('hidden');
-  formAction = $('form#_message_new').attr('action');
-  $('form#message_new').attr('action', href);
-}
-
 $( '.dropdown' ).hover(
   function(){
-    console.log('hover');
     $(this).children('.sub-menu').slideDown(300);
   },
   function(){
     $(this).children('.sub-menu').slideUp(300);
   }
   );
+
 
 $('#open_search_button').on('click', function(e){
   e.preventDefault;
@@ -49,9 +35,9 @@ $('#close_search_button').on('click', function(e){
 });
 
 
+
 $('#message_new').on('click', function(e){
   e.preventDefault;
-  console.log('#message_new');
   $('#message_form').fadeIn(500);
   $('#message_new').addClass('hidden');
   $('#close_message').removeClass('hidden');
@@ -63,10 +49,6 @@ $('#close_message').on('click', function(e){
   $('#close_message').addClass('hidden');
   $('#message_new').removeClass('hidden');
 });
-
-
-
-
 
 
 });
