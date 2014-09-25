@@ -178,7 +178,6 @@ img {
   display:none;
 }
 
-
 .inbox, th, td, tr {
  border: 1px solid white;
 }
@@ -378,6 +377,7 @@ input#user_name {
 select {
   background:transparent;
   border:none;
+  width:590px
 }
 
 .update_user_button {
