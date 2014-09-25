@@ -534,9 +534,10 @@ table.message_table {
     background-color: white;
     border: 3px solid #BDDEFF;
     padding:10px;
-
+  a{
+    text-decoration: none
   }
-
+  }
 }
 
 .message_new_button {
@@ -551,6 +552,15 @@ table.message_table {
   border: 3px solid #BDDEFF;
   height: 35px;
   border-radius: 5px
+}
+
+
+.message_field {
+  background-color: white;
+  border: 3px solid #BDDEFF;
+  height: 35px;
+  border-radius: 5px;
+  width: 305px
 }
 
 

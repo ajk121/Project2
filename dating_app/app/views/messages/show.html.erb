@@ -1,28 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<div class='messages'>
-<p>
-  <b>Subject:</b>
+<b>Subject</b>
+<div class="message_field">
   <%= @message.title %>
-</p>
+</div>
 
-<p>
-  <b>Content:</b>
+<b>Content</b>
+<div class="original_content">
   <%= @message.content %>
-</p>
+</div>
 
-<p>
-  <b>Sender:</b>
+<b>Sender</b>
+<div class="message_field">
   <%= @message.sender.name %>
-</p>
+</div>
 
-<p>
-  <b>Receiver:</b>
+<b>Receiver</b>
+<div class='message_field'>
   <%= @message.receiver.name %>
-</p>
 </div>
 
 
 
 <%= link_to 'Back to my messages', messages_path %>
-<%#= link_to 'Reply to this message', message_reply_message_path(@message) %>
+
+<%= link_to 'Reply', message_reply_message_path(@message) %>
