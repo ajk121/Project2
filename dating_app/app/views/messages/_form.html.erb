@@ -31,7 +31,8 @@
         <%= f.label :receiver_id, "To: #{current_user.viewed_users.all.last.name}" %><br><br>
         <%= f.hidden_field :receiver_id, value: current_user.viewed_users.all.last.id %>
       <% else %>
-        
+        <%= f.label :receiver_id, "Please select someone" %>
+        <%= f.collection_select :receiver_id, User.find(current_user.id).viewed_users.uniq,:id,:name %> 
       <% end %>
     <%end%> 
 
