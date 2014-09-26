@@ -44,7 +44,7 @@ div#main {
 }
 
 .login_message{
-  margin-left: 500px;
+  margin-left: 450px;
   color:white
 }
 
@@ -534,6 +534,7 @@ table.message_table {
     background-color: white;
     border: 3px solid #BDDEFF;
     padding:5px;
+    min-width:50px;
     a{
       text-decoration: none
     }
