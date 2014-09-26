@@ -60,6 +60,7 @@ Nav
   min-width: 10000px;
   border-bottom: 3px solid black;
   position: fixed;
+  z-index: 999;
 }
 
 .top-nav ul {
@@ -164,6 +165,37 @@ img {
 
 .search_image {
   display:inline-block;
+  position: relative;
+}
+
+.user-info {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  width: 100%;
+  line-height: 20px;
+  width: 250px;
+  margin: 10px 10px 14px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 0 0 5px 5px;
+  -webkit-transition: background-color 500ms ease-out 1s;
+      -moz-transition: background-color 500ms ease-out 1s;
+      -o-transition: background-color 500ms ease-out 1s;
+      transition: background-color 500ms ease-out 1s;
+  h3 {
+    line-height: 0px;
+    a {
+      color: #FFF;
+      text-decoration: none;
+    }
+  }
+}
+
+.search_image:hover .user-info {
+  display: block;
 }
 
 #image_name div { 

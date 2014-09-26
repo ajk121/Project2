@@ -11,12 +11,9 @@ class User < ActiveRecord::Base
 
   has_many :views_as_viewer, class_name:'View', foreign_key: :viewer_id, dependent: :destroy
   has_many :views_as_viewed, class_name:'View', foreign_key: :viewed_id, dependent: :destroy
-
   has_many :viewed_users, through: :views_as_viewer, source: :viewed 
-
   has_many :messages_as_sender, class_name:'Message', foreign_key: :sender_id, dependent: :destroy
   has_many :messages_as_receiver, class_name:'Message', foreign_key: :receiver_id,dependent: :destroy
-
   has_many :roles
 
   validates :name, presence: true, on: :update, length: { minimum: 2 }

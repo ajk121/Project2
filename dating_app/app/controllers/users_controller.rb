@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   helper :headshot
 
   def index
-    @users = User.where(current_user.gender = current_user.sex_preference)
+    # @users = User.find_by_sql("SELECT * FROM users WHERE id != #{current_user.id}")
     @search = User.search(params[:q])
     @users = @search.result(distinct: true).page(params[:page])
     @cities = User.select(:city).group(:city).pluck(:city)
