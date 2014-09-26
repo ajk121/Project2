@@ -1,4 +1,5 @@
 class ViewsController < ApplicationController
+  load_and_authorize_resource
   
   def user_makes_visit
     @user = current_user

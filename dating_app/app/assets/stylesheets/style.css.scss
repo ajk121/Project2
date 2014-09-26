@@ -49,12 +49,16 @@ div#main {
   margin-left: 450px;
   color:white
 }
-.laptopimg {
+.laptopimage {
   float: right;
-  width: 550px;
-  height: 550px;
+  min-width: 400px;
+  height: 400px;
   background: none;
-  // padding-bottom: 500px;
+  padding:0; 
+}
+
+.home_image{
+margin-bottom: 400px;  
 }
 
 /*
