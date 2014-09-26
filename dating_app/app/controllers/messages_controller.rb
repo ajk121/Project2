@@ -15,7 +15,6 @@ class MessagesController < ApplicationController
     render :index
   end
 
-
   def sent
     @views = current_user.views_as_viewed + current_user.views_as_viewer
     @messages = Kaminari.paginate_array(current_user.messages_as_sender).page(params[:page])
@@ -27,7 +26,12 @@ class MessagesController < ApplicationController
     @original = Message.find(params[:message_id])
     authorize! :reply, @original 
     @message = Message.new
-  end
+
+    respond_to do |format|
+      format.html {render :reply} # new.html.erb
+      format.json { render json: @message }
+    end
+ end
 
   def show
     @message = Message.find(params[:id])
@@ -43,6 +47,11 @@ class MessagesController < ApplicationController
 
   def edit
     @message = Message.find(params[:id])
+  end
+
+  def compose
+    @message = Message.new
+    render :new
   end
 
   def create

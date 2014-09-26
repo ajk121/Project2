@@ -22,9 +22,14 @@
     <%= form_for(@message) do |f| %>
 
     <div class="field">
-      <%= f.text_field :title, placeholder: "#{@original.title}" %>
-    </div><br>
-  
+      <% if @original.title.present? %>
+        <%= f.text_field :title, placeholder: "#{@original.title}" %>
+      <% else %>
+        <%= f.text_field :title, placeholder: "Subject" %>
+      <% end %>
+    </div>
+    <br>
+
     <div class="field">
       <%= f.text_area :content, placeholder: "Content" %>
     </div>

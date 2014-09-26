@@ -22,19 +22,24 @@
   </div>
 
   <div class="message_receiver">
-   <% if @original %>
-   <%= f.label 'To:' %> 
-   <%= @original.sender.name %> 
-   <%= f.hidden_field :receiver_id, :value => @original.sender_id %>
-   <% else %>
-   <%= f.label :To %><br><br>
-   <%= f.collection_select :receiver_id, User.find(current_user.id).viewed_users.uniq,:id,:name %> 
-   <%end%> 
- </div>
- 
- <div class="actions"><br>
-  <%= f.submit 'Send'%>
-</div>
+
+    <% if @original %>
+      <%= f.label :receiver_id, "To #{@original.sender.name}" %>
+      <%= f.hidden_field :receiver_id, value: @original.sender_id %>
+    <% else %>
+      <% if params[:action] == "new" %>
+        <%= f.label :receiver_id, "To: #{current_user.viewed_users.all.last.name}" %><br><br>
+        <%= f.hidden_field :receiver_id, value: current_user.viewed_users.all.last.id %>
+      <% else %>
+        <%= f.label :receiver_id, "Please select someone" %>
+        <%= f.collection_select :receiver_id, User.find(current_user.id).viewed_users.uniq,:id,:name %> 
+      <% end %>
+    <%end%> 
+
+  </div>
+  <div class="actions"><br>
+    <%= f.submit 'Send'%>
+  </div>
 
 <% end %>
 </div>

@@ -7,6 +7,7 @@ DatingApp::Application.routes.draw do
     collection do
       get 'inbox'
       get 'sent'
+      get 'compose'
     end
   end
 
@@ -14,6 +15,7 @@ DatingApp::Application.routes.draw do
 
   root to: 'home#index'
   resources :users 
+
   resources :views
   resources :roles
   resources :posts do
