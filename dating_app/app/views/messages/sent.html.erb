@@ -16,11 +16,9 @@
     <td><%= message.title %></td>
 
     <td><%= link_to 'reply', message_reply_message_path(message) if can? :reply, message %></td> 
-
     <td><%= link_to 'Show', message %></td>
     <td><%= link_to( 'Delete', delete_message_path(message), method: :delete, data: { confirm: 'Are you sure?' }) if can? :destroy, message %></td>  
   </tr>
-
   <% end %>
 </table>
 
@@ -32,10 +30,11 @@
   <div class="field">
     <%= f.text_field :title, placeholder: "Title" %>
   </div><br>
+  
   <div class="field">
     <%= f.text_area :content, placeholder: "Content" %>
   </div>
-
+  
   <div class="message_receiver">
    <% if @original %>
    <%= f.label 'To:' %> 
@@ -46,12 +45,13 @@
 
    <%end%> 
  </div>
+ 
  <div class="message_action">
   <%= f.submit 'Send'%>
-</div>
+ </div>
+
 <% end %>
 </div>
-
 
 <%= paginate @messages %>
 
