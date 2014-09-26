@@ -38,7 +38,9 @@
           </li>
           <% end %>
           <li><%= link_to 'Search', users_path %></li>
+          <%if @user = current_user%>
           <li class="login_message">Current User: <%= current_user.email %></li>
+          <%end%>
         </ul> 
       </nav>
 
