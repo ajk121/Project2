@@ -9,15 +9,12 @@ DatingApp::Application.routes.draw do
   root to: 'home#index'
   resources :messages
 
-
   resources :messages do
     get '/:id/reply', to: 'messages#reply' 
   end
   
-  
   delete '/messages/:id', to: 'messages#destroy', as: :delete_message
-  ; 
-
+ 
   resources :users
   resources :views
   resources :roles

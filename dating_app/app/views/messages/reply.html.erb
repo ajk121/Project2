@@ -22,25 +22,31 @@
     <%= form_for(@message) do |f| %>
 
     <div class="field">
-      <%= f.text_field :title, placeholder: "#{@original.title}" %>
-          </div><br>
-      <div class="field">
-        <%= f.text_area :content, placeholder: "Content" %>
-      </div>
-
-      <div class="message_receiver">
-       <% if @original %>
-       <%= f.label 'To:' %> 
-       <%= @original.sender.name %> 
-       <%= f.hidden_field :receiver_id, :value => @original.sender_id %>
-       <% else %>
-       <%= f.collection_select :receiver_id, User.order(:name),:id,:name %> 
-       <%end%> 
-     </div>
-     <div class="message_action">
-      <%= f.submit 'Send'%>
+      <% if @original.title.present? %>
+        <%= f.text_field :title, placeholder: "#{@original.title}" %>
+      <% else %>
+        <%= f.text_field :title, placeholder: "Subject" %>
+      <% end %>
     </div>
-    <% end %>
+    <br>
+
+    <div class="field">
+      <%= f.text_area :content, placeholder: "Content" %>
+    </div>
+
+    <div class="message_receiver">
+     <% if @original %>
+     <%= f.label 'To:' %> 
+     <%= @original.sender.name %> 
+     <%= f.hidden_field :receiver_id, :value => @original.sender_id %>
+     <% else %>
+     <%= f.collection_select :receiver_id, User.order(:name),:id,:name %> 
+     <%end%> 
+   </div>
+   <div class="message_action">
+    <%= f.submit 'Send'%>
   </div>
   <% end %>
+</div>
+<% end %>
 

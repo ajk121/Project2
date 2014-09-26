@@ -23,16 +23,14 @@
   </div>
 
   <div class="message_receiver">
-   <% if @original %>
-   <%= f.label 'To:' %> 
-   <%= @original.sender.name %> 
-   <%= f.hidden_field :receiver_id, :value => @original.sender_id %>
-   <% else %>
-
-     <%= f.label :To %><br><br>
-     <%= f.collection_select :receiver_id, User.get_all_user_except(current_user.id),:id,:name %> 
-  <%end%> 
-
+    <% if @original %>
+    <%= f.label 'To:' %> 
+    <%= @original.sender.name %> 
+      <%= f.hidden_field :receiver_id, value: @original.sender_id %>
+    <% else %>
+      <%= f.label :To, "To: #{current_user.viewed_users.all.last.name}" %><br><br>
+      <%= f.hidden_field :receiver_id, value: current_user.viewed_users.all.last.id %>
+    <%end%> 
 
   </div>
   <div class="actions"><br>

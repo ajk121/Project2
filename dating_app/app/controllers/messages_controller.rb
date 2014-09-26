@@ -31,6 +31,19 @@ class MessagesController < ApplicationController
    end
  end
 
+
+  # def profile_message
+
+  #   raise 
+    
+  #   @message = Message.new
+
+  #   respond_to do |format|
+  #    format.html {render :reply} # new.html.erb
+  #    format.json { render json: @message }
+  #  end
+  # end
+
   # GET /messages/1
   # GET /messages/1.json
   def show
