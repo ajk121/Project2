@@ -7,6 +7,7 @@ DatingApp::Application.routes.draw do
     collection do
       get 'inbox'
       get 'sent'
+      get 'compose'
     end
   end
 

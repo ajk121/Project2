@@ -49,6 +49,11 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
   end
 
+  def compose
+    @message = Message.new
+    render :new
+  end
+
   def create
     @message = Message.new(params[:message])
     @message.sender = current_user

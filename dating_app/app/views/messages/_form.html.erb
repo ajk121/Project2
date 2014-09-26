@@ -24,12 +24,15 @@
   <div class="message_receiver">
 
     <% if @original %>
-    <%= f.label 'To:' %> 
-    <%= @original.sender.name %> 
+      <%= f.label :receiver_id, "To #{@original.sender.name}" %>
       <%= f.hidden_field :receiver_id, value: @original.sender_id %>
     <% else %>
-      <%= f.label :To, "To: #{current_user.viewed_users.all.last.name}" %><br><br>
-      <%= f.hidden_field :receiver_id, value: current_user.viewed_users.all.last.id %>
+      <% if params[:action] == "new" %>
+        <%= f.label :receiver_id, "To: #{current_user.viewed_users.all.last.name}" %><br><br>
+        <%= f.hidden_field :receiver_id, value: current_user.viewed_users.all.last.id %>
+      <% else %>
+        
+      <% end %>
     <%end%> 
 
   </div>
