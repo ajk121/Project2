@@ -17,9 +17,9 @@
     <td><%= message.status %></td>
     <%end%>
     <td><%= message.created_at.time.strftime("%b %-d %Y @ %H:%M") %></td>
-    <td><%= message.sender.image%></td>
+    <td><%= image_tag(message.sender.image,  class: "message_image")%></td>
     <td><%= message.sender.name %></td>
-    <td><%= message.receiver.image%></td>
+    <td><%= image_tag(message.receiver.image, class: "message_image")%></td>
     <td><%= message.receiver.name %></td>
     <td><%= message.title %></td>
     <td><%= link_to 'reply', message_reply_message_path(message) if can? :reply, message %></td> 

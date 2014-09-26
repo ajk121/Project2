@@ -28,6 +28,7 @@
             <%end%>
           </ul> 
         </li>
+        <% unless current_user.role == "basic"%>
         <li class="dropdown">
           <%= link_to 'My Messages', messages_path %>
           <ul class="sub-menu">
@@ -35,9 +36,10 @@
               <li><%= link_to "Inbox (#{current_user.messages_as_receiver.count})", inbox_messages_path %></li>
               <li><%= link_to "Sent (#{current_user.messages_as_sender.count})", sent_messages_path %></li>
             </ul>
+            <%end%>
           </li>
           <% end %>
-          <li><%= link_to 'Search', users_path %></li>
+          <li><%= link_to "View People's Profiles", users_path %></li>
           <%if @user = current_user%>
           <li class="login_message">Current User: <%= current_user.email %></li>
           <%end%>

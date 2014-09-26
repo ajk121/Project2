@@ -154,7 +154,7 @@ footer {
 }
 
 img {
-  width: 250px;
+  max-width: 250px;
   height: 250px;
   margin:10px;
   border-radius: 5px;
@@ -533,7 +533,7 @@ table.message_table {
   td{
     background-color: white;
     border: 3px solid #BDDEFF;
-    padding:10px;
+    padding:5px;
     a{
       text-decoration: none
     }
@@ -574,4 +574,9 @@ table.message_table {
     padding:20px;
     padding-top:10px
   }
+}
+
+.message_image {
+  width:60px;
+  height:60px
 }
