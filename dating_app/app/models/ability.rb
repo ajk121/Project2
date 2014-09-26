@@ -26,9 +26,6 @@ class Ability
       can :update, User, id: user.id
       can :read, :home
       cannot :read, Message
-      # cannot :read, :receiver_id
-      # cannot :read, Search
-      # cannot :read, Views
       
     else
       can :create, User

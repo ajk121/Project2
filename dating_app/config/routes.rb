@@ -10,12 +10,9 @@ DatingApp::Application.routes.draw do
     end
   end
 
-  root to: 'home#index'
-
-  
-
   delete '/messages/:id', to: 'messages#destroy', as: :delete_message 
 
+  root to: 'home#index'
   resources :users 
   resources :views
   resources :roles

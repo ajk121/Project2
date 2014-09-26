@@ -22,19 +22,6 @@ ActiveRecord::Schema.define(:version => 20140923124515) do
 
   add_index "authentication_providers", ["name"], :name => "index_name_on_authentication_providers"
 
-  create_table "headshot_photos", :force => true do |t|
-    t.string   "description"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.integer  "capturable_id"
-    t.string   "capturable_type"
-    t.datetime "image_updated_at"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-  end
-
-
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
     t.integer  "impressionable_id"

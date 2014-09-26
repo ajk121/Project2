@@ -10,9 +10,6 @@
 </head>
 <body>
   <div id='wrapper'>
-    <% flash.each do |type, message| %>
-        <div class="notice"><%= message %></div>
-      <% end %>
     <nav class="top-nav">
       <ul>
         <li class="title"><img class="logo" src='https://lh4.ggpht.com/C48eNSYFGnAw7fGC3J04fPgPjtPcjCopXtFf0Pj7LzAEGmCOxE9Ocf9ZI8HraXJL5ymPaO8=s102'/></li>
@@ -23,48 +20,51 @@
           <ul class="sub-menu">
             <li><%= link_to 'Profiles I Visited', user_makes_visit_path %></li>
             <li><%= link_to "Visits To My Profile", user_receives_visit_path %></li>
-            <li><%= link_to 'My Messages', messages_path %></li>
             <li><%= link_to 'Edit Profile', edit_user_path(current_user)%></li>
             <% if current_user.role =='premium'%>
-              <li><%= link_to 'Downgrade To Basic', new_role_path%></li>
+            <li><%= link_to 'Downgrade To Basic', new_role_path%></li>
             <%else%>
-              <li><%= link_to 'Upgrade To Premium', new_role_path%></li>
+            <li><%= link_to 'Upgrade To Premium', new_role_path%></li>
             <%end%>
           </ul> 
         </li>
+        <% unless current_user.role == "basic"%>
         <li class="dropdown">
-          <%= link_to 'Mail', messages_path %>
+          <%= link_to 'My Messages', messages_path %>
           <ul class="sub-menu">
             <li><%= link_to "All Mail (#{current_user.messages_as_receiver.count + current_user.messages_as_sender.count})", messages_path %>
-            <li><%= link_to "Inbox (#{current_user.messages_as_receiver.count})", inbox_messages_path %></li>
-            <li><%= link_to "Sent (#{current_user.messages_as_sender.count})", sent_messages_path %></li>
-          </ul>
-        </li>
-
-        <% end %>
-      </ul> 
+              <li><%= link_to "Inbox (#{current_user.messages_as_receiver.count})", inbox_messages_path %></li>
+              <li><%= link_to "Sent (#{current_user.messages_as_sender.count})", sent_messages_path %></li>
+            </ul>
+            <%end%>
+            <li><%= link_to "View Profiles", users_path %></li>
+          </li>
+          <% end %>
+         
+          <%if @user = current_user%>
+          <li class="login_message">Current User: <%= current_user.email %></li>
+          <%end%>
+        </ul> 
       </nav>
 
-       <div id="main">
-         <!--  <p class="notice"><%= notice %></p> -->
-         <p class="alert"><%#= alert %></p>
-         <%= yield %>
-       </div>
+      <div id="main"><br>
+       <% flash.each do |type, message| %>
+       <div class="notice"><%= message %></div>
+       <% end %>
+       <%= yield %>
+     </div>
 
-       <footer>
-        <ul>
-          <%unless current_user %>
-          <li><%= link_to 'Register', new_user_registration_path %></li>
-          <li><%= link_to 'Login', new_user_session_path%></li>
-          <%else%>
-          <li><%= link_to 'Home', root_path%></li>
-          <li><%= link_to 'Search', users_path %></li>
-          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-          <% end %>
-        </ul>
-
-      </footer>
-    </div>
-
-  </body>
-  </html>
+     <footer>
+      <ul>
+        <%unless current_user %>
+        <li><%= link_to 'Register', new_user_registration_path %></li>
+        <li><%= link_to 'Login', new_user_session_path%></li>
+        <%else%>
+        <li><%= link_to 'Home', root_path%></li>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+        <% end %>
+      </ul>
+    </footer>
+  </div>
+</body>
+</html>

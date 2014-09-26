@@ -1,76 +1,85 @@
-<p id="notice"><%#= notice %>
+<p id="notice"></p>
 
-  <div class='profile_top_wrapper'>
-
+<div class='profile_top_wrapper'>
+  <% if @user.image.present? %>
     <div class='profile_image'>  
       <%= image_tag @user.image.url %>
     </div>
-   
-      <div class='profile_name'><h1><%= @user.name %></h1></div>
-      <div class= 'new_message_button_profile'><%= link_to 'SEND MESSAGE', new_message_path %></div>
-      <div class='profile_role'><h3><%= @user.role%> USER</h3></div>
-
-      <div class='about_me'>
-        <p><%= @user.about_me %></p>
-      </div>
-
+  <%else%>
+    <div class='profile_image'> 
+      <%= image_tag "heart.png" %>
     </div>
-  <div class ='profile_list'>
-    <table class='profile_table'>
-      <tr>
-        <td>Age</td>
-        <td><%= @user.age %></td>
-      </tr>
-      <tr>
-        <td>Gender</td>
-        <td><%= @user.gender %></td>
-      </tr>
-      <tr>
-        <td>City</td>
-        <td><%= @user.city %></td>
-      </tr>
-      <tr>
-        <td>Email</td>
-        <td><%= @user.email %></td>
-      </tr>
-      <tr>
-        <td>Interested in</td>
-        <td><%= @user.sex_preference %></td>
-      </tr>
-      <tr>
-        <td>Height in cm</td>
-        <td><%= @user.height %></td>
-      </tr>
-      <tr>
-        <td>Smoker</td>
-        <td><%= @user.smoker %></td>
-      </tr>
-      <tr>
-        <td>GitHub ID</td>
-        <td><%= @user.github_id %></td>
-      </tr>
-      <tr>
-        <td>Favourite code language</td>
-        <td><%= @user.favourite_language %></td>
-      </tr>
-      <tr>
-        <td>Stack Overflow Score</td>
-        <td><%= @user.stackoverflow_score %></td>
-      </tr>
-      <tr>
-        <td>Meet Ups</td>
-        <td><%= @user.meet_ups %></td>
-      </tr>
-      <tr>
-        <td>Front-end Or Back-end</td>
-        <td><%= @user.front_backend  %></td>
-      </tr>
-    </table>
-  </div>
-  <br>
+  <%end%>
 
-  <%if @user == current_user  %>
-  <div class ='visits'>
+  <div class='profile_name'><h1><%= @user.name %></h1></div>
+    <% unless current_user.id == params[:id].to_i %>
+      <div class= 'new_message_button_profile'>
+        <%= link_to 'SEND MESSAGE', new_message_path %>
+      </div>
+    <%end%>
+  <div class='profile_role'><h3><%= @user.role%> USER</h3></div>
+  
+  <div class='about_me'>
+    <p><%= @user.about_me %></p>
+  </div>
+</div>
+
+<div class ='profile_list'>
+  <table class='profile_table'>
+    <tr>
+      <td>Age</td>
+      <td><%= @user.age %></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><%= @user.gender %></td>
+    </tr>
+    <tr>
+      <td>City</td>
+      <td><%= @user.city %></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <td>Interested in</td>
+      <td><%= @user.sex_preference %></td>
+    </tr>
+    <tr>
+      <td>Height in cm</td>
+      <td><%= @user.height %></td>
+    </tr>
+    <tr>
+      <td>Smoker</td>
+      <td><%= @user.smoker %></td>
+    </tr>
+    <tr>
+      <td>GitHub ID</td>
+      <td><%= @user.github_id %></td>
+    </tr>
+    <tr>
+      <td>Favourite code language</td>
+      <td><%= @user.favourite_language %></td>
+    </tr>
+    <tr>
+      <td>Stack Overflow Score</td>
+      <td><%= @user.stackoverflow_score %></td>
+    </tr>
+    <tr>
+      <td>Meet Ups</td>
+      <td><%= @user.meet_ups %></td>
+    </tr>
+    <tr>
+      <td>Front-end Or Back-end</td>
+      <td><%= @user.front_backend  %></td>
+    </tr>
+  </table>
+</div>
+<br>
+
+<%if @user == current_user  %>
+<div class ='visits'>
   <%= link_to "#{@user.impressionist_count(start_date:Time.now-(24*60*60),end_date: Time.now)} visits to my profile in the past 3 days", user_receives_visit_path %>
   <%else%>
   <%end%>

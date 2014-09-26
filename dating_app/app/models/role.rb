@@ -4,8 +4,4 @@ class Role < ActiveRecord::Base
   belongs_to :user
   before_create :switch_role
 
-  # def set_role
-  #   current_user.role = current_user.user.role == 'basic' ? 'premium' : 'basic'
-  # end
-
 end

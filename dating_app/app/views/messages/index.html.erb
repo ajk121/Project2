@@ -2,30 +2,35 @@
 
 <table class='message_table'>
   <tr>
-    <th>Status</th>
-    <th>From</th>
-    <th>To</th>
-    <th>Title</th>
+    <td>Status</td>
+    <td>Date&Time</td>
+    <td colspan ="2">From</td>
+    <td colspan ="2">To</td>
+    <td>Title</td>
   </tr>
 
   <% @messages.each do |message| %>
   <tr>
+    <%if message.status=='unread'%>
+    <td class ='table_date'><strong><%= message.status %></strong></td>
+    <%else%>
     <td><%= message.status %></td>
+    <%end%>
+    <td><%= message.created_at.time.strftime("%b %-d %Y @ %H:%M") %></td>
+    <td><%= image_tag(message.sender.image,  class: "message_image")%></td>
     <td><%= message.sender.name %></td>
+    <td><%= image_tag(message.receiver.image, class: "message_image")%></td>
     <td><%= message.receiver.name %></td>
     <td><%= message.title %></td>
-
     <td><%= link_to 'reply', message_reply_message_path(message) if can? :reply, message %></td> 
-
     <td><%= link_to 'Show', message %></td>
-    <td><%= link_to( 'Delete', delete_message_path(message), method: :delete, data: { confirm: 'Are you sure?' }) if can? :destroy, message %></td>  
+    <td><%= link_to( 'Delete', delete_message_path(message), metdod: :delete, data: { confirm: 'Are you sure?' }) if can? :destroy, message %></td>  
   </tr>
-
   <% end %>
 </table>
 
-<div id='message_new'><button>New Message</button></div>
-<div id='close_message' class='hidden'><button>Close Message</button></div>
+<div id='message_new'><button class ="message_new_button">New Message</button></div>
+<div id='close_message' class='hidden'><button class ='message_new_button_close'>Close Message</button></div>
 <div id='message_form' class='hidden'>
   <%= form_for(@message) do |f| %>
 
@@ -43,7 +48,6 @@
    <%= f.hidden_field :receiver_id, :value => @original.sender_id %>
    <% else %>
    <%= f.collection_select :receiver_id, User.find(current_user.id).viewed_users.uniq,:id,:name %> 
-
    <%end%> 
  </div>
  <div class="message_action">
